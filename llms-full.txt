@@ -3,7 +3,7 @@
 
 感谢每一位参与维护 Awesome AI4Chip 的朋友。
 
-[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip)](https://github.com/tapeo-ai/awesome-ai4chip/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip&max=100)](https://github.com/tapeo-ai/awesome-ai4chip/graphs/contributors)
 
 ## 一起完善这份目录
 
@@ -19,7 +19,7 @@
 
 Thanks to everyone who contributes to Awesome AI4Chip.
 
-[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip)](https://github.com/tapeo-ai/awesome-ai4chip/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip&max=100)](https://github.com/tapeo-ai/awesome-ai4chip/graphs/contributors)
 
 ## Help improve the directory
 
@@ -323,8 +323,6 @@ These examples keep task instructions, container environments, reference solutio
 
 Awesome AI4Chip collects papers, open-source projects, tools and products that apply AI to chip design, covering specification understanding, RTL generation and verification, analog circuit design, synthesis and physical implementation. We organize the work by models and training methods, agents and harnesses, data, execution environments and benchmarks. The collection also covers Chip for AI and co-design across models, chips, compilers and cluster infrastructure.
 
-Research entries focus on work published since 2025, alongside widely used open-source frameworks, data formats and tutorials. Updated on October 27, 2026.
-
 ![AI4Chip research map: models, agents and harnesses, design execution, evaluation, data and environments, and chip and infrastructure co-design](/assets/ai4chip-architecture.png)
 
 ## Start here
@@ -349,7 +347,7 @@ Research entries focus on work published since 2025, alongside widely used open-
 
 Thanks to everyone helping maintain this directory. Contributions of new work, updated links and executable environments are welcome.
 
-[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip)](/en/contributors)
+[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip&max=100)](/en/contributors)
 
 [Contribute and meet the contributors](/en/contributors) ↗
 
@@ -1062,8 +1060,6 @@ fw_c14_overcomplete_banks_v1/
 
 Awesome AI4Chip 汇集 AI 参与芯片设计的论文、开源项目、工具与产品，涵盖规格理解、RTL 生成与验证、模拟电路设计、综合和物理实现。我们从模型与训练方法、agent 与 harness、数据、执行环境和 benchmark 梳理这些工作，也关注 Chip for AI，以及模型、芯片、编译器和集群基础设施之间的协同设计。
 
-研究工作以 2025 年以来为主，同时收录常用开源框架、数据格式和教程。更新于 2026-10-27。
-
 ![AI4Chip 资源架构：模型、agents 与 harness、设计执行、评测、数据环境及芯片与基础设施协同设计](/assets/ai4chip-architecture.png)
 
 ## 从这里开始
@@ -1088,7 +1084,7 @@ Awesome AI4Chip 汇集 AI 参与芯片设计的论文、开源项目、工具与
 
 感谢一起整理和维护这份目录的朋友。欢迎补充新工作、更新链接，或贡献可执行环境。
 
-[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip)](/contributors)
+[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip&max=100)](/contributors)
 
 [参与维护与查看贡献者](/contributors) ↗
 
