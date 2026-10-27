@@ -1,0 +1,71 @@
+name: Publish documentation
+
+on:
+  workflow_run:
+    workflows: [Build documentation]
+    types: [completed]
+  # Only the base branch's workflow and script run for this event.
+  pull_request_target:
+    branches: [main]
+    types: [closed]
+
+permissions:
+  contents: write
+  actions: read
+  pull-requests: read
+  pages: write
+  id-token: write
+
+# Root, previews, cleanup, and deployment share one lock; never cancel a publish.
+concurrency:
+  group: pages-publish
+  queue: max
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: >-
+      github.repository == 'tapeo-ai/awesome-ai4chip' &&
+      (github.event_name == 'pull_request_target' || github.event.workflow_run.conclusion == 'success')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: github-pages
+      url: ${{ steps.site.outputs.url }}
+    steps:
+      - name: Check out only the trusted publisher from main
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: tapeo-ai/awesome-ai4chip
+          ref: main
+          path: trusted
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /scripts/publish-pages.py
+      - name: Validate the build and assemble the complete Pages site
+        id: site
+        run: python3 trusted/scripts/publish-pages.py
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PUBLISH_DIR: ${{ runner.temp }}/pages-site
+      - name: Upload the combined production and preview site
+        if: steps.site.outputs.publish == 'true'
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          name: github-pages-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/pages-site
+          include-hidden-files: true
+      - name: Deploy to GitHub Pages
+        id: deployment
+        if: steps.site.outputs.publish == 'true'
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+        with:
+          artifact_name: github-pages-${{ github.run_attempt }}
+      - name: Report the published URL
+        if: steps.site.outputs.publish == 'true' && steps.deployment.outcome == 'success'
+        env:
+          SITE_URL: ${{ steps.site.outputs.url }}
+        run: |
+          printf 'Published: [%s](%s)\n' "$SITE_URL" "$SITE_URL" >> "$GITHUB_STEP_SUMMARY"
+

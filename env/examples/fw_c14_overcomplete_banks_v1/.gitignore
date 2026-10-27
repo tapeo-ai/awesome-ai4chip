@@ -1,0 +1,12 @@
+/*.tgz
+/environment/files/software/openroad-runtime.tgz
+/environment/files/technology/sky130_fd_sc_hd__tt_025C_1v80.lib
+/environment/files/technology/sky130_fd_sc_hd_merged.lef
+/environment/files/technology/sky130_fd_sc_hd.tlef
+/tests/public/
+/.prepare-*/
+/output/
+/logs/
+/jobs/
+__pycache__/
+*.pyc

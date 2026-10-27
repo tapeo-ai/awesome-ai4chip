@@ -1,0 +1,124 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Awesome AI4Chip",
+  "description": "AI for Chip 与 Chip / Infra Co-design 的研究、工具与实践目录。",
+  "colors": {
+    "primary": "#596B55",
+    "light": "#B67E62",
+    "dark": "#445640"
+  },
+  "logo": "/assets/awesome-ai4chip-logo.png",
+  "favicon": "/assets/awesome-ai4chip-logo.png",
+  "navigation": {
+    "languages": [
+      {
+        "language": "cn",
+        "default": true,
+        "groups": [
+          {
+            "group": "开始阅读",
+            "pages": [
+              "index",
+              "latest",
+              "tutorials"
+            ]
+          },
+          {
+            "group": "AI for Chip",
+            "pages": [
+              "resources/models/llm",
+              "resources/models/circuit",
+              "resources/agents",
+              "resources/optimization"
+            ]
+          },
+          {
+            "group": "数据、环境与评测",
+            "pages": [
+              "resources/data",
+              "resources/tools",
+              "resources/benchmarks",
+              "environments/index"
+            ]
+          },
+          {
+            "group": "Chip & Infra Co-design",
+            "pages": [
+              "resources/codesign/models-hardware",
+              "resources/codesign/chips-cim",
+              "resources/codesign/architecture-infra",
+              "resources/codesign/kernels"
+            ]
+          },
+          {
+            "group": "产品与阅读",
+            "pages": [
+              "resources/products",
+              "resources/articles"
+            ]
+          },
+          {
+            "group": "社区",
+            "pages": [
+              "contributors"
+            ]
+          }
+        ]
+      },
+      {
+        "language": "en",
+        "groups": [
+          {
+            "group": "Start here",
+            "pages": [
+              "en/index",
+              "en/latest",
+              "en/tutorials"
+            ]
+          },
+          {
+            "group": "AI for Chip",
+            "pages": [
+              "en/resources/models/llm",
+              "en/resources/models/circuit",
+              "en/resources/agents",
+              "en/resources/optimization"
+            ]
+          },
+          {
+            "group": "Data, environments & evaluation",
+            "pages": [
+              "en/resources/data",
+              "en/resources/tools",
+              "en/resources/benchmarks",
+              "en/environments/index"
+            ]
+          },
+          {
+            "group": "Chip & Infra Co-design",
+            "pages": [
+              "en/resources/codesign/models-hardware",
+              "en/resources/codesign/chips-cim",
+              "en/resources/codesign/architecture-infra",
+              "en/resources/codesign/kernels"
+            ]
+          },
+          {
+            "group": "Products & reading",
+            "pages": [
+              "en/resources/products",
+              "en/resources/articles"
+            ]
+          },
+          {
+            "group": "Community",
+            "pages": [
+              "en/contributors"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
