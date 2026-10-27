@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /awesome-ai4chip/pr-preview/
+Sitemap: https://tapeo-ai.github.io/awesome-ai4chip/sitemap.xml
