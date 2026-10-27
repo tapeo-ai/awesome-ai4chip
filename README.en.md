@@ -1,14 +1,14 @@
-# <img src="assets/awesome-ai4chip-logo.png" width="40" height="40" alt="AI4Chip logo"> Awesome AI4Chip
+<h1 align="center"><img src="assets/awesome-ai4chip-logo.png" width="40" height="40" align="absmiddle" alt="AI4Chip logo"> Awesome AI4Chip</h1>
 
-[中文](README.md) · **English**
-
-Awesome AI4Chip collects papers, open-source projects, tools and products that apply AI to chip design, covering specification understanding, RTL generation and verification, analog circuit design, synthesis and physical implementation. We organize the work by models and training methods, agents and harnesses, data, execution environments and benchmarks. The collection also covers Chip for AI and co-design across models, chips, compilers and cluster infrastructure.
+<p align="center"><a href="README.md">中文</a> · <strong>English</strong></p>
 
 ![AI4Chip research map](assets/ai4chip-architecture.png)
 
+Awesome AI4Chip collects papers, open-source projects, tools and products that apply AI to chip design, covering specification understanding, RTL generation and verification, analog circuit design, synthesis and physical implementation. We organize the work by models and training methods, agents and harnesses, data, execution environments and benchmarks. The collection also covers Chip for AI and co-design across models, chips, compilers and cluster infrastructure.
+
 **[Online docs](https://tapeo-ai.github.io/awesome-ai4chip/en/)** · [Getting started & tutorials](docs/en/tutorials.mdx) · [Environments & examples](env/README.en.md)
 
-Research entries focus on work published since 2025, alongside widely used open-source frameworks, data formats and tutorials.
+<sub>Updated on October 27, 2026.</sub>
 
 ## Latest
 
@@ -38,6 +38,6 @@ Research entries focus on work published since 2025, alongside widely used open-
 
 Thanks to everyone helping maintain this directory. Contributions of new work, corrections to links and descriptions, and executable environments are welcome.
 
-[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip)](https://github.com/tapeo-ai/awesome-ai4chip/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip&max=100)](https://github.com/tapeo-ai/awesome-ai4chip/graphs/contributors)
 
 [Open a pull request](https://github.com/tapeo-ai/awesome-ai4chip/pulls) · [Suggest an addition](https://github.com/tapeo-ai/awesome-ai4chip/issues)
