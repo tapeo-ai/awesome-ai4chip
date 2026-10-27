@@ -8,3 +8,5 @@
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 
 .language-switch{display:flex;align-items:center;gap:2px;border:1px solid var(--line);border-radius:6px;padding:3px;font-size:12px;white-space:nowrap}.language-switch a{padding:4px 7px;color:var(--muted);border-radius:4px}.language-switch a[aria-current]{background:var(--soft);color:var(--ink);font-weight:600}@media(max-width:800px){.site-header{gap:9px}.language-switch{font-size:11px}.language-switch a{padding:4px 5px}}
+
+.updated-at{font-size:12px;color:var(--muted);margin:16px 0 0;line-height:1.6}

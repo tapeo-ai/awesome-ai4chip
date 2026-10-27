@@ -8,7 +8,7 @@ Awesome AI4Chip collects papers, open-source projects, tools and products that a
 
 **[Online docs](https://tapeo-ai.github.io/awesome-ai4chip/en/)** · [Getting started & tutorials](docs/en/tutorials.mdx) · [Environments & examples](env/README.en.md)
 
-Research entries focus on work published since 2025, alongside widely used open-source frameworks, data formats and tutorials.
+<sub>Updated on October 27, 2026.</sub>
 
 ## Latest
 

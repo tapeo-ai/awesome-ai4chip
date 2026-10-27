@@ -8,7 +8,7 @@ Awesome AI4Chip 汇集 AI 参与芯片设计的论文、开源项目、工具与
 
 **[在线文档](https://tapeo-ai.github.io/awesome-ai4chip/)** · [入门与教程](docs/tutorials.mdx) · [环境与示例](env/README.md)
 
-研究工作以 2025 年以来为主，同时收录常用开源框架、数据格式和教程。
+<sub>更新于 2026 年 10 月 27 日。</sub>
 
 ## Latest
 

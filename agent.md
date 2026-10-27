@@ -39,6 +39,8 @@ npm run preview
 
 构建自动生成网页、搜索、环境展示、Markdown 下载、`llms.txt` 和 sitemap。`.generated-docs/`、`.generated-public/`、`.mintlify/`、`.astro/`、`dist/`、依赖目录与 IDE 配置不提交。不要提交提示词、过程截图、日志或临时调研文件。
 
+首页的更新时间维护在中英文 `docs/index.mdx` 的 `updated` 字段（YYYY-MM-DD），网页自动按语言显示为小号灰字。同步修改对应 README 的更新时间。
+
 Latest 保留少量近期工作，写清发布或修订日期，按日期倒序排列，月份不明确时保留原来源给出的粒度。同时更新 `docs/latest.mdx` 与 `docs/en/latest.mdx` 后执行 `npm run docs:sync`，把同步后的 README 一起提交；CI 会检查两者一致。
 
 中英文资源条目保持相同的项目名称、顺序和外部链接；翻译说明文字和标题。英文正文的站内链接指向 `/en/`。每次新增或修改内容同步更新对应语言，CI 检查页面配对和外部链接一致性。环境示例使用 `README.md` / `README.en.md`，代码、配置和原始任务说明共用一份。
