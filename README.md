@@ -24,14 +24,20 @@ Awesome AI4Chip 汇集 AI 参与芯片设计的论文、开源项目、工具与
 
 ## 目录
 
-- 模型：[LLM 与训练方法](docs/resources/models/llm.mdx) · [非 LLM 模型](docs/resources/models/circuit.mdx)
+- 模型
+  - [LLM 与训练方法](docs/resources/models/llm.mdx)
+  - [非 LLM 模型](docs/resources/models/circuit.mdx)
 - [Agents 与 Harness](docs/resources/agents.mdx)
 - [综合与物理设计优化](docs/resources/optimization.mdx)
 - [数据集与设计表示](docs/resources/data.mdx)
 - [工具与可执行环境](docs/resources/tools.mdx)
 - [Benchmark 与评测](docs/resources/benchmarks.mdx)
 - [商业产品与平台](docs/resources/products.mdx)
-- 协同设计：[AI 驱动设计与模型硬件协同设计](docs/resources/codesign/models-hardware.mdx) · [专用芯片与存算一体](docs/resources/codesign/chips-cim.mdx) · [架构、映射与集群基础设施](docs/resources/codesign/architecture-infra.mdx) · [Kernel agents 与编译基础设施](docs/resources/codesign/kernels.mdx)
+- 协同设计
+  - [AI 驱动设计与模型硬件协同设计](docs/resources/codesign/models-hardware.mdx)
+  - [专用芯片与存算一体](docs/resources/codesign/chips-cim.mdx)
+  - [架构、映射与集群基础设施](docs/resources/codesign/architecture-infra.mdx)
+  - [Kernel agents 与编译基础设施](docs/resources/codesign/kernels.mdx)
 - [综述与实践文章](docs/resources/articles.mdx)
 
 ## Contributors

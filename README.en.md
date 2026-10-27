@@ -24,14 +24,20 @@ Awesome AI4Chip collects papers, open-source projects, tools and products that a
 
 ## Directory
 
-- Models: [LLMs & training methods](docs/en/resources/models/llm.mdx) · [Non-LLM models](docs/en/resources/models/circuit.mdx)
+- Models
+  - [LLMs & training methods](docs/en/resources/models/llm.mdx)
+  - [Non-LLM models](docs/en/resources/models/circuit.mdx)
 - [Agents & harnesses](docs/en/resources/agents.mdx)
 - [Synthesis & physical design optimization](docs/en/resources/optimization.mdx)
 - [Datasets & design representations](docs/en/resources/data.mdx)
 - [Tools & executable environments](docs/en/resources/tools.mdx)
 - [Benchmarks & evaluation](docs/en/resources/benchmarks.mdx)
 - [Commercial products & platforms](docs/en/resources/products.mdx)
-- Co-design: [AI-driven design & model–hardware co-design](docs/en/resources/codesign/models-hardware.mdx) · [Custom chips & compute-in-memory](docs/en/resources/codesign/chips-cim.mdx) · [Architecture, mapping & cluster infrastructure](docs/en/resources/codesign/architecture-infra.mdx) · [Kernel agents & compiler infrastructure](docs/en/resources/codesign/kernels.mdx)
+- Co-design
+  - [AI-driven design & model–hardware co-design](docs/en/resources/codesign/models-hardware.mdx)
+  - [Custom chips & compute-in-memory](docs/en/resources/codesign/chips-cim.mdx)
+  - [Architecture, mapping & cluster infrastructure](docs/en/resources/codesign/architecture-infra.mdx)
+  - [Kernel agents & compiler infrastructure](docs/en/resources/codesign/kernels.mdx)
 - [Surveys & practical articles](docs/en/resources/articles.mdx)
 
 ## Contributors
