@@ -3,7 +3,7 @@
 
 感谢每一位参与维护 Awesome AI4Chip 的朋友。
 
-[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip)](https://github.com/tapeo-ai/awesome-ai4chip/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip&max=100)](https://github.com/tapeo-ai/awesome-ai4chip/graphs/contributors)
 
 ## 一起完善这份目录
 
@@ -19,7 +19,7 @@
 
 Thanks to everyone who contributes to Awesome AI4Chip.
 
-[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip)](https://github.com/tapeo-ai/awesome-ai4chip/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip&max=100)](https://github.com/tapeo-ai/awesome-ai4chip/graphs/contributors)
 
 ## Help improve the directory
 
@@ -347,7 +347,7 @@ Awesome AI4Chip collects papers, open-source projects, tools and products that a
 
 Thanks to everyone helping maintain this directory. Contributions of new work, updated links and executable environments are welcome.
 
-[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip)](/en/contributors)
+[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip&max=100)](/en/contributors)
 
 [Contribute and meet the contributors](/en/contributors) ↗
 
@@ -1084,7 +1084,7 @@ Awesome AI4Chip 汇集 AI 参与芯片设计的论文、开源项目、工具与
 
 感谢一起整理和维护这份目录的朋友。欢迎补充新工作、更新链接，或贡献可执行环境。
 
-[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip)](/contributors)
+[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip&max=100)](/contributors)
 
 [参与维护与查看贡献者](/contributors) ↗
 

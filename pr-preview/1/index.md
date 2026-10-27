@@ -24,6 +24,6 @@ Awesome AI4Chip 汇集 AI 参与芯片设计的论文、开源项目、工具与
 
 感谢一起整理和维护这份目录的朋友。欢迎补充新工作、更新链接，或贡献可执行环境。
 
-[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip)](/contributors)
+[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip&max=100)](/contributors)
 
 [参与维护与查看贡献者](/contributors) ↗

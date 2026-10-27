@@ -24,6 +24,6 @@ Awesome AI4Chip collects papers, open-source projects, tools and products that a
 
 Thanks to everyone helping maintain this directory. Contributions of new work, updated links and executable environments are welcome.
 
-[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip)](/en/contributors)
+[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip&max=100)](/en/contributors)
 
 [Contribute and meet the contributors](/en/contributors) ↗

@@ -1,6 +1,6 @@
 Thanks to everyone who contributes to Awesome AI4Chip.
 
-[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip)](https://github.com/tapeo-ai/awesome-ai4chip/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip&max=100)](https://github.com/tapeo-ai/awesome-ai4chip/graphs/contributors)
 
 ## Help improve the directory
 
