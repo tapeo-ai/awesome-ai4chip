@@ -1,10 +1,10 @@
-# <img src="assets/awesome-ai4chip-logo.png" width="40" height="40" alt="AI4Chip logo"> Awesome AI4Chip
+<h1 align="center"><img src="assets/awesome-ai4chip-logo.png" width="40" height="40" align="middle" alt="AI4Chip logo"> Awesome AI4Chip</h1>
 
-**中文** · [English](README.en.md)
-
-Awesome AI4Chip 汇集 AI 参与芯片设计的论文、开源项目、工具与产品，涵盖规格理解、RTL 生成与验证、模拟电路设计、综合和物理实现。我们从模型与训练方法、agent 与 harness、数据、执行环境和 benchmark 梳理这些工作，也关注 Chip for AI，以及模型、芯片、编译器和集群基础设施之间的协同设计。
+<p align="center"><strong>中文</strong> · <a href="README.en.md">English</a></p>
 
 ![AI4Chip 资源架构：模型、agents 与 harness、设计执行、评测、数据环境及芯片与基础设施协同设计](assets/ai4chip-architecture.png)
+
+Awesome AI4Chip 汇集 AI 参与芯片设计的论文、开源项目、工具与产品，涵盖规格理解、RTL 生成与验证、模拟电路设计、综合和物理实现。我们从模型与训练方法、agent 与 harness、数据、执行环境和 benchmark 梳理这些工作，也关注 Chip for AI，以及模型、芯片、编译器和集群基础设施之间的协同设计。
 
 **[在线文档](https://tapeo-ai.github.io/awesome-ai4chip/)** · [入门与教程](docs/tutorials.mdx) · [环境与示例](env/README.md)
 
@@ -38,6 +38,6 @@ Awesome AI4Chip 汇集 AI 参与芯片设计的论文、开源项目、工具与
 
 感谢每一位参与维护的朋友。欢迎补充新工作、修正链接和描述，或贡献可执行环境。
 
-[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip)](https://github.com/tapeo-ai/awesome-ai4chip/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=tapeo-ai/awesome-ai4chip&max=100)](https://github.com/tapeo-ai/awesome-ai4chip/graphs/contributors)
 
 [提交 PR](https://github.com/tapeo-ai/awesome-ai4chip/pulls) · [提出建议](https://github.com/tapeo-ai/awesome-ai4chip/issues)
