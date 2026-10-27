@@ -1,4 +1,4 @@
-<h1 align="center"><img src="assets/awesome-ai4chip-logo.png" width="40" height="40" align="middle" alt="AI4Chip logo"> Awesome AI4Chip</h1>
+<h1 align="center"><img src="assets/awesome-ai4chip-logo.png" width="40" height="40" align="absmiddle" alt="AI4Chip logo"> Awesome AI4Chip</h1>
 
 <p align="center"><a href="README.md">中文</a> · <strong>English</strong></p>
 
