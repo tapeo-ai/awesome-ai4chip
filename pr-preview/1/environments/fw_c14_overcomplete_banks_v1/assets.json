@@ -1,0 +1,49 @@
+{
+  "archive": {
+    "name": "fw_c14_overcomplete_banks_v1.tgz",
+    "size": 173018261,
+    "sha256": "2b528e901cfa58f5105debbc67c6fb21aacf99c614e698766482e26719b2a6c9"
+  },
+  "platform": "linux/amd64",
+  "files": [
+    {
+      "path": "environment/files/software/openroad-runtime.tgz",
+      "archive_member": "environment/files/software/openroad-runtime.tgz",
+      "size": 84764595,
+      "sha256": "0ba5d74cde4e71bdd192e0440fb6a8c7bbba9bcb893539e844faf556dae48a41",
+      "version": "v2.0-17598-ga008522d8",
+      "source": "Precision-Innovations/OpenROAD Debian package; portable dependency closure recorded in the runtime MANIFEST.json",
+      "license": "Multiple upstream licenses; retain runtime notices/ and Python LICENSE.txt"
+    },
+    {
+      "path": "environment/files/technology/sky130_fd_sc_hd__tt_025C_1v80.lib",
+      "archive_member": "environment/files/technology/sky130_fd_sc_hd__tt_025C_1v80.lib",
+      "size": 12800135,
+      "sha256": "ec0e1067a35c8bf20b11e58d1e8ac53326067e4dac84a125cc1b917a3518d0d9",
+      "source": "SKY130 HD technology files from the source archive; exact upstream revision not recorded",
+      "upstream": "https://github.com/google/skywater-pdk",
+      "license": "Apache-2.0",
+      "license_file": "environment/files/technology/LICENSE"
+    },
+    {
+      "path": "environment/files/technology/sky130_fd_sc_hd_merged.lef",
+      "archive_member": "environment/files/technology/sky130_fd_sc_hd_merged.lef",
+      "size": 2258431,
+      "sha256": "44180aaa0068b1fcb0789f128b090304c01ad48f511d3f7afa66c90b3e176ec5",
+      "source": "SKY130 HD technology files from the source archive; exact upstream revision not recorded",
+      "upstream": "https://github.com/google/skywater-pdk",
+      "license": "Apache-2.0",
+      "license_file": "environment/files/technology/LICENSE"
+    },
+    {
+      "path": "environment/files/technology/sky130_fd_sc_hd.tlef",
+      "archive_member": "environment/files/technology/sky130_fd_sc_hd.tlef",
+      "size": 18031,
+      "sha256": "8e99b4e8b016db0713029ebcae6b2cc2aedd9c2c49682e2f23521dd0b1a2085e",
+      "source": "SKY130 HD technology files from the source archive; exact upstream revision not recorded",
+      "upstream": "https://github.com/google/skywater-pdk",
+      "license": "Apache-2.0",
+      "license_file": "environment/files/technology/LICENSE"
+    }
+  ]
+}
