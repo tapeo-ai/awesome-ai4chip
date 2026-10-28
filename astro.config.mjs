@@ -3,6 +3,7 @@ import mdx from '@astrojs/mdx';
 import { mintlify } from '@mintlify/astro';
 import { prepareDocs } from './scripts/prepare-docs.mjs';
 import { siteUrl, base, remarkSiteLinks } from './scripts/site.mjs';
+import { pageRedirects } from './scripts/redirects.mjs';
 
 await prepareDocs();
 
@@ -11,6 +12,7 @@ export default defineConfig({
   base,
   output: 'static',
   trailingSlash: 'always',
+  redirects: pageRedirects(),
   publicDir: './.generated-public',
   integrations: [
     mintlify({ docsDir: './.generated-docs' }),

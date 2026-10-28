@@ -1,7 +1,7 @@
 import { readdir, readFile, writeFile, mkdir, cp, rm } from 'node:fs/promises';
-import { resolve, join, relative } from 'node:path';
+import { resolve, join, relative, dirname } from 'node:path';
 import { generateHarbor } from './harbor.mjs';
-import { repoUrl, siteUrl, base, pagePath, productionBase } from './site.mjs';
+import { repoUrl, siteUrl, base, pagePath, productionBase, isResourceCatalog } from './site.mjs';
 
 export async function filesIn(dir) {
   const entries = await readdir(dir, { withFileTypes: true });
@@ -29,8 +29,17 @@ export async function prepareDocs() {
   await cp(join(root, 'docs'), outputDir, { recursive: true });
   await mkdir(publicDir, { recursive: true });
   await mkdir(join(publicDir, 'assets'), { recursive: true });
-  for (const name of ['awesome-ai4chip-logo.png', 'ai4chip-architecture.png']) {
-    await cp(join(root, 'assets', name), join(publicDir, 'assets', name));
+  const publicAssets = [
+    'awesome-ai4chip-logo.png', 'ai4chip-architecture.png', 'eda-design-flow.svg',
+    'eda-101/verdi-debug.jpg', 'eda-101/innovus-berkeley-layout.png',
+    'eda-101/openroad-ibex-gui.webp', 'eda-101/calibre-rve-soft-checks.jpg',
+    'eda-101/xschem-ngspice.png', 'eda-101/openlane-asic-flow.webp',
+    'eda-101/synopsys-ai-chip-flow.png', 'eda-101/chipagents-build-a-chip-bench-figure-3.png',
+  ];
+  for (const name of publicAssets) {
+    const target = join(publicDir, 'assets', name);
+    await mkdir(dirname(target), { recursive: true });
+    await cp(join(root, 'assets', name), target);
   }
   const environments = [];
   for (const locale of ['zh', 'en']) environments.push(...await generateHarbor({ root, outputDir, publicDir, repoUrl, branch: 'main', locale }));
@@ -58,11 +67,11 @@ export async function prepareDocs() {
     texts.push(`# ${title}\n\n${content.replace(/^---\n[\s\S]*?\n---\n/, '')}`);
     urls.push(`${siteUrl}${base}${pagePath(slug)}`);
   }
-  const resourceFiles = (await filesIn(join(root, 'docs/resources'))).filter(f => f.endsWith('.mdx'));
+  const resourceFiles = (await filesIn(join(root, 'docs/resources'))).filter(f =>
+    f.endsWith('.mdx') && isResourceCatalog(relative(join(root, 'docs'), f).replace(/\\/g, '/').replace(/\.mdx$/, '')));
   let resources = 0;
   for (const f of resourceFiles) resources += (await readFile(f, 'utf8')).split('\n').filter(l => /^- \[[^\]]+\]\(https?:/.test(l)).length;
-  const tutorials = (await readFile(join(root, 'docs/tutorials.mdx'), 'utf8')).split('\n').filter(l => /^- \[[^\]]+\]\(https?:/.test(l)).length;
-  await writeFile(join(outputDir, 'site-meta.json'), JSON.stringify({ sources, resources, tutorials, environments: environments.filter(e => !e.slug.startsWith('en/')).length }, null, 2));
+  await writeFile(join(outputDir, 'site-meta.json'), JSON.stringify({ sources, resources, environments: environments.filter(e => !e.slug.startsWith('en/')).length }, null, 2));
   await writeFile(join(publicDir, 'llms.txt'), list.join('\n') + '\n');
   await writeFile(join(publicDir, 'llms-full.txt'), texts.join('\n\n---\n\n'));
   await writeFile(join(publicDir, '.nojekyll'), '');

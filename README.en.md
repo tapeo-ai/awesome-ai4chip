@@ -4,11 +4,11 @@
 
 ![AI4Chip research map](assets/ai4chip-architecture.png)
 
-Awesome AI4Chip collects papers, open-source projects, tools and products that apply AI to chip design, covering specification understanding, RTL generation and verification, analog circuit design, synthesis and physical implementation. We organize the work by models and training methods, agents and harnesses, data, execution environments and benchmarks. The collection also covers Chip for AI and co-design across models, chips, compilers and cluster infrastructure.
+Awesome AI4Chip collects papers, open-source projects, tools and products that apply AI to chip design, covering specification understanding, RTL generation and verification, analog circuit design, synthesis and physical implementation. The directory follows three perspectives: AI Model brings together data, benchmarks and training; EDA connects AI EDA and optimization to design tasks; Chip for AI explores co-design across models, kernels, chip architectures and infrastructure. The Guide offers selected surveys, courses and practical learning paths for readers with different backgrounds.
 
-**[Online docs](https://tapeo-ai.github.io/awesome-ai4chip/en/)** · [Getting started & tutorials](docs/en/tutorials.mdx) · [Environments & examples](env/README.en.md)
+**[Online docs](https://tapeo-ai.github.io/awesome-ai4chip/en/)** · [Guide](docs/en/guide.mdx) · [Environments & examples](env/README.en.md)
 
-<sub>Updated on October 27, 2026.</sub>
+<sub>Updated on October 28, 2026.</sub>
 
 ## Latest
 
@@ -24,21 +24,24 @@ Awesome AI4Chip collects papers, open-source projects, tools and products that a
 
 ## Directory
 
-- Models
-  - [LLMs & training methods](docs/en/resources/models/llm.mdx)
-  - [Non-LLM models](docs/en/resources/models/circuit.mdx)
-- [Agents & harnesses](docs/en/resources/agents.mdx)
-- [Synthesis & physical design optimization](docs/en/resources/optimization.mdx)
-- [Datasets & design representations](docs/en/resources/data.mdx)
-- [Tools & executable environments](docs/en/resources/tools.mdx)
-- [Benchmarks & evaluation](docs/en/resources/benchmarks.mdx)
-- [Commercial products & platforms](docs/en/resources/products.mdx)
-- Co-design
-  - [AI-driven design & model–hardware co-design](docs/en/resources/codesign/models-hardware.mdx)
-  - [Custom chips & compute-in-memory](docs/en/resources/codesign/chips-cim.mdx)
-  - [Architecture, mapping & cluster infrastructure](docs/en/resources/codesign/architecture-infra.mdx)
-  - [Kernel agents & compiler infrastructure](docs/en/resources/codesign/kernels.mdx)
-- [Surveys & practical articles](docs/en/resources/articles.mdx)
+- [Guide](docs/en/guide.mdx)
+- AI Model
+  - [Data](docs/en/resources/ai-model/data.mdx)
+  - [Benchmark](docs/en/resources/ai-model/benchmark.mdx)
+  - [Training](docs/en/resources/ai-model/training.mdx)
+- EDA
+  - [EDA 101](docs/en/resources/eda/eda-101.mdx)
+  - [Open Source](docs/en/resources/eda/open-source.mdx)
+  - [Closed Source](docs/en/resources/eda/closed-source.mdx)
+  - [AI EDA](docs/en/resources/eda/ai-eda.mdx)
+  - [EDA Optimization](docs/en/resources/eda/optimization.mdx)
+  - [Harbor Environments](env/README.en.md)
+- Chip for AI
+  - [Hardware-aware ML](docs/en/resources/chip-for-ai/hardware-aware-ml.mdx)
+  - [DSE (Design Space Exploration)](docs/en/resources/chip-for-ai/dse.mdx)
+  - [DSA (Domain-specific Architecture)](docs/en/resources/chip-for-ai/dsa.mdx)
+  - [Kernel Optimization](docs/en/resources/chip-for-ai/kernel-optimization.mdx)
+- [Surveys & Articles](docs/en/resources/articles.mdx)
 
 ## Contributors
 
