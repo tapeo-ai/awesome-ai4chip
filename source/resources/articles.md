@@ -1,5 +1,5 @@
 ---
-title: "综述与实践文章"
+title: "Surveys & Articles"
 description: "AI for Chip 综述、工程实践与技术文章。"
 ---
 

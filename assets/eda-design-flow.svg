@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1050" viewBox="0 0 1200 1050" role="img" aria-labelledby="title description">
+  <title id="title">EDA 101: from specification to tapeout</title>
+  <desc id="description">A digital ASIC flow with stage, artifact, open-source tool, and closed-source tool columns. Specification and architecture lead to RTL and verification, synthesis, floorplan, placement, clock-tree synthesis, routing, and signoff. Verification and physical feedback drive iteration. Signoff includes timing, DRC, LVS, and power integrity, followed by tapeout.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#9b654b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <style>
+      text { font-family: Arial, Helvetica, sans-serif; fill: #30372f; }
+      .eyebrow { font-size: 17px; font-weight: 700; letter-spacing: 2px; fill: #707768; }
+      .title { font-size: 39px; font-weight: 600; }
+      .subtitle { font-size: 22px; fill: #6b7065; }
+      .heading { font-size: 16px; font-weight: 700; letter-spacing: 1.8px; fill: #707768; }
+      .stage { font-size: 22px; font-weight: 600; }
+      .body { font-size: 20px; }
+      .muted { font-size: 19px; fill: #707768; }
+      .open { fill: #52644a; }
+      .closed { fill: #8a5d46; }
+      .note { font-size: 18px; fill: #707768; }
+      .rule { stroke: #dfded5; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="1050" rx="18" fill="#faf8f2"/>
+  <text x="64" y="56" class="eyebrow">AWESOME AI4CHIP / GUIDE</text>
+  <text x="64" y="111" class="title">From specification to tapeout</text>
+  <text x="64" y="147" class="subtitle">Digital ASIC stages, artifacts, and common EDA software</text>
+
+  <rect x="64" y="181" width="1072" height="67" rx="10" fill="#e9eddf"/>
+  <text x="86" y="209" class="stage">Specification → Architecture → Microarchitecture</text>
+  <text x="86" y="233" class="muted">Workload, interfaces, throughput, latency, and resource budgets</text>
+
+  <text x="86" y="287" class="heading">STAGE</text>
+  <text x="332" y="287" class="heading">ARTIFACTS</text>
+  <text x="584" y="287" class="heading open">OPEN SOURCE</text>
+  <text x="844" y="287" class="heading closed">CLOSED SOURCE</text>
+
+  <!-- Stage rows. Keep tool names aligned with their actual role. -->
+  <rect x="64" y="305" width="1072" height="84" rx="8" fill="#ffffff"/>
+  <rect x="64" y="389" width="1072" height="76" rx="8" fill="#f2f0e8"/>
+  <rect x="64" y="477" width="1072" height="304" rx="8" fill="#ffffff"/>
+  <rect x="64" y="793" width="1072" height="100" rx="8" fill="#f2f0e8"/>
+
+  <!-- 01 RTL and verification -->
+  <text x="86" y="338" class="stage">RTL &amp;</text>
+  <text x="86" y="366" class="stage">Verification</text>
+  <text x="332" y="338" class="body">RTL, tests,</text>
+  <text x="332" y="366" class="body">waveforms, reports</text>
+  <text x="584" y="338" class="body open">Verilator · Icarus</text>
+  <text x="584" y="366" class="body open">SymbiYosys</text>
+  <text x="844" y="338" class="body closed">VCS / Verdi · Xcelium</text>
+  <text x="844" y="366" class="body closed">Questa · Jasper</text>
+
+  <!-- 02 Synthesis -->
+  <text x="86" y="435" class="stage">Synthesis</text>
+  <text x="332" y="435" class="body">Gate-level netlist</text>
+  <text x="584" y="435" class="body open">Yosys</text>
+  <text x="844" y="421" class="body closed">Genus</text>
+  <text x="844" y="449" class="body closed">Fusion Compiler</text>
+
+  <!-- 03–06 Physical implementation, with shared tool lanes -->
+  <line x1="82" y1="553" x2="555" y2="553" class="rule"/>
+  <line x1="82" y1="629" x2="555" y2="629" class="rule"/>
+  <line x1="82" y1="705" x2="555" y2="705" class="rule"/>
+  <line x1="565" y1="495" x2="565" y2="763" class="rule"/>
+  <line x1="825" y1="495" x2="825" y2="763" class="rule"/>
+
+  <text x="86" y="522" class="stage">Floorplan</text>
+  <text x="332" y="508" class="body">Core, macros, pins,</text>
+  <text x="332" y="536" class="body">power plan</text>
+  <text x="86" y="598" class="stage">Placement</text>
+  <text x="332" y="598" class="body">Placed cells</text>
+  <text x="86" y="674" class="stage">CTS</text>
+  <text x="332" y="674" class="body">Clock tree</text>
+  <text x="86" y="750" class="stage">Routing</text>
+  <text x="332" y="736" class="body">Routed layout,</text>
+  <text x="332" y="764" class="body">parasitics</text>
+
+  <text x="584" y="614" class="stage open">OpenROAD</text>
+  <text x="584" y="646" class="muted">Physical implementation</text>
+  <text x="844" y="600" class="stage closed">Innovus</text>
+  <text x="844" y="633" class="stage closed">Fusion Compiler</text>
+  <text x="844" y="666" class="muted">Physical implementation</text>
+
+  <!-- 07 Signoff -->
+  <text x="86" y="850" class="stage">Signoff</text>
+  <text x="332" y="835" class="body">STA · DRC · LVS</text>
+  <text x="332" y="863" class="body">Power integrity</text>
+  <text x="584" y="821" class="body open">OpenSTA · PDNSim</text>
+  <text x="584" y="849" class="body open">KLayout · Magic · Netgen</text>
+  <text x="584" y="877" class="note">Checks depend on the PDK</text>
+  <text x="844" y="835" class="body closed">PrimeTime · Tempus</text>
+  <text x="844" y="863" class="body closed">Calibre · Voltus</text>
+
+  <!-- Iteration is continuous, not a once-through pipeline. -->
+  <path d="M 47 857 L 47 343" fill="none" stroke="#9b654b" stroke-width="2" stroke-dasharray="5 6" marker-end="url(#arrow)"/>
+  <text transform="translate(27 750) rotate(-90)" class="note" style="fill: #9b654b">Verification and physical feedback</text>
+
+  <path d="M 600 898 L 600 922" fill="none" stroke="#9b654b" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="64" y="931" width="1072" height="59" rx="10" fill="#e9eddf"/>
+  <text x="86" y="968" class="stage">Tapeout</text>
+  <text x="332" y="968" class="body">Final GDSII / OASIS + delivery files</text>
+  <text x="64" y="1025" class="note">PDK, libraries, and constraints support every stage. Physical checks also run during implementation.</text>
+</svg>

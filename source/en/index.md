@@ -1,30 +1,39 @@
 ---
 title: "Awesome AI4Chip"
 description: "Papers, open-source projects, products, tutorials and executable environments for AI for Chip and Chip / Infra Co-design."
-updated: "2026-10-27"
+updated: "2026-10-28"
 ---
-
-Awesome AI4Chip collects papers, open-source projects, tools and products that apply AI to chip design, covering specification understanding, RTL generation and verification, analog circuit design, synthesis and physical implementation. We organize the work by models and training methods, agents and harnesses, data, execution environments and benchmarks. The collection also covers Chip for AI and co-design across models, chips, compilers and cluster infrastructure.
 
 ![AI4Chip research map: models, agents and harnesses, design execution, evaluation, data and environments, and chip and infrastructure co-design](/assets/ai4chip-architecture.png)
 
+Awesome AI4Chip collects papers, open-source projects, tools and products that apply AI to chip design, covering specification understanding, RTL generation and verification, analog circuit design, synthesis and physical implementation. The directory follows three perspectives: AI Model brings together data, benchmarks and training; EDA connects AI EDA and optimization to design tasks; Chip for AI explores co-design across models, kernels, chip architectures and infrastructure. The Guide offers selected surveys, courses and practical learning paths for readers with different backgrounds.
+
 ## Start here
 
+- [Guide](/en/guide): selected surveys, courses and practice paths for your background.
+- [EDA 101](/en/resources/eda/eda-101): design stages, artifacts, common software and real interfaces.
 - [Latest](/en/latest): recent research, product and project updates.
-- [Getting started & tutorials](/en/tutorials): from Verilog, simulation and synthesis to AI4Chip practice and co-design.
-- [Environments & examples](/en/environments/index): run chip design tasks with inputs, starter RTL, an independent evaluator and a reference solution.
 
 ## Directory
 
-- Models: [LLMs & training methods](/en/resources/models/llm) · [Non-LLM models](/en/resources/models/circuit)
-- [Agents & harnesses](/en/resources/agents)
-- [Synthesis & physical design optimization](/en/resources/optimization)
-- [Datasets & design representations](/en/resources/data)
-- [Tools & executable environments](/en/resources/tools)
-- [Benchmarks & evaluation](/en/resources/benchmarks)
-- [Commercial products & platforms](/en/resources/products)
-- Co-design: [AI-driven design & model–hardware co-design](/en/resources/codesign/models-hardware) · [Custom chips & compute-in-memory](/en/resources/codesign/chips-cim) · [Architecture, mapping & cluster infrastructure](/en/resources/codesign/architecture-infra) · [Kernel agents & compiler infrastructure](/en/resources/codesign/kernels)
-- [Surveys & practical articles](/en/resources/articles)
+- [Guide](/en/guide)
+- AI Model
+  - [Data](/en/resources/ai-model/data)
+  - [Benchmark](/en/resources/ai-model/benchmark)
+  - [Training](/en/resources/ai-model/training)
+- EDA
+  - [EDA 101](/en/resources/eda/eda-101)
+  - [Open Source](/en/resources/eda/open-source)
+  - [Closed Source](/en/resources/eda/closed-source)
+  - [AI EDA](/en/resources/eda/ai-eda)
+  - [EDA Optimization](/en/resources/eda/optimization)
+  - [Harbor Environments](/en/environments/index)
+- Chip for AI
+  - [Hardware-aware ML](/en/resources/chip-for-ai/hardware-aware-ml)
+  - [DSE (Design Space Exploration)](/en/resources/chip-for-ai/dse)
+  - [DSA (Domain-specific Architecture)](/en/resources/chip-for-ai/dsa)
+  - [Kernel Optimization](/en/resources/chip-for-ai/kernel-optimization)
+- [Surveys & Articles](/en/resources/articles)
 
 ## Contributors
 

@@ -1,24 +1,33 @@
-Awesome AI4Chip 汇集 AI 参与芯片设计的论文、开源项目、工具与产品，涵盖规格理解、RTL 生成与验证、模拟电路设计、综合和物理实现。我们从模型与训练方法、agent 与 harness、数据、执行环境和 benchmark 梳理这些工作，也关注 Chip for AI，以及模型、芯片、编译器和集群基础设施之间的协同设计。
-
 ![AI4Chip 资源架构：模型、agents 与 harness、设计执行、评测、数据环境及芯片与基础设施协同设计](/assets/ai4chip-architecture.png)
+
+Awesome AI4Chip 汇集 AI 参与芯片设计的论文、开源项目、工具与产品，覆盖规格理解、RTL 生成与验证、模拟电路设计、综合和物理实现。目录从 AI Model、EDA、Chip for AI 三个视角展开：围绕数据、评测与训练提升模型能力，通过 AI EDA 和设计优化连接实际任务，并探索模型、计算内核、芯片架构与基础设施的协同设计。Guide 为不同背景的读者提供精选综述、课程和实践路径。
 
 ## 从这里开始
 
+- [Guide](/guide)：按背景选择综述、课程与实践路径。
+- [EDA 101](/resources/eda/eda-101)：设计环节、主要产物、常用软件和真实界面。
 - [Latest](/latest)：近期研究、产品与项目更新。
-- [入门与教程](/tutorials)：从 Verilog、仿真和综合，到 AI4Chip 实践与协同设计。
-- [环境与示例](/environments/index)：运行带输入、初始 RTL、独立评分器和参考解的芯片设计任务。
 
-## 资源分类
+## 目录
 
-- 模型：[LLM 与训练方法](/resources/models/llm) · [非 LLM 模型](/resources/models/circuit)
-- [Agents 与 Harness](/resources/agents)
-- [综合与物理设计优化](/resources/optimization)
-- [数据集与设计表示](/resources/data)
-- [工具与可执行环境](/resources/tools)
-- [Benchmark 与评测](/resources/benchmarks)
-- [商业产品与平台](/resources/products)
-- 协同设计：[AI 驱动设计与模型硬件协同设计](/resources/codesign/models-hardware) · [专用芯片与存算一体](/resources/codesign/chips-cim) · [架构、映射与集群基础设施](/resources/codesign/architecture-infra) · [Kernel agents 与编译基础设施](/resources/codesign/kernels)
-- [综述与实践文章](/resources/articles)
+- [Guide](/guide)
+- AI Model
+  - [Data](/resources/ai-model/data)
+  - [Benchmark](/resources/ai-model/benchmark)
+  - [Training](/resources/ai-model/training)
+- EDA
+  - [EDA 101](/resources/eda/eda-101)
+  - [Open Source](/resources/eda/open-source)
+  - [Closed Source](/resources/eda/closed-source)
+  - [AI EDA](/resources/eda/ai-eda)
+  - [EDA Optimization](/resources/eda/optimization)
+  - [Harbor Environments](/environments/index)
+- Chip for AI
+  - [Hardware-aware ML](/resources/chip-for-ai/hardware-aware-ml)
+  - [DSE (Design Space Exploration)](/resources/chip-for-ai/dse)
+  - [DSA (Domain-specific Architecture)](/resources/chip-for-ai/dsa)
+  - [Kernel Optimization](/resources/chip-for-ai/kernel-optimization)
+- [Surveys & Articles](/resources/articles)
 
 ## Contributors
 
