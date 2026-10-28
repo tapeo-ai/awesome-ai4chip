@@ -1,0 +1,9 @@
+{
+  "yosys": "yowasp-yosys",
+  "iverilog": "iverilog",
+  "openroad": "/opt/frontier/openroad/bin/openroad-portable",
+  "openroad_env": {},
+  "liberty": "technology/sky130_fd_sc_hd__tt_025C_1v80.lib",
+  "tech_lef": "technology/sky130_fd_sc_hd.tlef",
+  "cell_lef": "technology/sky130_fd_sc_hd_merged.lef"
+}

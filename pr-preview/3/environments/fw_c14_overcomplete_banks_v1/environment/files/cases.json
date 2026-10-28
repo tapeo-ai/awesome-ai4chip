@@ -1,0 +1,14 @@
+[
+  {
+    "id": "alpha",
+    "spec": "spec_alpha.json",
+    "output": "feature_alpha.v",
+    "starter": "starter_alpha.v"
+  },
+  {
+    "id": "beta",
+    "spec": "spec_beta.json",
+    "output": "feature_beta.v",
+    "starter": "starter_beta.v"
+  }
+]
