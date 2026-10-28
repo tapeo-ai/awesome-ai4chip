@@ -4,19 +4,19 @@
 
 ## 文件分工
 
-- `README.md`：项目介绍、架构图、Latest、目录和 Contributors。
+- `README.md` / `README.en.md`：项目介绍、架构图、Latest、目录、Guide、Contributors 和交流入口，是网页首页正文的唯一来源。
 - `docs/resources/ai-model/`：Data、Benchmark、Training。
 - `docs/resources/eda/`：EDA 101、Open Source、Closed Source、AI EDA、EDA Optimization。Agent 与 harness 的工作收在 AI EDA。
 - `docs/resources/chip-for-ai/`：Hardware-aware ML、DSE (Design Space Exploration)、DSA (Domain-specific Architecture)、Kernel Optimization。
 - `docs/resources/articles.mdx`：Surveys & Articles。每个项目的完整介绍只维护一处，Guide 按学习用途引用。
 - `docs/latest.mdx` 与 `docs/en/latest.mdx`：各语言近期动态的唯一来源；`npm run docs:sync` 将其同步到对应 README 标记区域。
-- `docs/guide.mdx`：单页 Guide，按背景和目标精选综述、完整课程网站与实践入口；根目录 `tutorials.md` 仅保留跳转入口，不维护第二份教程正文。
+- README 的 `## Guide`：按背景和目标精选综述、完整课程网站与实践入口。不另设 Guide、Roadmap 或 Tutorials 文档。
 - `docs/resources/eda/eda-101.mdx`：EDA 101，连接设计环节、主要产物、开源与商业软件、真实界面和流程图，作为 EDA 导航的第一篇。
-- `docs/index.mdx`、`docs/contributors.mdx`：网页首页与贡献者入口。
+- `docs/index.mdx` / `docs/en/index.mdx`：保留首页 frontmatter，正文由 `npm run docs:sync` 从相应 README 生成，dev/build 也会从 README 生成当前预览。脚本转换文档、图片与示例链接；请修改 README 后同步，避免直接编辑首页正文。`docs/contributors.mdx` 是贡献者入口。
 - `docs/docs.json`：Mintlify 导航与站点配置；新增手写页面时同步加入中英文导航。
 - `assets/`：公开的项目 logo、资源架构图和 EDA 流程 SVG。原创图内使用英文，配色采用暖白、橄榄绿和陶土色。`assets/eda-101/` 保存正文引用的真实工具界面与流程图。提示词留在本地，不提交。
 - `docs/en/`、`README.en.md`：对应英文正文与首页。中文默认展示，英文页面使用 `/en/` 前缀；两种语言的文件路径、分类和资源链接一一对应。
-- `env/examples/`：具体的环境与数据格式示例，当前使用 Harbor 格式。
+- `env/examples/`：具体的环境与数据格式示例，当前使用 Harbor 格式。网页在 AI Model 下直接展示“Harbor 环境示例”，不设额外环境索引页。
 - `src/`、`scripts/`：静态页面、内容生成与检查；`.github/workflows/` 管理 PR 构建、预览和正式发布。
 - `scripts/redirects.mjs`：页面迁移映射，自动覆盖中英文以及生产和 PR 预览路径。
 - `agent.md`：维护流程和编辑约定。
@@ -49,6 +49,8 @@ npm run preview
 Latest 保留少量近期工作，写清发布或修订日期，按日期倒序排列，月份不明确时保留原来源给出的粒度。同时更新 `docs/latest.mdx` 与 `docs/en/latest.mdx` 后执行 `npm run docs:sync`，把同步后的 README 一起提交；CI 会检查两者一致。
 
 中英文资源条目保持相同的项目名称、顺序和外部链接；翻译说明文字和标题。英文正文的站内链接指向 `/en/`。每次新增或修改内容同步更新对应语言，CI 检查页面配对和外部链接一致性。环境示例使用 `README.md` / `README.en.md`，代码、配置和原始任务说明共用一份。
+
+`assets/ai4chip-qrcode.jpg` 是文末居中展示的微信群二维码；更新时替换同名图片。联系方式维护在 README 的 Community 区域，保留个人微信号以便群二维码失效后联系。
 
 Contributors 使用 GitHub 贡献记录生成的头像图，并链接到仓库贡献者列表，无需手工维护名单。
 
@@ -101,7 +103,7 @@ Contributors 使用 GitHub 贡献记录生成的头像图，并链接到仓库�
 
 ## Guide 与 EDA 101
 
-Guide 只维护 `docs/guide.mdx` 和对应英文 `docs/en/guide.mdx` 两份单页，在 Overview 导航中直接列出，不另设 Roadmap 或 Tutorials 页面，也不按教程条数生成指标。Guide 与 EDA 101 都是说明性页面，不计入 Awesome 资源条目数。优先有完整组织的课程网站、作者综述和官方教程；说明具体值得读的章节或示例，不添加泛泛的路线介绍、机械的学习成果段落或凑数链接。需要的延伸材料与相应路线放在同一篇中，不按每日动态扩充入门必读清单。
+Guide 只在中英文 README 中维护，自动同步到网页首页。旧 Guide 地址跳转到首页 `#guide`，不设独立页面，也不按教程条数生成指标。Guide 与 EDA 101 都是说明性页面，不计入 Awesome 资源条目数。优先有完整组织的课程网站、作者综述和官方教程；说明具体值得读的章节或示例，不添加泛泛的路线介绍、机械的学习成果段落或凑数链接。需要的延伸材料与相应路线放在同一篇中，不按每日动态扩充入门必读清单。
 
 EDA 101 的流程图、软件对应表与正文一起更新。数字 ASIC 流程包含验证与反馈；DRC/LVS 属于物理验证和签核，模拟设计另列分支。真实界面和参考流程图从公开原始资料获取，保存到 `assets/eda-101/` 并直接嵌入正文，图注注明作者或机构、来源链接及图号／页码；中英文共用图片。保持原图内容，不生成仿真软件截图，不复制整篇资料。新增图片时同步更新 `scripts/prepare-docs.mjs` 的公开图片名单。操作视频保留链接。
 
@@ -109,7 +111,7 @@ EDA 101 的流程图、软件对应表与正文一起更新。数字 ASIC 流程
 
 ## 环境示例
 
-网页展示直接从 `env/examples/<任务名>/` 生成。添加 `task.toml`、`README.md`、`instruction.md` 和相关任务文件后，目录及详情页会自动出现，无需另写网站页面或修改导航。更新任务时改原文件，生成器负责展示 README、任务说明、配置、目录和依赖信息。网页只提供白名单小文件下载，大型工具与工艺文件继续通过 `assets.json` 与 `prepare.py` 管理。
+网页展示直接从 `env/examples/<任务名>/` 生成。添加 `task.toml`、中英文 README、`instruction.md` 和相关任务文件后，示例会自动进入 AI Model 下的单页文件浏览器，无需另写网站页面或修改导航。更新任务时改原文件，生成器负责目录、文件预览、下载和依赖信息；有多个示例时自动显示选择器。仅发布允许类型、大小范围内的文本文件，排除符号链接、敏感文件、生成副本与日志；大型工具与工艺文件继续通过 `assets.json` 与 `prepare.py` 管理。
 
 保留任务说明、规格、代码、验证器和参考解。大型工具包、工艺库、生成副本与运行日志通过忽略规则留在 Git 外。
 

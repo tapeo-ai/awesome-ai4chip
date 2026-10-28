@@ -22,8 +22,8 @@ const nav = (pages) => JSON.stringify({ navigation: { groups: [{ group: 'Docs', 
 test('content counts catalog entries without counting Guide, EDA 101, or Latest references', async (t) => {
   const first = '- [Task A](https://example.com/problems) — A.';
   const root = await fixture(t, {
-    'docs/docs.json': nav(['index', 'latest', 'resources/tasks', 'guide', 'resources/eda/eda-101', 'environments/index']),
-    'docs/index.mdx': `${frontmatter}[Tasks](/resources/tasks)\n![Image](/assets/map.png)\n[Environment](/environments/index)`,
+    'docs/docs.json': nav(['index', 'latest', 'resources/tasks', 'guide', 'resources/eda/eda-101', 'resources/ai-model/harbor-examples']),
+    'docs/index.mdx': `${frontmatter}[Tasks](/resources/tasks)\n![Image](/assets/map.png)\n[Environment](/resources/ai-model/harbor-examples)`,
     'docs/latest.mdx': `${frontmatter}${first}`,
     'docs/resources/tasks.mdx': `${frontmatter}${first}\n- [Task B](https://example.com/problems) — B.`,
     'docs/guide.mdx': `${frontmatter}${first}\n- [EDA 101](/resources/eda/eda-101)\n- Read the introduction.`,

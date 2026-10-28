@@ -20,7 +20,6 @@
             "group": "Overview",
             "pages": [
               "index",
-              "guide",
               "latest"
             ]
           },
@@ -29,7 +28,8 @@
             "pages": [
               "resources/ai-model/data",
               "resources/ai-model/benchmark",
-              "resources/ai-model/training"
+              "resources/ai-model/training",
+              "resources/ai-model/harbor-examples"
             ]
           },
           {
@@ -39,8 +39,7 @@
               "resources/eda/open-source",
               "resources/eda/closed-source",
               "resources/eda/ai-eda",
-              "resources/eda/optimization",
-              "environments/index"
+              "resources/eda/optimization"
             ]
           },
           {
@@ -73,7 +72,6 @@
             "group": "Overview",
             "pages": [
               "en/index",
-              "en/guide",
               "en/latest"
             ]
           },
@@ -82,7 +80,8 @@
             "pages": [
               "en/resources/ai-model/data",
               "en/resources/ai-model/benchmark",
-              "en/resources/ai-model/training"
+              "en/resources/ai-model/training",
+              "en/resources/ai-model/harbor-examples"
             ]
           },
           {
@@ -92,8 +91,7 @@
               "en/resources/eda/open-source",
               "en/resources/eda/closed-source",
               "en/resources/eda/ai-eda",
-              "en/resources/eda/optimization",
-              "en/environments/index"
+              "en/resources/eda/optimization"
             ]
           },
           {

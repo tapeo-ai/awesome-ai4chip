@@ -1,6 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
+import HarborExplorer from '../components/HarborExplorer.astro';
+import harborTasks from '../../.generated-docs/harbor-data.json';
 import docsConfig from '../../.generated-docs/docs.json';
 import meta from '../../.generated-docs/site-meta.json';
 import { base, pagePath, repoUrl, localeOf, localizedSlug, isResourceCatalog } from '../../scripts/site.mjs';
@@ -24,6 +26,7 @@ const prev = pages[currentIndex - 1];
 const next = pages[currentIndex + 1];
 const groupName = groups.find(g => g.pages.includes(pageId))?.group;
 const isHome = localizedSlug(pageId, 'zh') === 'index';
+const isHarbor = localizedSlug(pageId, 'zh') === 'resources/ai-model/harbor-examples';
 const resourceCount = isResourceCatalog(pageId) ? (doc.body || '').split('\n').filter(line => /^- \[[^\]]+\]\(https?:/.test(line)).length : 0;
 const source = meta.sources[pageId];
 const updated = doc.data.updated && new Intl.DateTimeFormat(locale === 'en' ? 'en-US' : 'zh-CN', {
@@ -31,7 +34,7 @@ const updated = doc.data.updated && new Intl.DateTimeFormat(locale === 'en' ? 'e
 }).format(new Date(`${doc.data.updated}T00:00:00Z`));
 ---
 <Layout title={doc.data.title} description={doc.data.description} slug={pageId}>
-  <div class="site-shell">
+  <div class:list={["site-shell", { "harbor-shell": isHarbor }]}>
     <aside class="sidebar" id="site-navigation" aria-label={t.directory}>
       <nav>
         {groups.map(group => <section class="nav-group">
@@ -49,10 +52,11 @@ const updated = doc.data.updated && new Intl.DateTimeFormat(locale === 'en' ? 'e
           <div class="eyebrow">{isHome ? 'AN OPEN MAP OF AI & CHIP DESIGN' : groupName}{resourceCount > 0 && <span class="count">{resourceCount} {t.resources}</span>}</div>
           <h1 data-pagefind-meta="title">{doc.data.title}</h1>
           {!isHome && <p class="page-description">{doc.data.description}</p>}
-          {isHome && <div class="home-stats" data-pagefind-ignore><span><strong>{meta.resources}</strong> {t.resources}</span><a href={`${base}${pagePath(localizedSlug('environments/index', locale))}`}><strong>{meta.environments}</strong> {t.environments} ↗</a></div>}
+          {isHome && <div class="home-stats" data-pagefind-ignore><span><strong>{meta.resources}</strong> {t.resources}</span><a href={`${base}${pagePath(localizedSlug('resources/ai-model/harbor-examples', locale))}`}><strong>{meta.environments}</strong> {t.environments} ↗</a></div>}
           {updated && <p class="updated-at">{locale === 'en' ? `Updated on ${updated}.` : `更新于 ${updated}。`}</p>}
         </header>
         <div class="prose"><Content /></div>
+        {isHarbor && <HarborExplorer tasks={harborTasks[locale]} locale={locale} />}
       </article>
       <footer class="page-footer" data-pagefind-ignore>
         <div class="source-links"><a href={`${repoUrl}/edit/main/${source}`} target="_blank" rel="noopener noreferrer">{t.edit}</a><a href={`${base}source/${pageId}.md`}>Markdown</a></div>
@@ -63,8 +67,8 @@ const updated = doc.data.updated && new Intl.DateTimeFormat(locale === 'en' ? 'e
         <p class="site-note">Awesome AI4Chip <span>{t.note}</span></p>
       </footer>
     </main>
-    <aside class="table-of-contents" aria-label={t.toc}>
+    {!isHarbor && <aside class="table-of-contents" aria-label={t.toc}>
       {headings.length > 0 && <><h2>{t.toc}</h2><nav>{headings.filter(h => h.depth < 4).map(h => <a class:list={{ nested: h.depth === 3 }} href={`#${h.slug}`}>{h.text}</a>)}</nav></>}
-    </aside>
+    </aside>}
   </div>
 </Layout>

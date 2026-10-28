@@ -18,7 +18,7 @@ export function localizedSlug(slug, locale) {
 }
 export function isResourceCatalog(slug) {
   const plain = localizedSlug(slug, 'zh');
-  return plain.startsWith('resources/') && plain !== 'resources/eda/eda-101';
+  return plain.startsWith('resources/') && !['resources/eda/eda-101', 'resources/ai-model/harbor-examples'].includes(plain);
 }
 export function withBase(url, siteBase = base) {
   if (!url.startsWith('/') || url.startsWith('//')) return url;

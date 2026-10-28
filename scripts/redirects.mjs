@@ -2,9 +2,13 @@ import { base, withBase } from './site.mjs';
 
 // Keep shared URLs working when a resource moves to a new category.
 export const movedPages = {
-  'tutorials': 'guide',
-  'guide/index': 'guide',
-  'guide/tutorials': 'guide',
+  'guide': '#guide',
+  'environments': 'resources/ai-model/harbor-examples',
+  'environments/index': 'resources/ai-model/harbor-examples',
+  'environments/fw_c14_overcomplete_banks_v1': 'resources/ai-model/harbor-examples',
+  'tutorials': '#guide',
+  'guide/index': '#guide',
+  'guide/tutorials': '#guide',
   'guide/eda-101': 'resources/eda/eda-101',
   'resources/data': 'resources/ai-model/data',
   'resources/benchmarks': 'resources/ai-model/benchmark',

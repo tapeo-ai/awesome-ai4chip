@@ -1,96 +1,76 @@
-import { mkdir, readdir, readFile, lstat, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile, lstat, writeFile, rm } from 'node:fs/promises';
 import path from 'node:path';
 
 const MAX_DOCUMENT_BYTES = 512 * 1024;
 const MAX_PUBLIC_BYTES = 512 * 1024;
-const PUBLIC_FILES = new Set([
-  'README.md', 'README.en.md', 'instruction.md', 'task.toml', 'assets.json',
-  'environment/Dockerfile', 'tests/Dockerfile',
-  'environment/files/README.md', 'environment/files/cases.json',
-  'environment/files/runtime.json',
-]);
+const PUBLIC_EXTENSIONS = new Set(['.py', '.v', '.sh', '.json', '.md', '.toml', '.lock']);
 const HIDDEN_DIRECTORIES = new Set([
   'node_modules', '__pycache__', 'cache', 'caches', 'logs', 'jobs',
-  'evidence', 'rollouts', 'tmp', 'venv',
+  'evidence', 'rollouts', 'tmp', 'temp', 'venv', 'build', 'dist',
+  'output', 'outputs', 'results', 'artifacts', 'runs',
 ]);
+const SECRET_NAME = /(?:^|[._-])(?:secrets?|credentials?|passwords?|tokens?|private[._-]?key)(?:[._-]|$)|^id_(?:rsa|ed25519)/i;
+const SECRET_TEXT = /-----BEGIN (?:[A-Z ]+ )?PRIVATE KEY-----|\b(?:gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|AKIA[0-9A-Z]{16}|sk-(?:proj|svcacct)-[A-Za-z0-9_-]{20,})\b/;
+const PAGE = 'resources/ai-model/harbor-examples';
 const LABELS = {
   zh: {
-    indexTitle: '环境与任务',
-    indexDescription: '可运行的 AI for Chip Harbor 任务、规格与环境示例。',
-    indexIntroduction: '这些示例将任务说明、容器环境、参考解和验证器放在同一目录，便于开展 agent 实验与评测。',
-    allEnvironments: '所有环境', taskSource: '任务源文件', overview: '概览',
-    instruction: '任务说明', configuration: '配置', viewTask: '查看任务目录',
-    viewConfig: '查看 task.toml', files: '目录与依赖', downloads: '小文件下载',
-    source: '源码', archive: '来源归档', platform: '运行平台',
-    dependency: '依赖', size: '大小', version: '版本', checksums: '完整依赖与校验值',
+    title: 'Harbor 环境示例',
+    description: '可执行的 Harbor 训练与评测样本。',
+    introduction: '[Harbor](https://docs.harborframework.com/tasks/overview) 将任务说明、运行环境与验证器打包为可执行的训练与评测样本。此处直接浏览任务目录；完整运行方式见 README，大型工具和 PDK 由 `assets.json` 与 `prepare.py` 管理。',
     fallbackDescription: (title) => `${title} 的 Harbor 任务说明、运行配置和依赖。`,
-    dependencyIntroduction: (assets, prepare) => `外部工具和工艺依赖记录在 [assets.json](${assets})，通过 [prepare.py](${prepare}) 从本地原始归档恢复并校验。`,
   },
   en: {
-    indexTitle: 'Environments and tasks',
-    indexDescription: 'Runnable AI for Chip Harbor tasks, specifications, and environment examples.',
-    indexIntroduction: 'These examples keep task instructions, container environments, reference solutions, and verifiers together for agent experiments and evaluation.',
-    allEnvironments: 'All environments', taskSource: 'Task source', overview: 'Overview',
-    instruction: 'Task instructions', configuration: 'Configuration', viewTask: 'View task directory',
-    viewConfig: 'View task.toml', files: 'Files and dependencies', downloads: 'Small-file downloads',
-    source: 'Source', archive: 'Source archive', platform: 'Runtime platform',
-    dependency: 'Dependency', size: 'Size', version: 'Version', checksums: 'Full dependency manifest and checksums',
+    title: 'Harbor Environment Examples',
+    description: 'Executable Harbor training and evaluation examples.',
+    introduction: '[Harbor](https://docs.harborframework.com/tasks/overview) packages task instructions, runtime environments, and verifiers into executable training and evaluation examples. Browse the task directory here; see the README for full running instructions. Large tools and PDKs are managed by `assets.json` and `prepare.py`.',
     fallbackDescription: (title) => `Harbor task instructions, runtime configuration, and dependencies for ${title}.`,
-    dependencyIntroduction: (assets, prepare) => `External tools and process libraries are recorded in [assets.json](${assets}). Use [prepare.py](${prepare}) to restore and verify them from the original local archive.`,
   },
 };
 
 const encodePath = (value) => value.split('/').map(encodeURIComponent).join('/');
 const plain = (value) => String(value).replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
-  .replace(/[*_`]/g, '').trim();
-const escapeText = (value) => String(value).replace(/&/g, '&amp;')
-  .replace(/</g, '&lt;').replace(/>/g, '&gt;')
-  .replace(/\{/g, '&#123;').replace(/\}/g, '&#125;');
-const tableText = (value) => escapeText(value ?? '—').replace(/\|/g, '&#124;').replace(/\r?\n/g, ' ');
+  .replace(/<[^>]*>/g, '').replace(/[*_`]/g, '').trim();
+const frontmatter = (title, description) => `---\ntitle: ${JSON.stringify(title)}\ndescription: ${JSON.stringify(description)}\n---\n\n`;
+const bytesValue = (value) => Number.isSafeInteger(value) && value >= 0 ? value : null;
+const stringValue = (value) => typeof value === 'string' && value.trim() ? value : null;
+const safeRelative = (value) => typeof value === 'string' && !value.includes('\\')
+  && !value.includes('\0') && !path.posix.isAbsolute(value)
+  && value.split('/').every(part => part && part !== '.' && part !== '..');
 
-function fence(text, language = 'text') {
-  const longest = Math.max(2, ...Array.from(text.matchAll(/`+/g), (m) => m[0].length));
-  const marker = '`'.repeat(longest + 1);
-  return `${marker}${language}\n${text.trimEnd()}\n${marker}`;
+function publicText(bytes) {
+  if (bytes.some(byte => byte < 32 && ![9, 10, 13].includes(byte)) || bytes.includes(127)) return null;
+  let text;
+  try { text = new TextDecoder('utf-8', { fatal: true }).decode(bytes); }
+  catch { return null; }
+  return SECRET_TEXT.test(text) ? null : text;
 }
 
-function frontmatter(title, description) {
-  return `---\ntitle: ${JSON.stringify(title)}\ndescription: ${JSON.stringify(description)}\n---\n\n`;
-}
-
-function fileSize(bytes) {
-  if (!Number.isFinite(bytes)) return '—';
-  if (bytes < 1024) return `${bytes} B`;
-  if (bytes < 1024 ** 2) return `${(bytes / 1024).toFixed(1)} KiB`;
-  return `${(bytes / 1024 ** 2).toFixed(1)} MiB`;
-}
-
-async function regularFile(base, relative) {
+async function regularPath(base, relative, directory = false) {
+  if (!safeRelative(relative)) return null;
   const parts = relative.split('/');
-  if (parts.some((part) => !part || part === '.' || part === '..')) return null;
   let current = base;
   for (let i = 0; i < parts.length; i += 1) {
     current = path.join(current, parts[i]);
     let info;
-    try { info = await lstat(current); } catch (error) {
-      if (error.code === 'ENOENT') return null;
-      throw error;
-    }
+    try { info = await lstat(current); }
+    catch (error) { if (error.code === 'ENOENT' || error.code === 'ENOTDIR') return null; throw error; }
     if (info.isSymbolicLink()) return null;
     if (i < parts.length - 1 && !info.isDirectory()) return null;
-    if (i === parts.length - 1) return info.isFile() ? info : null;
+    if (i === parts.length - 1) return (directory ? info.isDirectory() : info.isFile()) ? info : null;
   }
   return null;
 }
 
 async function readDocument(base, relative, required = false) {
-  const info = await regularFile(base, relative);
+  const info = await regularPath(base, relative);
   if (!info) {
     if (required) throw new Error(`Missing regular task file: ${path.join(base, relative)}`);
     return '';
   }
   if (info.size > MAX_DOCUMENT_BYTES) throw new Error(`Task document exceeds 512 KiB: ${relative}`);
-  return readFile(path.join(base, relative), 'utf8');
+  const text = publicText(await readFile(path.join(base, relative)));
+  if (text === null) throw new Error(`Task document must be public UTF-8 text: ${relative}`);
+  return text;
 }
 
 function metadata(markdown, fallback, labels) {
@@ -102,127 +82,66 @@ function metadata(markdown, fallback, labels) {
   return { title, description };
 }
 
-function sourceUrl(repoUrl, branch, relative) {
-  return `${repoUrl}/blob/${encodeURIComponent(branch)}/${encodePath(relative)}`;
+function parseManifest(assets, taskId) {
+  if (!assets) return {};
+  let manifest;
+  try { manifest = JSON.parse(assets); }
+  catch (error) { throw new Error(`Invalid assets.json in ${taskId}: ${error.message}`); }
+  if (!manifest || typeof manifest !== 'object' || Array.isArray(manifest)) throw new Error(`Expected an assets object in ${taskId}`);
+  if (manifest.files !== undefined && (!Array.isArray(manifest.files)
+    || manifest.files.some(file => !file || !safeRelative(file.path)))) {
+    throw new Error(`Expected an assets.files array with safe relative paths in ${taskId}`);
+  }
+  return manifest;
 }
 
-function rewriteMarkdown(markdown, { taskRelative, sourceFile, downloadUrls, repoUrl, branch }) {
-  let body = markdown.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, '')
-    .replace(/^#\s+.+\r?\n+/, '');
-  let activeFence = null;
-  const lines = body.split('\n').map((line) => {
-    const marker = line.match(/^\s{0,3}(`{3,}|~{3,})(.*)$/);
-    if (marker) {
-      if (!activeFence) activeFence = marker[1];
-      else if (marker[1][0] === activeFence[0] && marker[1].length >= activeFence.length && !marker[2].trim()) activeFence = null;
-      return line;
-    }
-    if (activeFence) return line;
-    // Content files are Markdown, not executable MDX. Keep code spans intact.
-    let cooked = line.split(/(`+[^`]*`+)/g).map((part) => part.startsWith('`') ? part : escapeText(part)).join('');
-    cooked = cooked.replace(/^(import|export)(?=\s)/, (word) => `&#${word.charCodeAt(0)};${word.slice(1)}`);
-    cooked = cooked.replace(/^(#{1,5})\s/, '$1# ');
-    cooked = cooked.replace(/(!?)\[([^\]]*)\]\(([^)]+)\)/g, (match, image, label, destination) => {
-      const target = destination.match(/^(\S+)(?:\s+(["']).*\2)?$/)?.[1];
-      if (!target || target.startsWith('#') || target.startsWith('/')) return match;
-      if (/^https?:\/\//i.test(target) || /^mailto:/i.test(target)) return match;
-      if (/^[a-z][a-z\d+.-]*:/i.test(target)) return label;
-      const [pathname, suffix = ''] = target.split(/(?=[?#])/s, 2);
-      const local = path.posix.normalize(path.posix.join(path.posix.dirname(sourceFile), pathname));
-      const projectPath = path.posix.normalize(path.posix.join(taskRelative, local));
-      if (projectPath.startsWith('../')) return label;
-      const url = downloadUrls.get(local) || sourceUrl(repoUrl, branch, projectPath);
-      // Non-published images remain links to their source file.
-      return `[${label}](${url}${suffix})`;
-    });
-    return cooked;
-  });
-  if (activeFence) lines.push(activeFence);
-  return lines.join('\n').trim();
-}
-
-async function taskTree(taskDir, excludedAssets) {
-  const lines = [];
-  async function visit(relative, depth, prefix) {
+async function publishSmallFiles(taskDir, id, publicDir, excludedAssets) {
+  const destinationRoot = path.join(publicDir, 'environments', id);
+  // The caller owns generated output; remove stale files that are no longer publishable.
+  await rm(destinationRoot, { recursive: true, force: true });
+  const files = [];
+  const publicPaths = new Set();
+  async function visit(relative = '') {
     const entries = (await readdir(path.join(taskDir, relative), { withFileTypes: true }))
-      .filter((entry) => !entry.name.startsWith('.') && !entry.isSymbolicLink())
-      .sort((a, b) => Number(b.isDirectory()) - Number(a.isDirectory()) || a.name.localeCompare(b.name, 'en'));
-    const visible = [];
+      .sort((a, b) => a.name.localeCompare(b.name, 'en'));
     for (const entry of entries) {
+      if (entry.name.startsWith('.') || entry.isSymbolicLink() || SECRET_NAME.test(entry.name)) continue;
       const child = relative ? `${relative}/${entry.name}` : entry.name;
-      if (HIDDEN_DIRECTORIES.has(entry.name) || child === 'tests/public' || excludedAssets.has(child)) continue;
-      if (/\.(?:tgz|tar|gz|zip|7z|lib|lef|tlef|pem|key|pyc)$/i.test(entry.name) || /^id_(?:rsa|ed25519)/.test(entry.name)) continue;
-      if (entry.isFile()) {
-        const info = await lstat(path.join(taskDir, child));
-        if (info.size > MAX_DOCUMENT_BYTES) continue;
+      if (child === 'tests/public' || excludedAssets.some(asset => child === asset || child.startsWith(`${asset}/`))) continue;
+      if (entry.isDirectory()) {
+        if (!HIDDEN_DIRECTORIES.has(entry.name.toLowerCase())) await visit(child);
+        continue;
       }
-      if (entry.isFile() || entry.isDirectory()) visible.push({ entry, child });
-    }
-    for (let i = 0; i < visible.length; i += 1) {
-      const { entry, child } = visible[i];
-      const last = i === visible.length - 1;
-      lines.push(`${prefix}${last ? '└──' : '├──'} ${entry.name}${entry.isDirectory() ? '/' : ''}`);
-      if (entry.isDirectory() && depth < 3) await visit(child, depth + 1, prefix + (last ? '    ' : '│   '));
+      if (!entry.isFile() || (!PUBLIC_EXTENSIONS.has(path.extname(entry.name).toLowerCase())
+        && entry.name !== 'Dockerfile' && !/^LICENSE(?:\.(?:md|txt))?$/i.test(entry.name))) continue;
+      const info = await regularPath(taskDir, child);
+      if (!info || info.size > MAX_PUBLIC_BYTES) continue;
+      const bytes = await readFile(path.join(taskDir, child));
+      if (bytes.length > MAX_PUBLIC_BYTES || publicText(bytes) === null) continue;
+      const publicPath = path.extname(child) ? child : `${child}.txt`;
+      if (publicPaths.has(publicPath)) throw new Error(`Public file URL collision in ${id}: ${publicPath}`);
+      publicPaths.add(publicPath);
+      const destination = path.join(destinationRoot, publicPath);
+      await mkdir(path.dirname(destination), { recursive: true });
+      await writeFile(destination, bytes);
+      files.push({ path: child, size: bytes.length, url: `/environments/${encodeURIComponent(id)}/${encodePath(publicPath)}` });
     }
   }
-  await visit('', 1, '');
-  return lines.join('\n');
+  await visit();
+  return files.sort((a, b) => a.path.localeCompare(b.path, 'en'));
 }
 
-async function publishSmallFiles(taskDir, slug, publicDir) {
-  const candidates = new Set(PUBLIC_FILES);
-  const filesDir = path.join(taskDir, 'environment/files');
-  try {
-    const parent = await lstat(filesDir);
-    if (parent.isDirectory() && !parent.isSymbolicLink()) {
-      for (const entry of await readdir(filesDir, { withFileTypes: true })) {
-        if (entry.isFile() && /^spec(?:_[a-zA-Z0-9-]+)?\.json$/.test(entry.name)) candidates.add(`environment/files/${entry.name}`);
-      }
-    }
-  } catch (error) { if (error.code !== 'ENOENT') throw error; }
-  const urls = new Map();
-  for (const relative of [...candidates].sort()) {
-    const info = await regularFile(taskDir, relative);
-    if (!info || info.size > MAX_PUBLIC_BYTES) continue;
-    const bytes = await readFile(path.join(taskDir, relative));
-    if (bytes.includes(0) || /-----BEGIN (?:[A-Z ]+ )?PRIVATE KEY-----/.test(bytes.toString('utf8'))) continue;
-    const destination = path.join(publicDir, 'environments', slug, relative);
-    await mkdir(path.dirname(destination), { recursive: true });
-    await writeFile(destination, bytes);
-    urls.set(relative, `/environments/${encodeURIComponent(slug)}/${encodePath(relative)}`);
-  }
-  return urls;
-}
-
-function dependencies(manifest, source, downloads, labels) {
-  const files = Array.isArray(manifest.files) ? manifest.files : [];
-  if (!files.length) return '';
-  const lines = [
-    labels.dependencyIntroduction(downloads.get('assets.json') || source('assets.json'), source('prepare.py')),
-  ];
-  if (manifest.archive?.name) lines.push(`${labels.archive}: ${tableText(manifest.archive.name)} (${fileSize(manifest.archive.size)})`);
-  if (manifest.platform) lines.push(`${labels.platform}: ${tableText(manifest.platform)}`);
-  const rows = [`| ${labels.dependency} | ${labels.size} | ${labels.version} |`, '| --- | ---: | --- |'];
-  for (const file of files) rows.push(`| ${tableText(file.path)} | ${fileSize(file.size)} | ${tableText(file.version)} |`);
-  lines.push(rows.join('\n'));
-  lines.push(`<details>\n<summary>${labels.checksums}</summary>\n\n${fence(JSON.stringify(manifest, null, 2), 'json')}\n\n</details>`);
-  return lines.join('\n\n');
-}
-
-/** Generate static Harbor pages and small-file downloads using only local task sources.
- * Returns [{ slug: '[en/]environments/<task-id>', title, description, source }].
- * English pages use maintained README.en.md translations. Download URLs are shared.
- * Output directories are owned/cleaned by the caller; source tasks are never changed.
+/** Generate one localized Harbor example page, file-browser metadata, and text downloads.
+ * Returns one { slug, taskId, title, description, source } record per task; slug is shared.
+ * README translations supply metadata; task content stays in fetched source files, not MDX.
+ * Output directories are owned by the caller. Source task files are never changed.
+ * Call locales sequentially: each invocation merges its records into harbor-data.json.
  */
 export async function generateHarbor({ root, outputDir, publicDir, repoUrl, branch = 'main', locale = 'zh' }) {
-  if (![root, outputDir, publicDir, repoUrl, branch].every((value) => typeof value === 'string' && value.trim())) {
+  if (![root, outputDir, publicDir, repoUrl, branch].every(value => typeof value === 'string' && value.trim())) {
     throw new TypeError('generateHarbor requires root, outputDir, publicDir, repoUrl, and a non-empty branch');
   }
   if (!Object.hasOwn(LABELS, locale)) throw new RangeError(`Unsupported Harbor locale: ${locale}`);
-  const labels = LABELS[locale];
-  const routePrefix = locale === 'en' ? 'en/environments' : 'environments';
-  const readmeFile = locale === 'en' ? 'README.en.md' : 'README.md';
-  repoUrl = repoUrl.replace(/\/$/, '').replace(/\.git$/, '');
   if (!/^https?:\/\//.test(repoUrl)) throw new TypeError('repoUrl must be an HTTP(S) repository URL');
   root = path.resolve(root);
   outputDir = path.resolve(root, outputDir);
@@ -234,64 +153,46 @@ export async function generateHarbor({ root, outputDir, publicDir, repoUrl, bran
     }
   }
   let entries;
-  try { entries = await readdir(taskRoot, { withFileTypes: true }); } catch (error) {
-    if (error.code !== 'ENOENT') throw error;
-    entries = [];
-  }
+  try { entries = await regularPath(root, 'env/examples', true) ? await readdir(taskRoot, { withFileTypes: true }) : []; }
+  catch (error) { if (error.code !== 'ENOENT') throw error; entries = []; }
+  const labels = LABELS[locale];
+  const readmeFile = locale === 'en' ? 'README.en.md' : 'README.md';
+  const slug = `${locale === 'en' ? 'en/' : ''}${PAGE}`;
   const summary = [];
-  const slugs = new Set();
-  const docsDir = path.join(outputDir, ...routePrefix.split('/'));
-  await mkdir(docsDir, { recursive: true });
+  const records = [];
+  const ids = new Set();
   for (const entry of entries.sort((a, b) => a.name.localeCompare(b.name, 'en'))) {
     if (!entry.isDirectory() || entry.name.startsWith('.') || entry.isSymbolicLink()) continue;
     const taskDir = path.join(taskRoot, entry.name);
-    if (!await regularFile(taskDir, 'task.toml')) continue;
-    const slug = entry.name === 'index' ? 'task-index' : entry.name.normalize('NFKC').replace(/[^\p{L}\p{N}_-]+/gu, '-');
-    if (!slug || slugs.has(slug)) throw new Error(`Duplicate or invalid environment slug: ${entry.name}`);
-    slugs.add(slug);
-    const [readme, instruction, config, assets] = await Promise.all([
-      readDocument(taskDir, readmeFile, locale === 'en'), readDocument(taskDir, 'instruction.md'),
-      readDocument(taskDir, 'task.toml', true), readDocument(taskDir, 'assets.json'),
+    if (!await regularPath(taskDir, 'task.toml')) continue;
+    const id = entry.name === 'index' ? 'task-index' : entry.name.normalize('NFKC').replace(/[^\p{L}\p{N}_-]+/gu, '-');
+    if (!id || ids.has(id)) throw new Error(`Duplicate or invalid environment slug: ${entry.name}`);
+    ids.add(id);
+    const [readme, , assets] = await Promise.all([
+      readDocument(taskDir, readmeFile, true), readDocument(taskDir, 'task.toml', true), readDocument(taskDir, 'assets.json'),
     ]);
-    let manifest = {};
-    if (assets) {
-      try { manifest = JSON.parse(assets); } catch (error) { throw new Error(`Invalid assets.json in ${entry.name}: ${error.message}`); }
-      if (!manifest || typeof manifest !== 'object' || Array.isArray(manifest)) throw new Error(`Expected an assets object in ${entry.name}`);
-      if (manifest.files !== undefined && (!Array.isArray(manifest.files) || manifest.files.some((file) => !file || typeof file.path !== 'string'))) {
-        throw new Error(`Expected an assets.files array of file records in ${entry.name}`);
-      }
-    }
-    const { title, description } = metadata(readme || instruction, entry.name, labels);
-    const primaryFile = readme ? readmeFile : instruction ? 'instruction.md' : 'task.toml';
-    const taskRelative = `env/examples/${entry.name}`;
-    const source = (relative) => sourceUrl(repoUrl, branch, `${taskRelative}/${relative}`);
-    const downloads = await publishSmallFiles(taskDir, slug, publicDir);
-    const markdownOptions = { taskRelative, downloadUrls: downloads, repoUrl, branch };
-    const tree = await taskTree(taskDir, new Set((manifest.files || []).map((file) => file.path)));
-    const page = [
-      frontmatter(title, description),
-      `[${labels.allEnvironments}](/${routePrefix}/) · [${labels.taskSource}](${source(primaryFile)})`,
-      `## ${labels.overview}`,
-      readme ? rewriteMarkdown(readme, { ...markdownOptions, sourceFile: readmeFile }) : escapeText(description),
-      `## ${labels.instruction}`,
-      instruction ? rewriteMarkdown(instruction, { ...markdownOptions, sourceFile: 'instruction.md' }) : `[${labels.viewTask}](${source('task.toml')})`,
-      `## ${labels.configuration}`,
-      `[${labels.viewConfig}](${source('task.toml')})`,
-      fence(config, 'toml'),
-      `## ${labels.files}`,
-      fence(`${entry.name}/\n${tree}`),
-      dependencies(manifest, source, downloads, labels),
-      `### ${labels.downloads}`,
-      ...[...downloads].map(([relative, url]) => `- [${relative}](${url}) · [${labels.source}](${source(relative)})`),
-    ].filter(Boolean).join('\n\n');
-    await writeFile(path.join(docsDir, `${slug}.mdx`), page + '\n');
-    summary.push({ slug: `${routePrefix}/${slug}`, title, description, source: `${taskRelative}/${primaryFile}` });
+    const manifest = parseManifest(assets, entry.name);
+    const { title, description } = metadata(readme, entry.name, labels);
+    const source = `env/examples/${entry.name}/${readmeFile}`;
+    const dependencies = (manifest.files || []).map(file => ({
+      path: file.path, size: bytesValue(file.size), version: stringValue(file.version),
+    }));
+    const files = await publishSmallFiles(taskDir, id, publicDir, dependencies.map(file => file.path));
+    records.push({ id, title, description, source, files, dependencies,
+      archive: { name: stringValue(manifest.archive?.name), size: bytesValue(manifest.archive?.size) },
+      platform: stringValue(manifest.platform),
+    });
+    summary.push({ slug, taskId: id, title, description, source });
   }
-  const index = [
-    frontmatter(labels.indexTitle, labels.indexDescription),
-    labels.indexIntroduction,
-    ...summary.map((task) => `- [${escapeText(task.title)}](/${encodePath(task.slug)}/) — ${escapeText(task.description)}`),
-  ].join('\n\n');
-  await writeFile(path.join(docsDir, 'index.mdx'), index + '\n');
+  const pageFile = path.join(outputDir, `${slug}.mdx`);
+  await mkdir(path.dirname(pageFile), { recursive: true });
+  await writeFile(pageFile, frontmatter(labels.title, labels.description) + labels.introduction + '\n');
+  const dataFile = path.join(outputDir, 'harbor-data.json');
+  let data = { zh: [], en: [] };
+  try { data = JSON.parse(await readFile(dataFile, 'utf8')); }
+  catch (error) { if (error.code !== 'ENOENT') throw error; }
+  if (!data || !Array.isArray(data.zh) || !Array.isArray(data.en)) throw new Error('Invalid existing harbor-data.json');
+  data[locale] = records;
+  await writeFile(dataFile, JSON.stringify(data, null, 2) + '\n');
   return summary;
 }
