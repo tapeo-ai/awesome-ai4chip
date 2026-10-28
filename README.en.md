@@ -6,9 +6,17 @@
 
 <!-- intro:start -->
 
-AI for Chip connects machine learning, chip design, and computer systems. We aim to build Awesome AI4Chip into the most comprehensive source of AI for Chip news and resources, collecting papers, open-source projects, datasets, benchmarks, tools, products, and technical articles. The goal is to help readers from different backgrounds **build a clear understanding of the field**: identify key problems and technical approaches, find learning material and reproducible projects, and follow research and industry developments.
+We will continue building Awesome AI4Chip into **the most comprehensive source of AI for Chip news and resources**, collecting papers, open-source projects, datasets, benchmarks, tools, products, and technical articles. The goal is to help readers from different backgrounds **quickly understand the field**: identify key problems and technical approaches, find learning material and reproducible projects, and follow research and industry developments.
 
-Our main focus is AI for Chip: model data, training, and evaluation; specification understanding; RTL generation and verification; analog circuits; synthesis; and physical implementation. We also cover Chip for AI and co-design across models, kernels, chip architectures, and infrastructure. The directory is organized into AI Model, EDA, and Chip for AI, with selected material and reading paths in the [Guide](#guide).
+## Where to Start
+
+| Background / Goal | Start with | Continue with |
+| --- | --- | --- |
+| New to chip design; want to understand the flow and common software | [EDA 101](docs/en/resources/eda/eda-101.mdx): design stages, tool interfaces, and key artifacts | Choose a path in the [Guide](#guide) |
+| Familiar with LLMs; interested in RTL generation, domain post-training, or evaluation | [LLMs for EDA: A Survey](https://arxiv.org/abs/2501.09655): tasks, model adaptation, data, and evaluation | [AI Model](#ai-model): VerilogEval → CodeV-R1 |
+| RTL / EDA experience; want to build design agents | [The Dawn of Agentic EDA](https://arxiv.org/abs/2512.23189): agent architectures, tool calls, and design feedback | [AI EDA](#ai-eda): OpenROAD flow → coding agent integration |
+| Circuit fundamentals; interested in analog design and automation | [JKU Analog Circuit Design](https://iic-jku.github.io/analog-circuit-design/aicd.html): circuit design, simulation, and sizing | [Analog / Mixed-Signal](#analog--mixed-signal): ngspice batch simulation and parameter search |
+| ML or computer architecture background; interested in model–accelerator co-design | [MIT 6.5940](https://hanlab.mit.edu/courses/2026-fall-65940): efficient models and hardware deployment | [Chip for AI](#chip-for-ai): Timeloop / Accelergy → Gemmini |
 
 <!-- intro:end -->
 
@@ -57,15 +65,13 @@ Our main focus is AI for Chip: model data, training, and evaluation; specificati
 
 <!-- guide:start -->
 
-If chip design is new to you, start with [EDA 101](docs/en/resources/eda/eda-101.mdx): a flow diagram connects RTL, verification, synthesis, place and route, and signoff to the software used at each stage.
-
 ### AI Model
 
-For readers familiar with LLMs who want to research RTL generation, domain post-training, or evaluation. Read the survey, establish an evaluation setup, then study a training implementation.
+For readers familiar with LLMs who want to research RTL generation, domain post-training, or evaluation.
 
-1. [LLMs for EDA: A Survey](https://arxiv.org/abs/2501.09655) — Section 3 covers EDA tasks, section 4 model adaptation, and section 5.1 data and evaluation. Use it to identify the data and checks needed for a particular task: generating RTL, generating assertions, or answering questions about design documents.
-2. [VerilogEval](https://github.com/NVlabs/verilog-eval) — Follow the README's `spec-to-rtl` flow from a specification through generated Verilog to simulation results. It makes a basic evaluation distinction concrete: compiling successfully and implementing the specification are different requirements.
-3. [CodeV-R1](https://github.com/IPRC-DIP/CodeV-R1) — Study a concrete Verilog post-training project. Read the evaluation instructions in `test/`, training configurations in `sft/`, then the RL pipeline and testbench reward in `verl/`. Compare these with the released data to see how reasoning distillation and simulation feedback enter training.
+1. [LLMs for EDA: A Survey](https://arxiv.org/abs/2501.09655) — Covers EDA tasks, models, data, and evaluation, offering a quick overview of key directions at the intersection of LLMs and EDA.
+2. [VerilogEval](https://github.com/NVlabs/verilog-eval) — Follow the README's `spec-to-rtl` workflow to understand evaluation from specifications through Verilog to simulation results.
+3. [CodeV-R1](https://github.com/IPRC-DIP/CodeV-R1) — Use this Verilog post-training project to explore the training configurations in `sft/`, then the RL workflow and testbench reward in `verl/`. Compare these with the released data to understand how reasoning distillation and simulation feedback enter training.
 
 If reading simple RTL is still difficult, begin with combinational and sequential logic exercises in [HDLBits](https://hdlbits.01xz.net/wiki/Main_Page), then [cocotb First Steps](https://docs.cocotb.org/en/stable/first_steps.html) to connect Python testbenches with clocks, reset, assertions, and waveforms. Continue through [Data](docs/en/resources/ai-model/data.mdx), [Benchmark](docs/en/resources/ai-model/benchmark.mdx), or [Training](docs/en/resources/ai-model/training.mdx) for your research question.
 
@@ -73,9 +79,9 @@ If reading simple RTL is still difficult, begin with combinational and sequentia
 
 For readers with RTL / EDA experience who want to build design agents or automated optimization flows.
 
-1. [The Dawn of Agentic EDA](https://arxiv.org/abs/2512.23189) — Read section 2 on agent architectures, then choose section 3 on RTL / Verification or section 4 on Physical Design. Follow how tool calls, task decomposition, and feedback are organized, and where deterministic EDA checks remain necessary.
-2. [OpenROAD Flow Scripts Tutorial](https://openroad-flow-scripts.readthedocs.io/en/latest/tutorials/FlowTutorial.html) — Follow the Ibex / SKY130 example through RTL to GDS. Start with Running the Automated RTL-to-GDS Flow, then use the directory guide to inspect synthesis, floorplan, CTS, and routing results. The tutorial connects commands, artifacts, the GUI, and timing reports.
-3. [OpenROAD — Running Claude Code in Docker](https://openroad-flow-scripts.readthedocs.io/en/latest/user/ClaudeCode.html) — Connect a coding agent to a container with EDA tools and see how it accesses a project, builds, and runs tests. Read this after completing an ORFS run to bring an existing design flow into an agent workflow.
+1. [The Dawn of Agentic EDA](https://arxiv.org/abs/2512.23189) — Start with section 2 on agent architectures, then choose section 3 on RTL / Verification or section 4 on Physical Design.
+2. [OpenROAD Flow Scripts Tutorial](https://openroad-flow-scripts.readthedocs.io/en/latest/tutorials/FlowTutorial.html) — Use the Ibex / SKY130 example to understand the complete RTL-to-GDS flow.
+3. [OpenROAD — Running Claude Code in Docker](https://openroad-flow-scripts.readthedocs.io/en/latest/user/ClaudeCode.html) — Connect a coding agent to a container with EDA tools and see how it accesses a project, builds, and runs tests.
 
 For synthesis optimization, continue with [Yosys Synthesis Starter](https://yosyshq.readthedocs.io/projects/yosys/en/latest/getting_started/example_synth.html) to follow a FIFO from RTL to a netlist. For verification, use [SymbiYosys Getting Started](https://symbiyosys.readthedocs.io/en/latest/quickstart.html) to learn assertions, bounded checks, proofs, and counterexamples. Find projects in [AI EDA](docs/en/resources/eda/ai-eda.mdx) and [EDA Optimization](docs/en/resources/eda/optimization.mdx).
 
@@ -89,8 +95,8 @@ To connect simulation to parameter search or agents, continue with the looping, 
 
 For readers with machine learning or computer architecture foundations who want to study model–accelerator co-design.
 
-1. [MIT 6.5940 — TinyML and Efficient AI Computing](https://hanlab.mit.edu/courses/2026-fall-65940) — Start with Introduction, then Quantization and Neural Architecture Search. Lectures, videos, and labs connect accuracy, computation, memory requirements, and deployment cost, providing a foundation for hardware-aware ML.
-2. [Timeloop / Accelergy v4](https://timeloop.csail.mit.edu/v4) and its [exercises](https://github.com/Accelergy-Project/timeloop-accelergy-exercises) — Read Problem, Architecture, and Constraints to distinguish workloads, hardware, and mapping constraints. Then run the exercises and compare data movement, cycles, and energy using Stats / Mapping outputs. This introduces DSE without first implementing an RTL accelerator.
+1. [MIT 6.5940 — TinyML and Efficient AI Computing](https://hanlab.mit.edu/courses/2026-fall-65940) — A foundation for studying hardware-aware ML.
+2. [Timeloop / Accelergy v4](https://timeloop.csail.mit.edu/v4) and its [exercises](https://github.com/Accelergy-Project/timeloop-accelergy-exercises) — Learn DSE without first implementing an RTL accelerator.
 
 To study an accelerator's hardware and software together, continue with [Gemmini Quick Start](https://github.com/ucb-bar/gemmini#quick-start): start with matrix multiplication in the simulator, then read Architecture for the systolic array, scratchpad, accumulator, and dataflow. Explore [Hardware-aware ML](docs/en/resources/chip-for-ai/hardware-aware-ml.mdx), [DSE](docs/en/resources/chip-for-ai/dse.mdx), [DSA](docs/en/resources/chip-for-ai/dsa.mdx), or [Kernel Optimization](docs/en/resources/chip-for-ai/kernel-optimization.mdx) for further work.
 
