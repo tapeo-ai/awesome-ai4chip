@@ -736,7 +736,7 @@ Working on AI4Chip starts with understanding what a model changes, how tools che
 
 ## From Specification to Tapeout
 
-![Digital ASIC design flow from specification and architecture through RTL, synthesis, physical implementation, and signoff to tapeout, with artifacts and common open-source and commercial tools.](/assets/eda-design-flow.svg)
+<img src="/assets/eda-design-flow.svg" alt="Digital ASIC design flow from specification and architecture through RTL, synthesis, physical implementation, and signoff to tapeout, with artifacts and common open-source and commercial tools." width="1200" height="1050" loading="eager" decoding="async" />
 
 [View full size](/assets/eda-design-flow.svg)
 
@@ -771,7 +771,7 @@ The design hierarchy is on the left, source in the middle, circuit connections o
 
 <figure>
 
-![Verdi design hierarchy, source, circuit connections, and waveform windows.](/assets/eda-101/verdi-debug.jpg)
+<img src="/assets/eda-101/verdi-debug.jpg" alt="Verdi design hierarchy, source, circuit connections, and waveform windows." width="1123" height="703" loading="lazy" decoding="async" />
 
 <figcaption>
 
@@ -786,7 +786,7 @@ The central view shows layout and routing; the right panel controls visibility o
 
 <figure>
 
-![Innovus layout window with layer controls on the right.](/assets/eda-101/innovus-berkeley-layout.png)
+<img src="/assets/eda-101/innovus-berkeley-layout.png" alt="Innovus layout window with layer controls on the right." width="1521" height="1028" loading="lazy" decoding="async" />
 
 <figcaption>
 
@@ -801,7 +801,7 @@ This is a routed Ibex design, with layer controls on the left, hierarchy on the 
 
 <figure>
 
-![Routed Ibex in OpenROAD, with layer controls, design hierarchy, and a Tcl console.](/assets/eda-101/openroad-ibex-gui.webp)
+<img src="/assets/eda-101/openroad-ibex-gui.webp" alt="Routed Ibex in OpenROAD, with layer controls, design hierarchy, and a Tcl console." width="1684" height="872" loading="lazy" decoding="async" />
 
 <figcaption>
 
@@ -816,7 +816,7 @@ This example shows well-connectivity soft-check results. The left panel lists ch
 
 <figure>
 
-![Calibre RVE well-connectivity checks, affected cells, and coordinate details.](/assets/eda-101/calibre-rve-soft-checks.jpg)
+<img src="/assets/eda-101/calibre-rve-soft-checks.jpg" alt="Calibre RVE well-connectivity checks, affected cells, and coordinate details." width="1430" height="597" loading="lazy" decoding="async" />
 
 <figcaption>
 
@@ -860,7 +860,7 @@ This RLC transient simulation shows the Xschem schematic behind ngspice waveform
 
 <figure>
 
-![An RLC schematic in Xschem with ngspice transient waveforms and console.](/assets/eda-101/xschem-ngspice.png)
+<img src="/assets/eda-101/xschem-ngspice.png" alt="An RLC schematic in Xschem with ngspice transient waveforms and console." width="869" height="853" loading="lazy" decoding="async" />
 
 <figcaption>
 
@@ -877,7 +877,7 @@ Follow how the design representation changes: RTL becomes a gate-level netlist, 
 
 <figure>
 
-![OpenLane ASIC flow from RTL and simulation through synthesis, layout, signoff, and fabrication.](/assets/eda-101/openlane-asic-flow.webp)
+<img src="/assets/eda-101/openlane-asic-flow.webp" alt="OpenLane ASIC flow from RTL and simulation through synthesis, layout, signoff, and fabrication." width="1102" height="862" loading="lazy" decoding="async" />
 
 <figcaption>
 
@@ -892,7 +892,7 @@ This view adds DFT, packaging, software development, and system validation aroun
 
 <figure>
 
-![Synopsys flow connecting architecture exploration, chip design, packaging, software, and power considerations.](/assets/eda-101/synopsys-ai-chip-flow.png)
+<img src="/assets/eda-101/synopsys-ai-chip-flow.png" alt="Synopsys flow connecting architecture exploration, chip design, packaging, software, and power considerations." width="1536" height="657" loading="lazy" decoding="async" />
 
 <figcaption>
 
@@ -907,7 +907,7 @@ The twelve stages connect workload specification to GDS. Dashed arrows show why 
 
 <figure>
 
-![Build-A-Chip-Bench stages from workload specification to GDS, with feedback from area, timing, and congestion.](/assets/eda-101/chipagents-build-a-chip-bench-figure-3.png)
+<img src="/assets/eda-101/chipagents-build-a-chip-bench-figure-3.png" alt="Build-A-Chip-Bench stages from workload specification to GDS, with feedback from area, timing, and congestion." width="1756" height="650" loading="lazy" decoding="async" />
 
 <figcaption>
 
@@ -1705,7 +1705,7 @@ AI EDA 将模型接入芯片设计与验证，组织工具调用、设计上下�
 
 ## 从 Specification 到 Tapeout
 
-![数字 ASIC 设计流程：从规格与架构，经 RTL、综合、物理实现和签核到 Tapeout，并列展示阶段产物和常用开源、商业工具。](/assets/eda-design-flow.svg)
+<img src="/assets/eda-design-flow.svg" alt="数字 ASIC 设计流程：从规格与架构，经 RTL、综合、物理实现和签核到 Tapeout，并列展示阶段产物和常用开源、商业工具。" width="1200" height="1050" loading="eager" decoding="async" />
 
 [查看完整尺寸](/assets/eda-design-flow.svg)
 
@@ -1740,7 +1740,7 @@ EDA 软件执行仿真、综合或布局布线；PDK 提供工艺模型、层定
 
 <figure>
 
-![Verdi 的设计层次、源码、电路连接与波形窗口。](/assets/eda-101/verdi-debug.jpg)
+<img src="/assets/eda-101/verdi-debug.jpg" alt="Verdi 的设计层次、源码、电路连接与波形窗口。" width="1123" height="703" loading="lazy" decoding="async" />
 
 <figcaption>
 
@@ -1755,7 +1755,7 @@ EDA 软件执行仿真、综合或布局布线；PDK 提供工艺模型、层定
 
 <figure>
 
-![Innovus 的版图窗口及右侧图层控制。](/assets/eda-101/innovus-berkeley-layout.png)
+<img src="/assets/eda-101/innovus-berkeley-layout.png" alt="Innovus 的版图窗口及右侧图层控制。" width="1521" height="1028" loading="lazy" decoding="async" />
 
 <figcaption>
 
@@ -1770,7 +1770,7 @@ EDA 软件执行仿真、综合或布局布线；PDK 提供工艺模型、层定
 
 <figure>
 
-![OpenROAD 中的 Ibex 版图、图层控制、设计层次与 Tcl 控制台。](/assets/eda-101/openroad-ibex-gui.webp)
+<img src="/assets/eda-101/openroad-ibex-gui.webp" alt="OpenROAD 中的 Ibex 版图、图层控制、设计层次与 Tcl 控制台。" width="1684" height="872" loading="lazy" decoding="async" />
 
 <figcaption>
 
@@ -1785,7 +1785,7 @@ EDA 软件执行仿真、综合或布局布线；PDK 提供工艺模型、层定
 
 <figure>
 
-![Calibre RVE 的井连接检查列表、单元和坐标详情。](/assets/eda-101/calibre-rve-soft-checks.jpg)
+<img src="/assets/eda-101/calibre-rve-soft-checks.jpg" alt="Calibre RVE 的井连接检查列表、单元和坐标详情。" width="1430" height="597" loading="lazy" decoding="async" />
 
 <figcaption>
 
@@ -1829,7 +1829,7 @@ Parasitic Extraction → Post-layout Simulation → Signoff
 
 <figure>
 
-![Xschem 的 RLC 原理图，以及 ngspice 瞬态波形和控制台。](/assets/eda-101/xschem-ngspice.png)
+<img src="/assets/eda-101/xschem-ngspice.png" alt="Xschem 的 RLC 原理图，以及 ngspice 瞬态波形和控制台。" width="869" height="853" loading="lazy" decoding="async" />
 
 <figcaption>
 
@@ -1846,7 +1846,7 @@ Parasitic Extraction → Post-layout Simulation → Signoff
 
 <figure>
 
-![OpenLane 的 ASIC 流程：RTL、仿真、综合、版图、签核与制造。](/assets/eda-101/openlane-asic-flow.webp)
+<img src="/assets/eda-101/openlane-asic-flow.webp" alt="OpenLane 的 ASIC 流程：RTL、仿真、综合、版图、签核与制造。" width="1102" height="862" loading="lazy" decoding="async" />
 
 <figcaption>
 
@@ -1861,7 +1861,7 @@ Parasitic Extraction → Post-layout Simulation → Signoff
 
 <figure>
 
-![Synopsys 设计流程：架构探索、芯片设计、封装、软件开发与贯穿流程的功耗考虑。](/assets/eda-101/synopsys-ai-chip-flow.png)
+<img src="/assets/eda-101/synopsys-ai-chip-flow.png" alt="Synopsys 设计流程：架构探索、芯片设计、封装、软件开发与贯穿流程的功耗考虑。" width="1536" height="657" loading="lazy" decoding="async" />
 
 <figcaption>
 
@@ -1876,7 +1876,7 @@ Parasitic Extraction → Post-layout Simulation → Signoff
 
 <figure>
 
-![Build-A-Chip-Bench 的十二个设计阶段，以及面积、时序和拥塞反馈。](/assets/eda-101/chipagents-build-a-chip-bench-figure-3.png)
+<img src="/assets/eda-101/chipagents-build-a-chip-bench-figure-3.png" alt="Build-A-Chip-Bench 的十二个设计阶段，以及面积、时序和拥塞反馈。" width="1756" height="650" loading="lazy" decoding="async" />
 
 <figcaption>
 
