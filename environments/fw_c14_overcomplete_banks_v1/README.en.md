@@ -1,4 +1,4 @@
-# C14: Combinational RTL optimization example
+# Harbor Environment Example
 
 A Harbor task for AI for Chip: optimize two quadratic Boolean feature maps to reduce area and meet timing limits while preserving functionality for every input.
 
