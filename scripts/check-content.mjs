@@ -1,6 +1,7 @@
 import { readdir, readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { isResourceCatalog } from './site.mjs';
 
 const projectRoot = fileURLToPath(new URL('../', import.meta.url));
 const external = (value) => /^(?:[a-z][a-z\d+.-]*:|\/\/)/i.test(value);
@@ -141,17 +142,13 @@ export async function checkContent({ root = projectRoot } = {}) {
   for (const slug of slugs) if (!listed.has(slug)) errors.push(`docs/docs.json: page is not in navigation: ${slug}`);
 
   let resources = 0;
-  let tutorials = 0;
   const seen = new Map();
   for (const file of documents) {
     const name = slash(path.relative(root, file));
     const text = await readFile(file, 'utf8');
     errors.push(...frontmatterErrors(text).map((error) => `${name}: ${error}`));
     const english = name.startsWith('docs/en/');
-    const localName = name.replace(/^docs\/en\//, 'docs/');
-    const resourcePage = localName.startsWith('docs/resources/');
-    const tutorialPage = localName === 'docs/tutorials.mdx';
-    if (resourcePage || tutorialPage) {
+    if (isResourceCatalog(pageSlug(file, docsRoot))) {
       for (const [index, line] of withoutCode(text).split('\n').entries()) {
         if (!/^\s*[-*]\s+/.test(line)) continue;
         const entry = /^- \[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/.exec(line);
@@ -161,7 +158,7 @@ export async function checkContent({ root = projectRoot } = {}) {
         const key = `${english ? 'en' : 'zh'}\n${entry[1].trim()}\n${entry[2]}`;
         if (seen.has(key)) errors.push(`${name}:${index + 1}: duplicate resource (${seen.get(key)}): ${entry[1]}`);
         else seen.set(key, `${name}:${index + 1}`);
-        if (!english) { if (resourcePage) resources += 1; else tutorials += 1; }
+        if (!english) resources += 1;
       }
     }
     const parsed = markdownLinks(text);
@@ -196,14 +193,14 @@ export async function checkContent({ root = projectRoot } = {}) {
     if (error) errors.push(`${readmeName}:${link.line}: ${error}`);
   }
   }
-  return { pages: documents.length, resources, tutorials, errors };
+  return { pages: documents.length, resources, errors };
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   try {
     const result = await checkContent();
     for (const error of result.errors) console.error(`✗ ${error}`);
-    console.log(`Content: ${result.pages} pages, ${result.resources} resources, ${result.tutorials} tutorials; ${result.errors.length} errors.`);
+    console.log(`Content: ${result.pages} pages, ${result.resources} resources; ${result.errors.length} errors.`);
     if (result.errors.length) process.exitCode = 1;
   } catch (error) { console.error(`Content check failed: ${error.message}`); process.exitCode = 1; }
 }

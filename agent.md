@@ -5,15 +5,20 @@
 ## 文件分工
 
 - `README.md`：项目介绍、架构图、Latest、目录和 Contributors。
-- `docs/resources/**/*.mdx`：分类资源正文，每个项目的完整介绍只维护一处。
+- `docs/resources/ai-model/`：Data、Benchmark、Training。
+- `docs/resources/eda/`：EDA 101、Open Source、Closed Source、AI EDA、EDA Optimization。Agent 与 harness 的工作收在 AI EDA。
+- `docs/resources/chip-for-ai/`：Hardware-aware ML、DSE (Design Space Exploration)、DSA (Domain-specific Architecture)、Kernel Optimization。
+- `docs/resources/articles.mdx`：Surveys & Articles。每个项目的完整介绍只维护一处，Guide 按学习用途引用。
 - `docs/latest.mdx` 与 `docs/en/latest.mdx`：各语言近期动态的唯一来源；`npm run docs:sync` 将其同步到对应 README 标记区域。
-- `docs/tutorials.mdx`：入门课程、教程与动手练习；根目录 `tutorials.md` 保留迁移入口。
+- `docs/guide.mdx`：单页 Guide，按背景和目标精选综述、完整课程网站与实践入口；根目录 `tutorials.md` 仅保留跳转入口，不维护第二份教程正文。
+- `docs/resources/eda/eda-101.mdx`：EDA 101，连接设计环节、主要产物、开源与商业软件、真实界面和流程图，作为 EDA 导航的第一篇。
 - `docs/index.mdx`、`docs/contributors.mdx`：网页首页与贡献者入口。
 - `docs/docs.json`：Mintlify 导航与站点配置；新增手写页面时同步加入中英文导航。
-- `assets/`：公开的项目 logo 和资源架构图。图内使用英文，配色采用暖白、橄榄绿和陶土色。提示词留在本地，不提交。
+- `assets/`：公开的项目 logo、资源架构图和 EDA 流程 SVG。原创图内使用英文，配色采用暖白、橄榄绿和陶土色。`assets/eda-101/` 保存正文引用的真实工具界面与流程图。提示词留在本地，不提交。
 - `docs/en/`、`README.en.md`：对应英文正文与首页。中文默认展示，英文页面使用 `/en/` 前缀；两种语言的文件路径、分类和资源链接一一对应。
 - `env/examples/`：具体的环境与数据格式示例，当前使用 Harbor 格式。
 - `src/`、`scripts/`：静态页面、内容生成与检查；`.github/workflows/` 管理 PR 构建、预览和正式发布。
+- `scripts/redirects.mjs`：页面迁移映射，自动覆盖中英文以及生产和 PR 预览路径。
 - `agent.md`：维护流程和编辑约定。
 
 调研底稿、聊天记录和内部实验报告留在仓库外。当前不设置 `CONTRIBUTING.md`、Related Awesome Lists 或公开调研专题目录。
@@ -53,13 +58,14 @@ Contributors 使用 GitHub 贡献记录生成的头像图，并链接到仓库�
 
 关注以下方向：
 
-- 模型与训练：区分基于 LLM 的方法和非 LLM 模型；LLM 按继续预训练、监督微调、推理蒸馏、偏好优化、强化学习等训练方法组织。
-- Agents 与 harness：设计与调试、工具调用、上下文、记忆、长流程任务及验收。
+- AI Model：以数据、评测和训练为主；Training 按 CPT、SFT、Distillation、Preference Optimization、RL 等训练方法组织。
+- AI EDA：设计与调试、工具调用、上下文、记忆、长流程任务及验收，包括相关 harness。
+- EDA Optimization：电路表示与性能预测、RTL 与逻辑优化、物理设计优化、模拟电路设计。相关图网络、代理模型和策略网络按所解决的任务归入同一篇，不设置“非 LLM 模型”目录。
 - 数据与环境：训练语料、设计表示、工具反馈、开放 PDK、可执行任务和数据格式。
 - Benchmark：功能、验证、PPA、仓库任务、端到端设计及模拟电路评测。
-- 商业产品：EDA 厂商和芯片设计 AI 平台，以官方产品和技术材料为入口。
-- Co-design：模型与硬件、架构与映射、kernel agents、存算一体和集群通信。
-- 入门材料：有讲义、示例代码或练习的课程与教程。
+- Open Source / Closed Source：开源 EDA 软件和商业 EDA 产品，以官方项目、产品文档和技术材料为入口。
+- Chip for AI：Hardware-aware ML、DSE、DSA 和 Kernel Optimization；CIM 属于 DSA，架构与集群模拟、映射和性能建模服务于 DSE。
+- Guide：精选与 AI4Chip 直接相关的综述、课程和实践入口，写清适合谁、阅读顺序、每份材料解决什么问题，以及可继续深入的资料；不收泛用 LLM 课程，不硬凑材料数量。
 
 团队自己的公开工作按用途放入对应分类；可复用的任务示例放入 `env/examples/`。
 
@@ -69,9 +75,9 @@ Contributors 使用 GitHub 贡献记录生成的头像图，并链接到仓库�
 
 优先查看作者论文、官方仓库、数据卡、产品文档和技术博客。搜索摘要与转载用于发现线索，条目内容以原始来源为依据。
 
-模型条目写清基础模型、训练数据或信号、训练目标。监督微调、偏好优化与强化学习都属于 post-training；采用 Transformer 的非 LLM 模型按其实际架构和训练方式归类。仅使用提示、RAG、工具反馈或搜索的工作，按主要贡献归入 Agents 与 Harness 或相应设计优化章节。厂商工作按内容收录到对应分类，包括模型、评测、工具、产品和技术文章。
+模型条目写清基础模型、训练数据或信号、训练目标。监督微调、偏好优化与强化学习都属于 post-training。仅使用提示、RAG、工具反馈或搜索的工作，按主要贡献归入 AI EDA 或相应优化章节。厂商工作按内容收录到对应分类，包括模型、评测、工具、产品和技术文章。
 
-分类依据是基础模型与训练流程：适配预训练 T5、CodeT5 等较小语言模型的工作也归入语言模型训练；专用图网络、生成器和策略网络单列。验证反馈应写清被检查的是代码、电路还是断言，以及反馈用于筛选数据、训练模型还是推理期搜索。
+适配预训练 T5、CodeT5 等较小语言模型的工作也归入 Training；电路图网络、生成器和策略网络按任务归入 EDA Optimization。验证反馈应写清被检查的是代码、电路还是断言，以及反馈用于筛选数据、训练模型还是推理期搜索。
 
 添加或更新前核实项目名称、任务用途、日期和链接。区分论文、代码、权重、数据和产品入口，链接文字应与目标内容对应。遇到重命名、仓库迁移或新版本，更新已有条目，避免重复收录。撤稿或已被替代的条目应移除或换成后续工作。
 
@@ -90,6 +96,16 @@ Contributors 使用 GitHub 贡献记录生成的头像图，并链接到仓库�
 直接介绍用途和方法，避免宣传、排名口号、过度防御和调研过程说明。必要的使用信息简短写明，例如需要某个商业工具或榜单待发布。不要把“本次未核验”“不能声称”“避免误解”等编辑笔记放进条目。
 
 技术名称保持原名，中文和英文之间留空格。普通小节按项目名称排序，教程按上手顺序排列。新增分类应由内容需要决定，不为少量链接预建空目录。
+
+目录优先使用专业术语，常用缩写首次配英文全称，例如 DSA (Domain-specific Architecture)。中英文页面使用相同的专业分类名称，说明文字按语言编写。
+
+## Guide 与 EDA 101
+
+Guide 只维护 `docs/guide.mdx` 和对应英文 `docs/en/guide.mdx` 两份单页，在 Overview 导航中直接列出，不另设 Roadmap 或 Tutorials 页面，也不按教程条数生成指标。Guide 与 EDA 101 都是说明性页面，不计入 Awesome 资源条目数。优先有完整组织的课程网站、作者综述和官方教程；说明具体值得读的章节或示例，不添加泛泛的路线介绍、机械的学习成果段落或凑数链接。需要的延伸材料与相应路线放在同一篇中，不按每日动态扩充入门必读清单。
+
+EDA 101 的流程图、软件对应表与正文一起更新。数字 ASIC 流程包含验证与反馈；DRC/LVS 属于物理验证和签核，模拟设计另列分支。真实界面和参考流程图从公开原始资料获取，保存到 `assets/eda-101/` 并直接嵌入正文，图注注明作者或机构、来源链接及图号／页码；中英文共用图片。保持原图内容，不生成仿真软件截图，不复制整篇资料。新增图片时同步更新 `scripts/prepare-docs.mjs` 的公开图片名单。操作视频保留链接。
+
+移动页面时更新 README、站点首页、导航及站内引用，并在 `scripts/redirects.mjs` 保留旧网页入口。同一内容只保留一份正文，中英文各自对应，不为不同导航入口复制页面。
 
 ## 环境示例
 

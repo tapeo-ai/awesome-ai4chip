@@ -19,21 +19,24 @@ async function fixture(t, files) {
 const frontmatter = '---\ntitle: "Example"\ndescription: "Example description"\n---\n\n';
 const nav = (pages) => JSON.stringify({ navigation: { groups: [{ group: 'Docs', pages }] } });
 
-test('content counts only resources and tutorials; shared URLs and Latest are valid', async (t) => {
+test('content counts catalog entries without counting Guide, EDA 101, or Latest references', async (t) => {
   const first = '- [Task A](https://example.com/problems) — A.';
   const root = await fixture(t, {
-    'docs/docs.json': nav(['index', 'latest', 'resources/tasks', 'tutorials', 'environments/index']),
+    'docs/docs.json': nav(['index', 'latest', 'resources/tasks', 'guide', 'resources/eda/eda-101', 'environments/index']),
     'docs/index.mdx': `${frontmatter}[Tasks](/resources/tasks)\n![Image](/assets/map.png)\n[Environment](/environments/index)`,
     'docs/latest.mdx': `${frontmatter}${first}`,
     'docs/resources/tasks.mdx': `${frontmatter}${first}\n- [Task B](https://example.com/problems) — B.`,
-    'docs/tutorials.mdx': `${frontmatter}- [Tutorial](https://example.com/start) — Start.`,
+    'docs/guide.mdx': `${frontmatter}${first}\n- [EDA 101](/resources/eda/eda-101)\n- Read the introduction.`,
+    'docs/resources/eda/eda-101.mdx': `${frontmatter}${first}\n- [Guide](/guide)\n- Open the timing report.`,
     'assets/map.png': 'image fixture',
     'README.md': '[Source](docs/resources/tasks.mdx)\n<img src="assets/map.png">',
   });
   const result = await checkContent({ root });
   assert.deepEqual(result.errors, []);
   assert.equal(result.resources, 2);
-  assert.equal(result.tutorials, 1);
+  assert.equal(Object.hasOwn(result, 'tutorials'), false);
+  await writeFile(path.join(root, 'docs/resources/eda/eda-101.mdx'), `${frontmatter}- [Broken](/missing)`);
+  assert.ok((await checkContent({ root })).errors.some(error => error.includes('eda-101.mdx') && error.includes('local link does not resolve')));
 });
 
 test('content rejects duplicate identity, missing navigation, frontmatter, and local targets', async (t) => {

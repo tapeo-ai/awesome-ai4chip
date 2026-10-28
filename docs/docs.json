@@ -2,7 +2,7 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "Awesome AI4Chip",
-  "description": "AI for Chip 与 Chip / Infra Co-design 的研究、工具与实践目录。",
+  "description": "AI Model、EDA 与 Chip for AI 的研究目录、学习路径和环境示例。",
   "colors": {
     "primary": "#596B55",
     "light": "#B67E62",
@@ -17,49 +17,49 @@
         "default": true,
         "groups": [
           {
-            "group": "开始阅读",
+            "group": "Overview",
             "pages": [
               "index",
-              "latest",
-              "tutorials"
+              "guide",
+              "latest"
             ]
           },
           {
-            "group": "AI for Chip",
+            "group": "AI Model",
             "pages": [
-              "resources/models/llm",
-              "resources/models/circuit",
-              "resources/agents",
-              "resources/optimization"
+              "resources/ai-model/data",
+              "resources/ai-model/benchmark",
+              "resources/ai-model/training"
             ]
           },
           {
-            "group": "数据、环境与评测",
+            "group": "EDA",
             "pages": [
-              "resources/data",
-              "resources/tools",
-              "resources/benchmarks",
+              "resources/eda/eda-101",
+              "resources/eda/open-source",
+              "resources/eda/closed-source",
+              "resources/eda/ai-eda",
+              "resources/eda/optimization",
               "environments/index"
             ]
           },
           {
-            "group": "Chip & Infra Co-design",
+            "group": "Chip for AI",
             "pages": [
-              "resources/codesign/models-hardware",
-              "resources/codesign/chips-cim",
-              "resources/codesign/architecture-infra",
-              "resources/codesign/kernels"
+              "resources/chip-for-ai/hardware-aware-ml",
+              "resources/chip-for-ai/dse",
+              "resources/chip-for-ai/dsa",
+              "resources/chip-for-ai/kernel-optimization"
             ]
           },
           {
-            "group": "产品与阅读",
+            "group": "Reading",
             "pages": [
-              "resources/products",
               "resources/articles"
             ]
           },
           {
-            "group": "社区",
+            "group": "Community",
             "pages": [
               "contributors"
             ]
@@ -70,44 +70,44 @@
         "language": "en",
         "groups": [
           {
-            "group": "Start here",
+            "group": "Overview",
             "pages": [
               "en/index",
-              "en/latest",
-              "en/tutorials"
+              "en/guide",
+              "en/latest"
             ]
           },
           {
-            "group": "AI for Chip",
+            "group": "AI Model",
             "pages": [
-              "en/resources/models/llm",
-              "en/resources/models/circuit",
-              "en/resources/agents",
-              "en/resources/optimization"
+              "en/resources/ai-model/data",
+              "en/resources/ai-model/benchmark",
+              "en/resources/ai-model/training"
             ]
           },
           {
-            "group": "Data, environments & evaluation",
+            "group": "EDA",
             "pages": [
-              "en/resources/data",
-              "en/resources/tools",
-              "en/resources/benchmarks",
+              "en/resources/eda/eda-101",
+              "en/resources/eda/open-source",
+              "en/resources/eda/closed-source",
+              "en/resources/eda/ai-eda",
+              "en/resources/eda/optimization",
               "en/environments/index"
             ]
           },
           {
-            "group": "Chip & Infra Co-design",
+            "group": "Chip for AI",
             "pages": [
-              "en/resources/codesign/models-hardware",
-              "en/resources/codesign/chips-cim",
-              "en/resources/codesign/architecture-infra",
-              "en/resources/codesign/kernels"
+              "en/resources/chip-for-ai/hardware-aware-ml",
+              "en/resources/chip-for-ai/dse",
+              "en/resources/chip-for-ai/dsa",
+              "en/resources/chip-for-ai/kernel-optimization"
             ]
           },
           {
-            "group": "Products & reading",
+            "group": "Reading",
             "pages": [
-              "en/resources/products",
               "en/resources/articles"
             ]
           },

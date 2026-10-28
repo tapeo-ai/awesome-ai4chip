@@ -1,5 +1,5 @@
 ---
-title: "Surveys and Engineering Articles"
+title: "Surveys & Articles"
 description: "AI for Chip surveys, engineering case studies, and technical articles."
 ---
 

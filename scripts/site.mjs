@@ -16,6 +16,10 @@ export function localizedSlug(slug, locale) {
   const plain = slug === 'en' ? 'index' : slug.replace(/^en\//, '');
   return locale === 'en' ? `en/${plain}` : plain;
 }
+export function isResourceCatalog(slug) {
+  const plain = localizedSlug(slug, 'zh');
+  return plain.startsWith('resources/') && plain !== 'resources/eda/eda-101';
+}
 export function withBase(url, siteBase = base) {
   if (!url.startsWith('/') || url.startsWith('//')) return url;
   if (siteBase !== '/' && url.startsWith(siteBase)) return url;

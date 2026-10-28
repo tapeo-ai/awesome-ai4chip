@@ -1,0 +1,194 @@
+---
+title: "EDA 101"
+description: "From specification to tapeout: design stages, artifacts, open-source and commercial software, and real interfaces and demos."
+---
+
+Working on AI4Chip starts with understanding what a model changes, how tools check that change, and which later stages it affects. This page connects the digital ASIC flow to its software and artifacts, with a separate starting point for analog circuits.
+
+## From Specification to Tapeout
+
+<img src="/assets/eda-design-flow.svg" alt="Digital ASIC design flow from specification and architecture through RTL, synthesis, physical implementation, and signoff to tapeout, with artifacts and common open-source and commercial tools." width="1200" height="1050" loading="eager" decoding="async" />
+
+[View full size](/assets/eda-design-flow.svg)
+
+The diagram places common tools along the flow. OpenROAD handles physical implementation; OpenROAD Flow Scripts and OpenLane connect multiple tools into runnable flows. Commercial tools such as Genus, Innovus, and Fusion Compiler also work across stages. Projects choose tool combinations around their process, IP, and team setup. Find their entry points in [Open Source](/en/resources/eda/open-source) and [Closed Source](/en/resources/eda/closed-source).
+
+| Stage | Main inputs → artifacts | What to look for |
+|---|---|---|
+| Specification / Architecture / Microarchitecture | Workloads, interfaces, and performance targets → module boundaries, pipelines, memory hierarchy, and timing contracts | Whether the design meets its targets; how throughput, latency, bandwidth, and resource budgets are allocated |
+| RTL & Verification | Specification → RTL, testbenches, assertions, waveforms, and test reports | Correct behavior; coverage of reset, corner cases, and protocols; the cycle where a failure begins |
+| Synthesis | RTL, standard-cell libraries, and SDC constraints → gate-level netlist and initial PPA reports | Cell mapping, area and timing under the constraints, and preservation of functionality |
+| Floorplan | Netlist, macros, and process information → core dimensions, macro/pin locations, and power planning | Space, connectivity, and likely congestion |
+| Placement → CTS (Clock Tree Synthesis) → Routing | Floorplan → cell locations → clock tree → metal connections | Cell placement, clock distribution, and the effects of wiring on timing, congestion, and power |
+| Signoff → Tapeout | Routed layout, extracted parasitics, and constraints → check reports, final GDSII / OASIS, and delivery files | Whether STA, power/power integrity, DRC, LVS, and other checks meet project and process requirements |
+
+**Verification runs throughout the flow.** RTL simulation, formal verification, and netlist equivalence checks serve different purposes; STA (Static Timing Analysis) already informs optimization during synthesis. DRC (Design Rule Checking) checks layout geometry against process rules. LVS (Layout Versus Schematic) checks whether the extracted circuit matches the reference netlist. Both belong to physical signoff. Late timing, congestion, or power problems can also require changes to RTL or architecture.
+
+An actual SoC also involves IP integration, DFT, low-power design, and other work. The [flow diagrams below](#existing-flow-diagrams) show an open-source toolchain, an industrial design flow, and an end-to-end benchmark.
+
+## Software, PDKs, and Design Files
+
+EDA software performs simulation, synthesis, or place and route. A PDK supplies process models, layer definitions, and rules; standard-cell libraries supply the available cells and their timing, power, and physical information. The design also needs constraints such as clocks and I/O delays. Changing the process, libraries, or constraints can change the PPA of the same RTL.
+
+On a first run, locate these files: `.v` / `.sv` for the design or testbench, `.sdc` for timing constraints, `.lib` for cell characteristics, LEF / DEF for physical abstracts and design layout, SPEF for extracted parasitics, and GDSII / OASIS for layout geometry. ORFS also saves reloadable design databases as ODB files. The [official ORFS tutorial](https://openroad-flow-scripts.readthedocs.io/en/latest/tutorials/FlowTutorial.html) connects these inputs, directories, and intermediate results.
+
+## Real Interfaces: What Engineers Look At
+
+These real interfaces cover debugging, physical implementation, and physical verification. First identify the design object in each window, then follow how engineers connect reports to specific problems.
+
+### Synopsys Verdi · RTL Debug
+
+The design hierarchy is on the left, source in the middle, circuit connections on the right, and waveforms below. Locate a failing clock cycle, then trace signal values back to the source and related modules.
+
+<figure>
+
+<img src="/assets/eda-101/verdi-debug.jpg" alt="Verdi design hierarchy, source, circuit connections, and waveform windows." width="1123" height="703" loading="lazy" decoding="async" />
+
+<figcaption>
+
+Source: [Synopsys Verdi Datasheet, Figure 3 / page 3](https://www.synopsys.com/content/dam/synopsys/verification/datasheets/verdi-ds.pdf#page=3).
+
+</figcaption>
+</figure>
+
+### Cadence Innovus · Physical Implementation
+
+The central view shows layout and routing; the right panel controls visibility of cells, nets, and layers. Start with the core boundary and module placement, then inspect the metal layers to connect RTL to its physical implementation.
+
+<figure>
+
+<img src="/assets/eda-101/innovus-berkeley-layout.png" alt="Innovus layout window with layer controls on the right." width="1521" height="1028" loading="lazy" decoding="async" />
+
+<figcaption>
+
+Source: [UC Berkeley EECS 151, Lab 3 — Running the Flow](https://eecs151.org/asic/lab3/docs/pg6-running-the-flow/).
+
+</figcaption>
+</figure>
+
+### OpenROAD · Physical Implementation
+
+This is a routed Ibex design, with layer controls on the left, hierarchy on the right, and a Tcl console below. After running ORFS, open a saved design database to inspect placement, routing, and timing paths in the GUI.
+
+<figure>
+
+<img src="/assets/eda-101/openroad-ibex-gui.webp" alt="Routed Ibex in OpenROAD, with layer controls, design hierarchy, and a Tcl console." width="1684" height="872" loading="lazy" decoding="async" />
+
+<figcaption>
+
+Source: [OpenROAD Flow Scripts Tutorial, Ibex Final Database](https://openroad-flow-scripts.readthedocs.io/en/latest/tutorials/FlowTutorial.html).
+
+</figcaption>
+</figure>
+
+### Siemens Calibre RVE · Physical Verification
+
+This example shows well-connectivity soft-check results. The left panel lists checks and affected cells; the right panel gives result details and coordinates that help locate connectivity problems in the layout.
+
+<figure>
+
+<img src="/assets/eda-101/calibre-rve-soft-checks.jpg" alt="Calibre RVE well-connectivity checks, affected cells, and coordinate details." width="1430" height="597" loading="lazy" decoding="async" />
+
+<figcaption>
+
+Source: [Siemens Calibre, Well Connectivity / Soft Checks, Figure 4](https://blogs.sw.siemens.com/calibre/2024/04/10/how-to-verify-well-layer-connectivity-with-soft-checks/). Red annotations are part of the original image.
+
+</figcaption>
+</figure>
+
+For hands-on demonstrations, see [OpenROAD GUI / CTS / Routing videos](https://openroad.org/resources/videos) or the [Questa AutoCheck formal-checking demo](https://resources.sw.siemens.com/en-US/product-demo-questa-autocheck-demo/).
+
+### From Scripts to the GUI
+
+Engineers use the GUI to understand designs and diagnose problems, while scripts make runs repeatable. A typical sequence is:
+
+1. Load the design, libraries, and constraints through configuration and Tcl scripts, then run a stage.
+2. Read logs and reports to identify failures or metrics that need improvement.
+3. Open the saved database in the GUI and inspect the relevant path, cells, wires, or markers.
+4. Save changes to RTL, constraints, or scripts, rerun, and compare results.
+
+The Berkeley Innovus tutorial shows how scripts and the GUI work together. For a first open-source run, follow the ORFS tutorial from RTL to GDS, then open the synthesis, floorplan, CTS, and routing results separately. Learn to associate each report with a design stage before tuning parameters.
+
+## A Separate Path for Analog / Mixed-Signal
+
+Analog design typically starts with topology, device sizes, and performance targets. Its main working objects are schematics and transistor-level circuits:
+
+```text
+Specification
+    ↓
+Schematic & Sizing ↔ SPICE Simulation
+    ↓
+Layout ↔ DRC / LVS
+    ↓
+Parasitic Extraction → Post-layout Simulation → Signoff
+```
+
+Start with schematic entry in Xschem and simulation in ngspice: inspect operating points, gain, bandwidth, and transient response before moving to layout, parasitic extraction, and post-layout simulation. Common commercial environments include Cadence Virtuoso / Spectre and Synopsys Custom Compiler / PrimeSim. Begin with [chapters 1 and 2 of JKU Analog Circuit Design](https://iic-jku.github.io/analog-circuit-design/aicd.html), which include schematics, simulation examples, and environment setup. Later chapters go deeper into sizing and PVT analysis.
+
+### Xschem & ngspice · Schematic and Simulation
+
+This RLC transient simulation shows the Xschem schematic behind ngspice waveforms and its console. Follow the voltages at nodes A, B, and C over time, then return to the schematic to understand the components and connections.
+
+<figure>
+
+<img src="/assets/eda-101/xschem-ngspice.png" alt="An RLC schematic in Xschem with ngspice transient waveforms and console." width="869" height="853" loading="lazy" decoding="async" />
+
+<figcaption>
+
+Source: [Xschem Tutorial, Run a Simulation with Xschem](https://xschem.sourceforge.io/stefan/xschem_man/tutorial_run_simulation.html).
+
+</figcaption>
+</figure>
+
+## Existing Flow Diagrams
+
+### OpenLane · From RTL to Silicon
+
+Follow how the design representation changes: RTL becomes a gate-level netlist, then a layout, which passes signoff before fabrication. Simulation checks behavior at multiple stages.
+
+<figure>
+
+<img src="/assets/eda-101/openlane-asic-flow.webp" alt="OpenLane ASIC flow from RTL and simulation through synthesis, layout, signoff, and fabrication." width="1102" height="862" loading="lazy" decoding="async" />
+
+<figcaption>
+
+Source: [OpenLane Documentation, Figure 2 — ASIC Flow](https://openlane2.readthedocs.io/en/latest/getting_started/newcomers/index.html#id1).
+
+</figcaption>
+</figure>
+
+### Synopsys · A Broader SoC Flow
+
+This view adds DFT, packaging, software development, and system validation around chip implementation. Power spans the flow, influencing architecture as well as later design decisions.
+
+<figure>
+
+<img src="/assets/eda-101/synopsys-ai-chip-flow.png" alt="Synopsys flow connecting architecture exploration, chip design, packaging, software, and power considerations." width="1536" height="657" loading="lazy" decoding="async" />
+
+<figcaption>
+
+Source: [Synopsys, Building an AI Chip: Pre-Silicon Planning, Figure 4 / page 4](https://www.synopsys.com/content/dam/synopsys/verification/white-papers/building-an-ai-chip-pre-silicon-planning-wp.pdf#page=4).
+
+</figcaption>
+</figure>
+
+### Build-A-Chip-Bench · Stages and Feedback
+
+The twelve stages connect workload specification to GDS. Dashed arrows show why an agent may need to revise an earlier decision: area can send it back to RTL, timing to microarchitecture, and routing congestion to floorplanning.
+
+<figure>
+
+<img src="/assets/eda-101/chipagents-build-a-chip-bench-figure-3.png" alt="Build-A-Chip-Bench stages from workload specification to GDS, with feedback from area, timing, and congestion." width="1756" height="650" loading="lazy" decoding="async" />
+
+<figcaption>
+
+Source: [ChipAgents, Build-A-Chip-Bench, Figure 3](https://chipagents.ai/research/build-a-chip-bench#spec-to-gds).
+
+</figcaption>
+</figure>
+
+## Where to Go Next
+
+- [Guide](/en/guide/) — Choose a learning path for your AI, chip-design, or systems background.
+- [AI EDA](/en/resources/eda/ai-eda) — Explore how AI reads specifications, edits designs, calls tools, and acts on feedback.
+- [EDA Optimization](/en/resources/eda/optimization) — Explore performance prediction, logic optimization, physical design, and analog optimization research.

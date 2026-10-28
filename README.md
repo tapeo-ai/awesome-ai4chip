@@ -4,11 +4,11 @@
 
 ![AI4Chip 资源架构：模型、agents 与 harness、设计执行、评测、数据环境及芯片与基础设施协同设计](assets/ai4chip-architecture.png)
 
-Awesome AI4Chip 汇集 AI 参与芯片设计的论文、开源项目、工具与产品，涵盖规格理解、RTL 生成与验证、模拟电路设计、综合和物理实现。我们从模型与训练方法、agent 与 harness、数据、执行环境和 benchmark 梳理这些工作，也关注 Chip for AI，以及模型、芯片、编译器和集群基础设施之间的协同设计。
+Awesome AI4Chip 汇集 AI 参与芯片设计的论文、开源项目、工具与产品，覆盖规格理解、RTL 生成与验证、模拟电路设计、综合和物理实现。目录从 AI Model、EDA、Chip for AI 三个视角展开：围绕数据、评测与训练提升模型能力，通过 AI EDA 和设计优化连接实际任务，并探索模型、计算内核、芯片架构与基础设施的协同设计。Guide 为不同背景的读者提供精选综述、课程和实践路径。
 
-**[在线文档](https://tapeo-ai.github.io/awesome-ai4chip/)** · [入门与教程](docs/tutorials.mdx) · [环境与示例](env/README.md)
+**[在线文档](https://tapeo-ai.github.io/awesome-ai4chip/)** · [Guide](docs/guide.mdx) · [环境与示例](env/README.md)
 
-<sub>更新于 2026 年 10 月 27 日。</sub>
+<sub>更新于 2026 年 10 月 28 日。</sub>
 
 ## Latest
 
@@ -24,21 +24,24 @@ Awesome AI4Chip 汇集 AI 参与芯片设计的论文、开源项目、工具与
 
 ## 目录
 
-- 模型
-  - [LLM 与训练方法](docs/resources/models/llm.mdx)
-  - [非 LLM 模型](docs/resources/models/circuit.mdx)
-- [Agents 与 Harness](docs/resources/agents.mdx)
-- [综合与物理设计优化](docs/resources/optimization.mdx)
-- [数据集与设计表示](docs/resources/data.mdx)
-- [工具与可执行环境](docs/resources/tools.mdx)
-- [Benchmark 与评测](docs/resources/benchmarks.mdx)
-- [商业产品与平台](docs/resources/products.mdx)
-- 协同设计
-  - [AI 驱动设计与模型硬件协同设计](docs/resources/codesign/models-hardware.mdx)
-  - [专用芯片与存算一体](docs/resources/codesign/chips-cim.mdx)
-  - [架构、映射与集群基础设施](docs/resources/codesign/architecture-infra.mdx)
-  - [Kernel agents 与编译基础设施](docs/resources/codesign/kernels.mdx)
-- [综述与实践文章](docs/resources/articles.mdx)
+- [Guide](docs/guide.mdx)
+- AI Model
+  - [Data](docs/resources/ai-model/data.mdx)
+  - [Benchmark](docs/resources/ai-model/benchmark.mdx)
+  - [Training](docs/resources/ai-model/training.mdx)
+- EDA
+  - [EDA 101](docs/resources/eda/eda-101.mdx)
+  - [Open Source](docs/resources/eda/open-source.mdx)
+  - [Closed Source](docs/resources/eda/closed-source.mdx)
+  - [AI EDA](docs/resources/eda/ai-eda.mdx)
+  - [EDA Optimization](docs/resources/eda/optimization.mdx)
+  - [Harbor Environments](env/README.md)
+- Chip for AI
+  - [Hardware-aware ML](docs/resources/chip-for-ai/hardware-aware-ml.mdx)
+  - [DSE (Design Space Exploration)](docs/resources/chip-for-ai/dse.mdx)
+  - [DSA (Domain-specific Architecture)](docs/resources/chip-for-ai/dsa.mdx)
+  - [Kernel Optimization](docs/resources/chip-for-ai/kernel-optimization.mdx)
+- [Surveys & Articles](docs/resources/articles.mdx)
 
 ## Contributors
 
