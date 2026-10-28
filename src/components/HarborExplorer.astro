@@ -1,0 +1,157 @@
+---
+import { base, repoUrl } from '../../scripts/site.mjs';
+
+interface HarborFile { path: string; size: number; url: string; }
+interface HarborDependency { path: string; size?: number | null; version?: string | null; }
+interface HarborTask {
+  id: string;
+  title: string;
+  description: string;
+  source: string;
+  files: HarborFile[];
+  dependencies: HarborDependency[];
+  archive?: { name: string | null; size: number | null } | null;
+  platform?: string | null;
+}
+interface Props { tasks: HarborTask[]; locale?: 'zh' | 'en'; }
+
+const { tasks = [], locale = 'zh' } = Astro.props;
+const english = locale === 'en';
+const data = tasks.map(task => ({
+  ...task,
+  sourceUrl: `${repoUrl}/blob/main/${task.source.split('/').map(encodeURIComponent).join('/')}`,
+  files: task.files.map(file => ({ ...file, url: base + file.url.slice(1) })),
+}));
+// Escape '<' so a task title or path cannot terminate the JSON script element.
+const serialized = JSON.stringify(data).replace(/</g, '\\u003c');
+---
+
+<section class="harbor-explorer" data-harbor-explorer data-locale={locale} aria-label={english ? 'Harbor task files' : 'Harbor 任务文件'}>
+  <script is:inline type="application/json" data-harbor-data set:html={serialized} />
+  {tasks.length > 0 ? <>
+    <header class="hx-heading">
+      {tasks.length > 1 && <label class="hx-task-select">
+        <span>{english ? 'Environment' : '环境'}</span>
+        <select data-task-select aria-label={english ? 'Choose an environment' : '选择环境'}>
+          {tasks.map(task => <option value={task.id}>{task.title === task.id ? task.id : `${task.title} · ${task.id}`}</option>)}
+        </select>
+      </label>}
+      <h2 data-task-title>{tasks[0].id}</h2>
+      <p data-task-description>{tasks[0].description}</p>
+      <div class="hx-task-meta" data-task-meta></div>
+    </header>
+
+    <div class="hx-browser">
+      <aside class="hx-sidebar" aria-label={english ? 'File directory' : '文件目录'}>
+        <label class="hx-search">
+          <span>{english ? 'Files' : '文件'}</span>
+          <input type="search" data-file-search placeholder={english ? 'Find a file…' : '搜索文件…'} autocomplete="off" spellcheck="false" aria-label={english ? 'Search file paths' : '搜索文件路径'} />
+        </label>
+        <div class="hx-file-count" data-file-count aria-live="polite"></div>
+        <nav class="hx-tree" data-file-tree aria-label={english ? 'Files and folders' : '文件与文件夹'}></nav>
+      </aside>
+
+      <section class="hx-viewer" aria-label={english ? 'File contents' : '文件内容'}>
+        <div class="hx-toolbar">
+          <div class="hx-shortcuts">
+            <button type="button" data-open-instruction>Instruction</button>
+            <button type="button" data-open-readme>README</button>
+          </div>
+          <div class="hx-actions">
+            <button type="button" data-copy-file disabled>{english ? 'Copy' : '复制'}</button>
+            <a data-download-file aria-disabled="true">{english ? 'Download' : '下载'}</a>
+          </div>
+        </div>
+        <div class="hx-file-heading">
+          <strong data-file-path>{english ? 'Choose a file' : '选择文件'}</strong>
+          <span data-file-size></span>
+        </div>
+        <div class="hx-feedback" data-file-feedback role="status" aria-live="polite"></div>
+        <div class="hx-load-state" data-load-state role="status">
+          <span data-load-message>{english ? 'Loading…' : '加载中…'}</span>
+          <button type="button" data-retry-file hidden>{english ? 'Retry' : '重试'}</button>
+        </div>
+        <pre class="hx-code" data-code-pane tabindex="0" aria-label={english ? 'Source code' : '源文件内容'} hidden><code data-file-code></code></pre>
+      </section>
+    </div>
+
+    <details class="hx-dependencies" data-dependencies hidden>
+      <summary><span>{english ? 'External dependencies' : '外置依赖'}</span><span data-dependency-count></span></summary>
+      <p>{english ? 'Tool and PDK archives are restored through the task’s dependency manifest.' : '工具和 PDK 归档通过任务的依赖清单恢复。'}</p>
+      <ul data-dependency-list></ul>
+    </details>
+
+    <noscript>
+      <p>{english ? 'Enable JavaScript to browse file contents, or download files below.' : '启用 JavaScript 后可浏览文件内容，也可以直接下载以下文件。'}</p>
+      {data.map(task => <details><summary>{task.title}</summary><ul>{task.files.map(file => <li><a href={file.url}>{file.path}</a></li>)}</ul></details>)}
+    </noscript>
+  </> : <p class="hx-empty">{english ? 'No environments are available yet.' : '暂时没有可展示的环境。'}</p>}
+</section>
+
+<script>
+  import '../scripts/harbor-explorer';
+</script>
+
+<style>
+  .harbor-explorer { margin: 26px 0 36px; min-width: 0; font-size: 13px; line-height: 1.6; }
+  .hx-heading { margin-bottom: 18px; }
+  .hx-heading h2 { margin: 0 0 7px; padding: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 16px; line-height: 1.5; overflow-wrap: anywhere; }
+  .hx-heading p { margin: 0 0 10px; color: var(--muted, #73796d); font-size: 13px; }
+  .hx-task-select { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
+  .hx-task-select > span { flex-shrink: 0; color: var(--muted, #73796d); }
+  .hx-task-select select { min-width: 0; width: 100%; border: 1px solid var(--line, #e6e5dc); border-radius: 6px; padding: 9px 10px; background: var(--surface, #fffefa); color: var(--ink, #303a2e); font: inherit; }
+  .hx-task-meta { display: flex; flex-wrap: wrap; gap: 6px 15px; color: var(--muted, #73796d); font-size: 11px; overflow-wrap: anywhere; }
+  .hx-task-meta :global(a) { color: var(--green, #596b55); text-decoration: underline; text-underline-offset: 3px; }
+  .hx-browser { display: grid; grid-template-columns: minmax(170px, 30%) minmax(0, 1fr); border: 1px solid var(--line, #e6e5dc); border-radius: 10px; overflow: hidden; background: var(--surface, #fffefa); }
+  .hx-sidebar { min-width: 0; padding: 14px 10px 12px; background: var(--paper, #f8f7f2); border-right: 1px solid var(--line, #e6e5dc); }
+  .hx-search { display: block; margin: 0 2px; }
+  .hx-search > span { display: block; margin-bottom: 9px; color: var(--ink, #303a2e); font-size: 12px; font-weight: 600; }
+  .hx-search input { display: block; width: 100%; min-width: 0; border: 1px solid #dcded3; border-radius: 5px; padding: 7px 9px; background: var(--surface, #fffefa); color: var(--ink, #303a2e); font: inherit; font-size: 12px; }
+  .hx-search input:focus-visible { outline: 2px solid var(--green, #596b55); outline-offset: 2px; }
+  .hx-file-count { margin: 9px 3px 7px; color: var(--muted, #73796d); font-size: 11px; }
+  .hx-tree { overflow: auto; max-height: 526px; scrollbar-width: thin; }
+  .hx-tree :global(ul) { list-style: none; padding: 0; margin: 0; }
+  .hx-tree :global(li) { padding: 0; margin: 0; min-width: 0; }
+  .hx-tree :global(details) { border: 0; border-radius: 0; padding: 0; margin: 0; background: transparent; }
+  .hx-tree :global(summary) { padding: 6px 5px; margin: 0 !important; color: var(--ink, #303a2e); font-size: 12px; font-weight: 500; overflow-wrap: anywhere; cursor: pointer; }
+  .hx-tree :global(summary::marker) { color: #8e987f; font-size: 9px; }
+  .hx-tree :global(details > ul) { padding-left: 12px; margin-left: 6px; border-left: 1px solid var(--line, #e6e5dc); }
+  .hx-tree :global(.hx-folder-count) { margin-left: 6px; color: var(--muted, #73796d); font-size: 10px; font-weight: 400; }
+  .hx-tree :global(.hx-file) { display: block; border: 0; border-radius: 4px; width: 100%; min-width: 0; padding: 6px 7px; margin: 1px 0; text-align: left; color: #586052; background: transparent; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; line-height: 1.6; overflow-wrap: anywhere; cursor: pointer; }
+  .hx-tree :global(.hx-file:hover) { background: #eeefe6; }
+  .hx-tree :global(.hx-file[aria-current="true"]) { background: #e5e9dc; color: #334c2e; font-weight: 600; }
+  .hx-tree :global(.hx-no-results) { padding: 12px 6px; margin: 0; font-size: 12px; color: var(--muted, #73796d); }
+  .hx-viewer { min-width: 0; display: flex; flex-direction: column; background: var(--surface, #fffefa); }
+  .hx-toolbar { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding: 10px 13px; border-bottom: 1px solid var(--line, #e6e5dc); }
+  .hx-shortcuts, .hx-actions { display: flex; gap: 5px; align-items: center; }
+  .hx-toolbar button, .hx-toolbar a, .hx-load-state button { border: 1px solid transparent; border-radius: 4px; padding: 4px 7px; color: var(--green, #596b55); background: transparent; font: inherit; font-size: 11px; line-height: 1.5; text-decoration: none; cursor: pointer; }
+  .hx-toolbar button:hover, .hx-toolbar a:hover, .hx-load-state button:hover { border-color: #d8ddcc; background: var(--paper, #f8f7f2); }
+  .hx-toolbar button:disabled, .hx-toolbar a[aria-disabled="true"] { color: #a0a597; cursor: default; pointer-events: none; }
+  .hx-file-heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: 5px 10px; padding: 11px 16px; border-bottom: 1px solid var(--line, #e6e5dc); }
+  .hx-file-heading strong { min-width: 0; overflow-wrap: anywhere; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; font-weight: 500; }
+  .hx-file-heading > span { margin-left: auto; color: var(--muted, #73796d); white-space: nowrap; font-size: 10px; }
+  .hx-feedback:empty { display: none; }
+  .hx-feedback { padding: 5px 16px; color: var(--muted, #73796d); font-size: 11px; }
+  .hx-load-state { min-height: 370px; padding: 24px 18px; color: var(--muted, #73796d); font-size: 12px; }
+  .hx-load-state button { margin-left: 8px; border-color: var(--line, #e6e5dc); }
+  .hx-code { flex: 1; min-height: 440px; max-height: 560px; max-width: 100%; overflow: auto; margin: 0; padding: 17px 18px; border: 0; border-radius: 0; color: var(--ink, #303a2e); background: var(--surface, #fffefa); font: 12px/1.8 ui-monospace, SFMono-Regular, Menlo, monospace; white-space: pre; overflow-wrap: normal; tab-size: 4; scrollbar-width: thin; }
+  .hx-code code { display: block; border: 0; padding: 0; background: none; color: inherit; font: inherit; white-space: inherit; }
+  .harbor-explorer [hidden] { display: none !important; }
+  .hx-dependencies { margin: 14px 0 0; padding: 12px 14px; border: 1px solid var(--line, #e6e5dc); border-radius: 7px; background: var(--paper, #f8f7f2); }
+  .hx-dependencies summary { color: var(--muted, #73796d); font-size: 12px; font-weight: 500; cursor: pointer; }
+  .hx-dependencies summary span + span { margin-left: 7px; font-size: 10px; }
+  .hx-dependencies > p { margin: 12px 0 9px; color: var(--muted, #73796d); font-size: 12px; }
+  .hx-dependencies ul { margin: 0; padding: 0; list-style: none; }
+  .hx-dependencies :global(li) { margin: 6px 0; padding: 0; overflow-wrap: anywhere; font-size: 11px; }
+  .hx-dependencies :global(li > span) { color: var(--muted, #73796d); margin-left: 9px; }
+  .hx-empty { color: var(--muted, #73796d); }
+  @media (max-width: 640px) {
+    .hx-browser { grid-template-columns: minmax(0, 1fr); }
+    .hx-sidebar { border-right: 0; border-bottom: 1px solid var(--line, #e6e5dc); }
+    .hx-tree { max-height: 230px; }
+    .hx-code { min-height: 300px; max-height: 520px; padding: 14px 12px; }
+    .hx-load-state { min-height: 260px; }
+    .hx-file-heading { padding: 10px 12px; }
+    .hx-task-select { align-items: flex-start; flex-direction: column; gap: 5px; }
+  }
+</style>

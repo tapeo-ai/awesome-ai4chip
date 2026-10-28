@@ -110,7 +110,7 @@ async function resolveMarkdownLink(url, file, root, docsRoot) {
   catch { return `invalid URL encoding: ${url}`; }
   if (!pathname) return null;
   const inDocs = file.startsWith(`${docsRoot}${path.sep}`);
-  if (inDocs && /^\/(?:en\/)?environments(?:\/|$)/.test(pathname)) return null;
+  if (inDocs && /^\/(?:en\/)?resources\/ai-model\/harbor-examples\/?$/.test(pathname)) return null;
   const bases = pathname.startsWith('/')
     ? (inDocs ? [docsRoot, path.join(root, 'public'), root] : [root])
     : [path.dirname(file)];
@@ -137,7 +137,7 @@ export async function checkContent({ root = projectRoot } = {}) {
   const slugs = new Set(documents.map((file) => pageSlug(file, docsRoot)));
   const listed = new Set(pages.map(normalizeSlug));
   for (const slug of listed) {
-    if (!slugs.has(slug) && !/^(?:en\/)?environments\//.test(slug)) errors.push(`docs/docs.json: missing page ${slug}`);
+    if (!slugs.has(slug) && !/^(?:en\/)?resources\/ai-model\/harbor-examples$/.test(slug)) errors.push(`docs/docs.json: missing page ${slug}`);
   }
   for (const slug of slugs) if (!listed.has(slug)) errors.push(`docs/docs.json: page is not in navigation: ${slug}`);
 

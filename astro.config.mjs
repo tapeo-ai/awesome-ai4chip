@@ -21,11 +21,11 @@ export default defineConfig({
       name: 'source-docs-watch',
       hooks: {
         'astro:server:setup': ({ server }) => {
-          server.watcher.add(['docs', 'env/examples', 'assets']);
+          server.watcher.add(['docs', 'env/examples', 'assets', 'README.md', 'README.en.md']);
           let timer;
           server.watcher.on('all', (_event, file) => {
             const relative = file.replace(process.cwd() + '/', '');
-            if (!/^(docs|env\/examples|assets)\//.test(relative)) return;
+            if (!/^(docs|env\/examples|assets)\//.test(relative) && !/^README(?:\.en)?\.md$/.test(relative)) return;
             clearTimeout(timer);
             timer = setTimeout(() => server.restart(), 250);
           });

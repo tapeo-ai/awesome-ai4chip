@@ -37,9 +37,12 @@ test('moved pages redirect to the matching language under production and PR pref
     assert.equal(redirects['/resources/models/llm'], `${base}resources/ai-model/training/`);
     assert.equal(redirects['/en/resources/agents'], `${base}en/resources/eda/ai-eda/`);
     for (const prefix of ['', 'en/']) {
-      assert.equal(redirects[`/${prefix}tutorials`], `${base}${prefix}guide/`);
-      assert.equal(redirects[`/${prefix}guide/tutorials`], `${base}${prefix}guide/`);
-      assert.equal(redirects[`/${prefix}guide/index`], `${base}${prefix}guide/`);
+      assert.equal(redirects[`/${prefix}guide`], `${base}${prefix}#guide`);
+      assert.equal(redirects[`/${prefix}environments`], `${base}${prefix}resources/ai-model/harbor-examples/`);
+      assert.equal(redirects[`/${prefix}environments/fw_c14_overcomplete_banks_v1`], `${base}${prefix}resources/ai-model/harbor-examples/`);
+      assert.equal(redirects[`/${prefix}tutorials`], `${base}${prefix}#guide`);
+      assert.equal(redirects[`/${prefix}guide/tutorials`], `${base}${prefix}#guide`);
+      assert.equal(redirects[`/${prefix}guide/index`], `${base}${prefix}#guide`);
       assert.equal(redirects[`/${prefix}guide/eda-101`], `${base}${prefix}resources/eda/eda-101/`);
     }
     for (const [from, to] of Object.entries(redirects)) {
@@ -55,5 +58,6 @@ test('resource counts exclude explanatory pages in either language', () => {
     assert.equal(isResourceCatalog(`${prefix}resources/eda/ai-eda`), true);
     assert.equal(isResourceCatalog(`${prefix}resources/eda/eda-101`), false);
     assert.equal(isResourceCatalog(`${prefix}guide`), false);
+    assert.equal(isResourceCatalog(`${prefix}resources/ai-model/harbor-examples`), false);
   }
 });
