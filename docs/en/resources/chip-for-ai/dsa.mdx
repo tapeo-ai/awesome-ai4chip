@@ -6,9 +6,11 @@ description: "Specialized accelerators, model-specific chips, and compute-in-mem
 ## Domain-specific Accelerators
 
 - [Etched](https://www.etched.com/) — Co-designs chips, racks, interconnects, and software for large-model inference, with material on low-voltage inference and cluster-level memory.
+- [FIGFLEX](https://arxiv.org/abs/2610.30480) (2026) — Co-designs low-bit mixed-precision quantization and an FP-INT GEMM datapath using radix-4 shift-add and precision-flexible partial-product reduction to turn lower weight precision into computation throughput.
 - [Gemmini](https://github.com/ucb-bar/gemmini) (2019/2021) — A parameterized systolic-array accelerator generator that combines RTL, a RISC-V host, memory systems, and software for full-system DNN evaluation. [Paper](https://arxiv.org/abs/1911.09925)
 - [Jalapeño](https://openai.com/index/jalapeno-first-results/) (2026) — OpenAI's example of co-designing chips, memory, networking, and inference software, also describing the use of AI in hardware design and kernel optimization.
 - [Taalas HC1](https://taalas.com/the-path-to-ubiquitous-ai/) (2026) — Hardwires specific models into silicon; the HC1 demonstration runs Llama 3.1 8B, with official material on its architecture and inference approach.
+- [TranSAGE](https://github.com/sjtu-zhao-lab/TranSAGE) (2026) — Jointly searches Transformer operation clusters, pipelines, and dataflows, then uses graph partitioning and MLIR lowering to generate spatial accelerators; the released implementation is AccelGen. [Paper](https://arxiv.org/abs/2610.32279)
 
 ## CIM (Compute-in-Memory)
 

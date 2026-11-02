@@ -12,7 +12,7 @@ description: "数字设计、模拟仿真、物理实现工具和开放 PDK。"
 - [GEM](https://github.com/NVlabs/GEM)（2025） — NVIDIA 将 RTL 综合为 AIG 并映射到 GPU 上的布尔计算结构，加速逻辑仿真。
 - [Icarus Verilog](https://github.com/steveicarus/iverilog) — 开源 Verilog 编译与仿真工具，是多项 RTL 生成基准的执行后端。
 - [INSTA](https://github.com/NVlabs/INSTA)（2025） — NVIDIA 的 GPU 统计静态时序分析工具，提供可微时序梯度，支持门尺寸调整等物理设计优化。 [论文](https://research.nvidia.com/labs/electronic-design-automation/papers/yichen_INSTA_dac25.pdf)
-- [LibreLane](https://github.com/librelane/librelane) — 基于 OpenLane 2 的可扩展 Python RTL-to-GDS 流程，保存各步骤配置和设计状态。
+- [LibreLane](https://github.com/librelane/librelane) — 基于 OpenLane 2 的可扩展 Python RTL-to-GDS 流程，保存各步骤配置和设计状态；3.0.17 补充手工安装指南与版本清单，并回移 Magic 修复。 [3.0.17 发布](https://github.com/librelane/librelane/releases/tag/3.0.17)
 - [OpenROAD / OpenROAD-flow-scripts](https://github.com/The-OpenROAD-Project/OpenROAD) — 开放物理设计工具及 RTL-to-GDS 流程，为 agent 运行与 PPA 反馈提供基础环境。 [流程与示例](https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts)
 - [OpenSTA](https://github.com/parallaxsw/OpenSTA) — 读取门级网表、Liberty、SDC 与寄生参数，执行静态时序分析并生成时序报告。
 - [SymbiYosys](https://github.com/YosysHQ/sby) — 为 Yosys 形式验证流程组织有界与无界性质检查、覆盖率和活性验证。

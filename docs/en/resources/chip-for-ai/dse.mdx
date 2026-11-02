@@ -8,6 +8,9 @@ description: "Search, simulation, and performance modeling for exploring acceler
 - [AlphaEvolve](https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/) (2025–2026) — Combines LLMs, program evolution, and automated verification to optimize algorithms, with official examples in TPU arithmetic circuits, training kernels, and data-center scheduling. [Follow-up Case Studies](https://deepmind.google/blog/alphaevolve-impact/)
 - [ArchGym](https://github.com/srivatsankrishnan/oss-arch-gym) (2023) — Unifies search-algorithm and architecture-simulator interfaces for ML-driven design-space exploration and experimental data collection. [Paper](https://arxiv.org/abs/2306.08888)
 - [CHIA](https://github.com/ucb-bar/chia) (2026) — Uses workflow graphs and an extensible runtime for AI-driven hardware/software co-design experiments, with examples covering RTL, gem5 alignment, microarchitecture implementation, and critical-path optimization. [Paper](https://arxiv.org/abs/2606.27350)
+- [Formulaic](https://arxiv.org/abs/2610.39380) (2026) — Uses agents to progressively formulate hardware–software optimization problems, solvers to search, and verification and measurement to check results; studies components separately through GB10 measurements, Ventus simulation, and proof reuse.
+- [IMPACT](https://arxiv.org/abs/2610.39040) (2026) — Combines genetic search and constraint-aware repair for imperfectly factorized accelerator mappings, converting infeasible candidates into feasible mappings for flexible and tightly constrained CIM architectures.
+- [PaFeDSE](https://arxiv.org/abs/2610.34838) (2026) — Uses Pareto-hit and Pareto-miss feedback to guide out-of-order microarchitecture search and filters persistently low-priority candidates to reduce simulation and candidate-processing overhead.
 
 ## Architecture and Mapping Evaluation
 

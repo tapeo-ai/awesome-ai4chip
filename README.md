@@ -26,17 +26,18 @@
 
 <!-- website-link:end -->
 
-<sub>更新于 2026 年 10 月 28 日。</sub>
+<sub>更新于 2026 年 11 月 2 日。</sub>
 
 ## Latest
 
 <!-- latest:start -->
 
-- **2026-10-26** · [Cadence Maestro](https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2026/cadence-introduces-maestro-a-domain-specialized-ai-model.html) — 发布面向芯片与系统设计的领域模型组合，结合 EDA 工具反馈训练。
-- **2026-10-22** · [Back-to-the-Future (BTTF)](https://arxiv.org/abs/2610.06790) — 更新论文，用 SQLite 波形数据和自然语言查询辅助 RTL 调试。
-- **2026-10-07** · [RFChipAgent](https://arxiv.org/abs/2610.10858) — 发布模拟/RF 多 agent 设计流程，串联检索、拓扑选择与仿真优化。
-- **2026-10-04** · [VHDL-REPOBENCH](https://arxiv.org/abs/2610.05380) — 发布仓库级 VHDL 评测，关注跨文件依赖和层次设计理解。
-- **2026-10** · [Build-A-Chip-Bench](https://chipagents.ai/research/build-a-chip-bench) — 介绍从工作负载规格到 GDS 的长流程评测，结合功能验收与 PPA 评分。
+- **2026-10-30** · [RTL-Interact](https://arxiv.org/abs/2610.41225) — 以分阶段 SFT 与 PAPO 强化学习训练 RTL 生成、EDA 检查和反馈修复。
+- **2026-10-29** · [OPERA](https://arxiv.org/abs/2610.39395) — 将 gm/ID 推理与 gLayout 生成器连接到 SKY130 运放的版图提取和 PVT 验证。
+- **2026-10-29** · [RISC-V FPGA-in-the-Loop](https://arxiv.org/abs/2610.39570) — 在人工监督下用 FPGA 板上测量迭代 CPU，并定位长程运行中的性能退化。
+- **2026-10-29** · [Formulaic](https://arxiv.org/abs/2610.39380) — 让 agent 构造软硬件优化问题，由求解器、验证和测量检查；公布分项实验。
+- **2026-10-28** · [GI-RTL-Fuzz](https://arxiv.org/abs/2610.38489) — 以语法覆盖引导 RTL 生成，通过差分测试发现仿真器 lint 与执行结果不一致。
+- **2026-10-27** · [AutoProfiler](https://arxiv.org/abs/2610.36576) — 从优化反馈学习按 kernel 选择 profiling 信息，控制测量预算。
 
 <!-- latest:end -->
 

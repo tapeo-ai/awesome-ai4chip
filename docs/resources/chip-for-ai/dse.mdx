@@ -8,6 +8,9 @@ description: "通过搜索、仿真与性能建模探索加速器架构、映射
 - [AlphaEvolve](https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/)（2025–2026） — 结合 LLM、程序进化与自动验证优化算法，官方披露了 TPU 算术电路、训练 kernel 和数据中心调度案例。 [后续实践](https://deepmind.google/blog/alphaevolve-impact/)
 - [ArchGym](https://github.com/srivatsankrishnan/oss-arch-gym)（2023） — 统一搜索算法与架构模拟器接口，用于机器学习驱动的设计空间探索和实验数据收集。 [论文](https://arxiv.org/abs/2306.08888)
 - [CHIA](https://github.com/ucb-bar/chia)（2026） — 用工作流图和可扩展运行时组织 AI 驱动的硬件/软件协同设计实验，示例覆盖 RTL、gem5 对齐、微架构实现和关键路径优化。 [论文](https://arxiv.org/abs/2606.27350)
+- [Formulaic](https://arxiv.org/abs/2610.39380)（2026） — 由 agent 逐步构造软硬件协同优化问题，求解器搜索、验证器和测量检查结果；以独立的 GB10 实测、Ventus 仿真与证明复用实验研究各环节。
+- [IMPACT](https://arxiv.org/abs/2610.39040)（2026） — 以遗传搜索和约束感知修复探索非整除 tiling 的加速器映射，将不可行候选修复为可行映射，覆盖灵活架构与受限 CIM 架构。
+- [PaFeDSE](https://arxiv.org/abs/2610.34838)（2026） — 利用 Pareto 命中与未命中反馈引导乱序处理器微架构搜索，并过滤反复低优先级候选，减少仿真和候选处理开销。
 
 ## 架构与映射评估
 

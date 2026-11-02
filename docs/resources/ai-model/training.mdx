@@ -14,11 +14,13 @@ description: "按继续预训练、监督微调与推理蒸馏、表示学习、
 - [DeepRTL](https://github.com/PeterLau61/DeepRTL)（2025） — 基于 CodeT5+，按行、代码块和模块逐步进行指令微调，联合学习 Verilog 理解与生成。 [论文](https://arxiv.org/abs/2502.15832) [数据](https://huggingface.co/datasets/liuyi2000/deeprtl_finetuning_dataset)
 - [IBM EDA Assistants with RAFT](https://research.ibm.com/publications/improving-llm-powered-eda-assistants-with-raft)（2025） — 用合成 EDA 问答进行检索增强微调，并用真实问题引导训练数据生成，改善设计文档问答。
 - [LaMAGIC2](https://proceedings.mlr.press/v267/chang25b.html)（2025） — 以预训练 Flan-T5-base 为基础改造数值输入和电路表示，通过监督微调生成满足指标的电源转换器拓扑。 [代码](https://github.com/turtleben/LaMAGIC)
+- [MCTS-SFT / Plan-MCTS](https://arxiv.org/abs/2610.37706)（2026） — 用 testbench 反馈引导 DeepSeek-R1 搜索结构化硬件计划，再保留计划与 RTL 轨迹，对 Qwen2.5-Coder-7B-Instruct 做 LoRA SFT。
 - [ReasoningV](https://github.com/BUAA-CLab/ReasoningV)（2025） — 先用 LoRA 学习 Verilog 基础，再以通过仿真的代码及对应推理轨迹做全参数微调，并按题目难度选择推理方式。 [论文](https://arxiv.org/abs/2504.14560)
 - [RF-Agent (RFIC)](https://github.com/Nina-nina123/RF-Agent)（2026） — 从 RF 教材蒸馏问答与推理数据，对 Llama / Qwen 小型语言模型做 SFT，并比较不同 RAG 方法。 [论文](https://arxiv.org/abs/2607.18772)
 - [ScaleRTL](https://arxiv.org/abs/2506.05566)（2025） — NVIDIA 用 DeepSeek-R1 生成的长链推理数据微调 R1-Distill-Qwen-32B，并通过推理期反思与自纠错延长 RTL 推理。
 - [SiliconMind-V1](https://github.com/AS-SiliconMind/SiliconMind-V1)（2026） — 将多 agent 生成和自纠错轨迹蒸馏进 Qwen、OLMo 等模型，通过两轮 SFT 学习 RTL 生成与调试。 [论文](https://arxiv.org/abs/2603.08719)
 - [VeriThoughts](https://github.com/wilyub/VeriThoughts)（2025） — 利用 Verilog 形式等价反馈构建训练数据，并对 Qwen 系列进行推理 SFT。 [论文](https://arxiv.org/abs/2505.20302)
+- [VHDLBench](https://arxiv.org/abs/2610.28676)（2026） — 用开源 VHDL 与转换后的 Verilog 数据，对 DeepSeek-Coder 等五种 7B 模型做 QLoRA 微调，并分别评估语法/综合、功能仿真与 Zynq FPGA 原型。
 
 ## Representation Learning & Knowledge Distillation
 
@@ -33,6 +35,7 @@ description: "按继续预训练、监督微调与推理蒸馏、表示学习、
 - [ChipSeek](https://github.com/rong-hash/chipseek)（2026） — 先做推理冷启动 SFT，再通过 CDPO 将仿真、综合与 PPA 反馈用于强化学习，兼顾功能正确性和设计质量。 [论文](https://aclanthology.org/2026.acl-long.1154/)
 - [CodeV-R1 / QiMeng-CodeV-R1](https://github.com/IPRC-DIP/CodeV-R1)（2025） — 通过自动 testbench 筛选训练数据，先蒸馏推理能力，再用自适应 DAPO 优化 Verilog 生成。 [论文](https://arxiv.org/abs/2505.24183) [数据](https://huggingface.co/datasets/zhuyaoyu/CodeV-R1-dataset)
 - [CovR](https://arxiv.org/abs/2609.19189)（2026） — 从覆盖率反馈生成推理与激励数据，先做 SFT，再用 GRPO 训练高覆盖率 testbench 生成模型。
+- [RTL-Interact](https://arxiv.org/abs/2610.41225)（2026） — 基于 Qwen3-8B/32B，以 CodeV-R1 数据和 DeepSeek-V3.2 工具交互轨迹分阶段 SFT，再用 PAPO 强化学习联合训练 RTL 生成、检查与修复。
 - [RTLSeek](https://arxiv.org/abs/2603.27630)（2026） — 在 SFT 后分阶段进行 GRPO 训练，用 EDA 反馈和 AST 多样性奖励兼顾功能正确与不同实现方式。
 - [VeriPrefer](https://github.com/CatIIIIIIII/VeriPrefer)（2025） — 把 testbench 执行结果转成代码偏好对，在 SFT 后用 DPO 提高 Verilog 生成的功能正确性。 [论文](https://arxiv.org/abs/2504.15804) [数据](https://huggingface.co/datasets/LLM-EDA/pyra_tb)
 - [VeriReason](https://github.com/NellyW8/VeriReason)（2025） — 先做推理数据 SFT，再用 testbench 与代码结构反馈进行 GRPO 训练，提升 RTL 生成和自检查能力。 [论文](https://arxiv.org/abs/2505.11849) [数据](https://huggingface.co/collections/AI4EDA-CASE/verireason)
