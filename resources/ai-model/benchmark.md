@@ -41,6 +41,7 @@
 
 - [AMSbench](https://github.com/Why0912/AMSBench)（2025） — 覆盖模拟/混合信号原理图感知、分析和设计的多模态评测。 [数据](https://huggingface.co/datasets/wwhhyy/AMSBench)
 - [AnalogGym](https://github.com/CODA-Team/AnalogGym)（2024） — 提供多类模拟拓扑、规格和仿真测试，支持比较自动尺寸优化方法。
+- [AnalogPortBench](https://github.com/saeidrajabii/AnalogPortBench)（2026） — 评测从 0.18 μm 工艺到 SKY130 的模拟电路迁移，覆盖降压、拓扑调整与不可行规格识别，提供 ngspice 评分流程及多工艺角参考设计。 [论文](https://arxiv.org/abs/2610.33088)
 - [CircuitSense](https://github.com/xz-group/CircuitSense)（2026） — 评估从电路图感知到符号方程推导及设计推理，并提供合成生成流水线。 [数据](https://huggingface.co/datasets/armanakbari4/CircuitSense)
 - [Long-Horizon Analog Design Bench](https://arxiv.org/abs/2609.33356)（2026） — 以 SKY130/ngspice 下的长时设计任务评估模拟/混合信号 agent，验收范围是原理图级电气指标。
 - [NetlistBench](https://arxiv.org/abs/2608.12197)（2026） — 以确定性结构 oracle 检验 SPICE 网表识别、编辑、层次操作及等价判断。

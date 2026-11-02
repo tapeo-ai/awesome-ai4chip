@@ -49,11 +49,12 @@ We will continue building Awesome AI4Chip into **the most comprehensive source o
 
 ## Latest
 
-- **2026-10-26** · [Cadence Maestro](https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2026/cadence-introduces-maestro-a-domain-specialized-ai-model.html) — Introduces a family of domain models for chip and system design, trained with EDA tool feedback.
-- **2026-10-22** · [Back-to-the-Future (BTTF)](https://arxiv.org/abs/2610.06790) — Updates its paper on RTL debugging with SQLite waveform data and natural-language queries.
-- **2026-10-07** · [RFChipAgent](https://arxiv.org/abs/2610.10858) — Presents a multi-agent analog/RF design workflow connecting retrieval, topology selection and simulation-based optimization.
-- **2026-10-04** · [VHDL-REPOBENCH](https://arxiv.org/abs/2610.05380) — Introduces repository-level VHDL evaluation focused on cross-file dependencies and hierarchical design understanding.
-- **2026-10** · [Build-A-Chip-Bench](https://chipagents.ai/research/build-a-chip-bench) — Describes long-horizon evaluation from workload specifications to GDS, combining functional acceptance with PPA scoring.
+- **2026-10-30** · [RTL-Interact](https://arxiv.org/abs/2610.41225) — Trains RTL generation, EDA checking, and feedback-guided revision with staged SFT and PAPO reinforcement learning.
+- **2026-10-29** · [OPERA](https://arxiv.org/abs/2610.39395) — Connects gm/ID reasoning and gLayout generators to layout extraction and PVT verification for SKY130 opamps.
+- **2026-10-29** · [RISC-V FPGA-in-the-Loop](https://arxiv.org/abs/2610.39570) — Uses FPGA on-board measurements for human-supervised CPU iteration and diagnosis of long-run performance regressions.
+- **2026-10-29** · [Formulaic](https://arxiv.org/abs/2610.39380) — Uses agents to formulate hardware–software optimization problems checked by solvers, verification, and measurement, reporting separate component studies.
+- **2026-10-28** · [GI-RTL-Fuzz](https://arxiv.org/abs/2610.38489) — Guides RTL generation with grammar coverage and uses differential testing to find simulator lint and execution inconsistencies.
+- **2026-10-27** · [AutoProfiler](https://arxiv.org/abs/2610.36576) — Learns kernel-specific profiling information selection from optimization feedback under a measurement budget.
 
 ## Directory
 
@@ -137,11 +138,12 @@ Scan the code to join the AI4CHIP WeChat group and discuss research and engineer
 # Latest
 
 
-- **2026-10-26** · [Cadence Maestro](https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2026/cadence-introduces-maestro-a-domain-specialized-ai-model.html) — Introduces a family of domain models for chip and system design, trained with EDA tool feedback.
-- **2026-10-22** · [Back-to-the-Future (BTTF)](https://arxiv.org/abs/2610.06790) — Updates its paper on RTL debugging with SQLite waveform data and natural-language queries.
-- **2026-10-07** · [RFChipAgent](https://arxiv.org/abs/2610.10858) — Presents a multi-agent analog/RF design workflow connecting retrieval, topology selection and simulation-based optimization.
-- **2026-10-04** · [VHDL-REPOBENCH](https://arxiv.org/abs/2610.05380) — Introduces repository-level VHDL evaluation focused on cross-file dependencies and hierarchical design understanding.
-- **2026-10** · [Build-A-Chip-Bench](https://chipagents.ai/research/build-a-chip-bench) — Describes long-horizon evaluation from workload specifications to GDS, combining functional acceptance with PPA scoring.
+- **2026-10-30** · [RTL-Interact](https://arxiv.org/abs/2610.41225) — Trains RTL generation, EDA checking, and feedback-guided revision with staged SFT and PAPO reinforcement learning.
+- **2026-10-29** · [OPERA](https://arxiv.org/abs/2610.39395) — Connects gm/ID reasoning and gLayout generators to layout extraction and PVT verification for SKY130 opamps.
+- **2026-10-29** · [RISC-V FPGA-in-the-Loop](https://arxiv.org/abs/2610.39570) — Uses FPGA on-board measurements for human-supervised CPU iteration and diagnosis of long-run performance regressions.
+- **2026-10-29** · [Formulaic](https://arxiv.org/abs/2610.39380) — Uses agents to formulate hardware–software optimization problems checked by solvers, verification, and measurement, reporting separate component studies.
+- **2026-10-28** · [GI-RTL-Fuzz](https://arxiv.org/abs/2610.38489) — Guides RTL generation with grammar coverage and uses differential testing to find simulator lint and execution inconsistencies.
+- **2026-10-27** · [AutoProfiler](https://arxiv.org/abs/2610.36576) — Learns kernel-specific profiling information selection from optimization feedback under a measurement budget.
 
 
 ---
@@ -192,6 +194,7 @@ Scan the code to join the AI4CHIP WeChat group and discuss research and engineer
 
 - [AMSbench](https://github.com/Why0912/AMSBench) (2025) — A multimodal benchmark for analog and mixed-signal schematic perception, analysis, and design. [Data](https://huggingface.co/datasets/wwhhyy/AMSBench)
 - [AnalogGym](https://github.com/CODA-Team/AnalogGym) (2024) — Provides multiple analog topologies, specifications, and simulation tests for comparing automated sizing methods.
+- [AnalogPortBench](https://github.com/saeidrajabii/AnalogPortBench) (2026) — Evaluates analog circuit porting from a 0.18 μm process to SKY130, including reduced supplies, topology changes, and infeasible specifications, with ngspice scoring and process-corner-checked references. [Paper](https://arxiv.org/abs/2610.33088)
 - [CircuitSense](https://github.com/xz-group/CircuitSense) (2026) — Evaluates circuit-image perception, symbolic equation derivation, and design reasoning, with a synthetic data generation pipeline. [Data](https://huggingface.co/datasets/armanakbari4/CircuitSense)
 - [Long-Horizon Analog Design Bench](https://arxiv.org/abs/2609.33356) (2026) — Evaluates analog and mixed-signal agents on long-running SKY130/ngspice design tasks, using schematic-level electrical specifications for acceptance.
 - [NetlistBench](https://arxiv.org/abs/2608.12197) (2026) — Uses deterministic structural oracles to assess SPICE netlist recognition, editing, hierarchy operations, and equivalence judgments.
@@ -246,11 +249,13 @@ Scan the code to join the AI4CHIP WeChat group and discuss research and engineer
 - [DeepRTL](https://github.com/PeterLau61/DeepRTL) (2025) — Uses curriculum-based instruction tuning of CodeT5+, progressing from lines and blocks to modules, to jointly learn Verilog understanding and generation. [Paper](https://arxiv.org/abs/2502.15832) [Data](https://huggingface.co/datasets/liuyi2000/deeprtl_finetuning_dataset)
 - [IBM EDA Assistants with RAFT](https://research.ibm.com/publications/improving-llm-powered-eda-assistants-with-raft) (2025) — Uses synthetic EDA questions and answers for retrieval-augmented fine-tuning, with real questions guiding data generation to improve design documentation Q&A.
 - [LaMAGIC2](https://proceedings.mlr.press/v267/chang25b.html) (2025) — Adapts pretrained Flan-T5-base with numerical inputs and circuit representations, then uses supervised fine-tuning to generate power converter topologies that meet specifications. [Code](https://github.com/turtleben/LaMAGIC)
+- [MCTS-SFT / Plan-MCTS](https://arxiv.org/abs/2610.37706) (2026) — Uses testbench feedback to guide DeepSeek-R1 searches over structured hardware plans, then retains plans and RTL traces for LoRA SFT of Qwen2.5-Coder-7B-Instruct.
 - [ReasoningV](https://github.com/BUAA-CLab/ReasoningV) (2025) — First learns Verilog fundamentals with LoRA, then fully fine-tunes on simulation-tested code and associated reasoning traces, selecting a reasoning mode by problem difficulty. [Paper](https://arxiv.org/abs/2504.14560)
 - [RF-Agent (RFIC)](https://github.com/Nina-nina123/RF-Agent) (2026) — Distills question-answer and reasoning data from RF textbooks, fine-tunes small Llama and Qwen language models, and compares RAG methods. [Paper](https://arxiv.org/abs/2607.18772)
 - [ScaleRTL](https://arxiv.org/abs/2506.05566) (2025) — NVIDIA fine-tunes R1-Distill-Qwen-32B on long reasoning traces generated by DeepSeek-R1, then extends RTL reasoning through reflection and self-correction at inference time.
 - [SiliconMind-V1](https://github.com/AS-SiliconMind/SiliconMind-V1) (2026) — Distills multi-agent generation and self-correction trajectories into Qwen, OLMo, and other models through two rounds of SFT for RTL generation and debugging. [Paper](https://arxiv.org/abs/2603.08719)
 - [VeriThoughts](https://github.com/wilyub/VeriThoughts) (2025) — Builds training data using Verilog formal equivalence feedback and applies reasoning SFT to Qwen models. [Paper](https://arxiv.org/abs/2505.20302)
+- [VHDLBench](https://arxiv.org/abs/2610.28676) (2026) — Uses open-source VHDL and converted Verilog data for QLoRA fine-tuning of five 7B models including DeepSeek-Coder, with separate syntax/synthesis, functional simulation, and Zynq FPGA prototype evaluations.
 
 ## Representation Learning & Knowledge Distillation
 
@@ -265,6 +270,7 @@ Scan the code to join the AI4CHIP WeChat group and discuss research and engineer
 - [ChipSeek](https://github.com/rong-hash/chipseek) (2026) — Starts with reasoning cold-start SFT, then uses CDPO reinforcement learning with simulation, synthesis, and PPA feedback to improve functional correctness and design quality. [Paper](https://aclanthology.org/2026.acl-long.1154/)
 - [CodeV-R1 / QiMeng-CodeV-R1](https://github.com/IPRC-DIP/CodeV-R1) (2025) — Filters training data with automatically generated testbenches, distills reasoning capabilities, and applies adaptive DAPO to optimize Verilog generation. [Paper](https://arxiv.org/abs/2505.24183) [Data](https://huggingface.co/datasets/zhuyaoyu/CodeV-R1-dataset)
 - [CovR](https://arxiv.org/abs/2609.19189) (2026) — Generates reasoning and stimulus data from coverage feedback, then applies SFT followed by GRPO to train models that generate high-coverage testbenches.
+- [RTL-Interact](https://arxiv.org/abs/2610.41225) (2026) — Applies staged SFT to Qwen3-8B/32B using CodeV-R1 data and DeepSeek-V3.2 tool-interaction traces, followed by PAPO reinforcement learning for RTL generation, checking, and revision.
 - [RTLSeek](https://arxiv.org/abs/2603.27630) (2026) — Follows SFT with staged GRPO training, using EDA feedback and AST diversity rewards to balance functional correctness with varied implementations.
 - [VeriPrefer](https://github.com/CatIIIIIIII/VeriPrefer) (2025) — Converts testbench execution results into code preference pairs and applies DPO after SFT to improve the functional correctness of generated Verilog. [Paper](https://arxiv.org/abs/2504.15804) [Data](https://huggingface.co/datasets/LLM-EDA/pyra_tb)
 - [VeriReason](https://github.com/NellyW8/VeriReason) (2025) — Follows reasoning SFT with GRPO using testbench and code-structure feedback to improve RTL generation and self-checking. [Paper](https://arxiv.org/abs/2505.11849) [Data](https://huggingface.co/collections/AI4EDA-CASE/verireason)
@@ -278,11 +284,13 @@ Scan the code to join the AI4CHIP WeChat group and discuss research and engineer
 
 - [Exploring the Agentic Frontier of Verilog Code Generation](https://arxiv.org/abs/2603.19347) (2026) — Compares prompt structures, tools, and agent wrappers under controlled conditions on CVDP, analyzing failure modes such as tool-output interpretation and crashes.
 - [Human-Centered Agentic AI Workflows for RTL Verification](https://resources.sw.siemens.com/en-GB/white-paper-human-centered-agentic-ai-workflows-for-rtl-verification/) — Siemens explains the division of work among engineers, agents, and deterministic tools in RTL verification.
+- [Learn the Interface, Not the Implementation](https://arxiv.org/abs/2610.25881) (2026) — Holds data and the formal-equivalence oracle fixed on SECDED ECC wrappers to compare training regimes and output representations, studying configuration generation followed by a deterministic RTL generator.
 - [LLM for EDA in Front-End Design](https://arxiv.org/abs/2607.09616) (2026) — Discusses LLM capabilities and limitations in specification understanding, HDL, testbenches, and high-level synthesis.
 - [LLMs for EDA: A Survey](https://arxiv.org/abs/2501.09655) (2025) — Surveys EDA tasks, model adaptation, and evaluation methods for LLMs.
 - [Loop Engineering for Chip Design](https://agentrys.ai/case-studies/loop-engineering-for-chip-design) (2026) — Agentrys' XiangShan optimization case study connects workloads, microarchitecture parameters, correctness checks, and physical design feedback.
 - [Microsoft Discovery — Learning Chip Design](https://techcommunity.microsoft.com/blog/microsoft-discovery-blog/from-ad-astra-to-semper-disco-learning-chip-design-with-microsoft-discovery/4554904) (2026) — Describes using Discovery to progress from specifications and RTL to OpenROAD physical layout, with experiments in timing and power optimization.
 - [Report for NSF Workshop on AI for EDA](https://arxiv.org/abs/2601.14541) (2026) — Covers physical design, synthesis, verification, and AI tools, and discusses data and computing infrastructure.
+- [The Code Behind the Layout](https://arxiv.org/abs/2610.38426) (2026) — Compares direct geometry, device-level calls, and generator-source edits in SKY130/gLayout, studying physical verification across parameterized layout families and distillation of editing experience.
 - [The Dawn of Agentic EDA](https://arxiv.org/abs/2512.23189) (2025–2026) — Surveys agent workflows and cross-stage feedback from RTL and verification through physical design.
 - [Thermonat Thermal Modeling](https://research.ibm.com/blog/from-atoms-to-chips-thermonat-models-heat-with-unprecedented-accuracy) (2026) — IBM and Ansys/Synopsys combine atomistic thermal data, reduced-order models, and a Fourier neural operator in a DARPA project to connect transistor thermal behavior with chip design.
 
@@ -295,9 +303,11 @@ Scan the code to join the AI4CHIP WeChat group and discuss research and engineer
 ## Domain-specific Accelerators
 
 - [Etched](https://www.etched.com/) — Co-designs chips, racks, interconnects, and software for large-model inference, with material on low-voltage inference and cluster-level memory.
+- [FIGFLEX](https://arxiv.org/abs/2610.30480) (2026) — Co-designs low-bit mixed-precision quantization and an FP-INT GEMM datapath using radix-4 shift-add and precision-flexible partial-product reduction to turn lower weight precision into computation throughput.
 - [Gemmini](https://github.com/ucb-bar/gemmini) (2019/2021) — A parameterized systolic-array accelerator generator that combines RTL, a RISC-V host, memory systems, and software for full-system DNN evaluation. [Paper](https://arxiv.org/abs/1911.09925)
 - [Jalapeño](https://openai.com/index/jalapeno-first-results/) (2026) — OpenAI's example of co-designing chips, memory, networking, and inference software, also describing the use of AI in hardware design and kernel optimization.
 - [Taalas HC1](https://taalas.com/the-path-to-ubiquitous-ai/) (2026) — Hardwires specific models into silicon; the HC1 demonstration runs Llama 3.1 8B, with official material on its architecture and inference approach.
+- [TranSAGE](https://github.com/sjtu-zhao-lab/TranSAGE) (2026) — Jointly searches Transformer operation clusters, pipelines, and dataflows, then uses graph partitioning and MLIR lowering to generate spatial accelerators; the released implementation is AccelGen. [Paper](https://arxiv.org/abs/2610.32279)
 
 ## CIM (Compute-in-Memory)
 
@@ -317,6 +327,9 @@ Scan the code to join the AI4CHIP WeChat group and discuss research and engineer
 - [AlphaEvolve](https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/) (2025–2026) — Combines LLMs, program evolution, and automated verification to optimize algorithms, with official examples in TPU arithmetic circuits, training kernels, and data-center scheduling. [Follow-up Case Studies](https://deepmind.google/blog/alphaevolve-impact/)
 - [ArchGym](https://github.com/srivatsankrishnan/oss-arch-gym) (2023) — Unifies search-algorithm and architecture-simulator interfaces for ML-driven design-space exploration and experimental data collection. [Paper](https://arxiv.org/abs/2306.08888)
 - [CHIA](https://github.com/ucb-bar/chia) (2026) — Uses workflow graphs and an extensible runtime for AI-driven hardware/software co-design experiments, with examples covering RTL, gem5 alignment, microarchitecture implementation, and critical-path optimization. [Paper](https://arxiv.org/abs/2606.27350)
+- [Formulaic](https://arxiv.org/abs/2610.39380) (2026) — Uses agents to progressively formulate hardware–software optimization problems, solvers to search, and verification and measurement to check results; studies components separately through GB10 measurements, Ventus simulation, and proof reuse.
+- [IMPACT](https://arxiv.org/abs/2610.39040) (2026) — Combines genetic search and constraint-aware repair for imperfectly factorized accelerator mappings, converting infeasible candidates into feasible mappings for flexible and tightly constrained CIM architectures.
+- [PaFeDSE](https://arxiv.org/abs/2610.34838) (2026) — Uses Pareto-hit and Pareto-miss feedback to guide out-of-order microarchitecture search and filters persistently low-priority candidates to reduce simulation and candidate-processing overhead.
 
 ## Architecture and Mapping Evaluation
 
@@ -357,6 +370,7 @@ Scan the code to join the AI4CHIP WeChat group and discuss research and engineer
 - [AccelOpt](https://github.com/zhang677/AccelOpt) (2025/2026) — Builds optimization memory from slow-fast kernel pairs to autonomously optimize kernels on AWS Trainium, and provides NKIBench. [Paper](https://arxiv.org/abs/2511.15915)
 - [AKG kernel Agent](https://arxiv.org/abs/2512.23424) (2025) — Uses multiple agents to generate, port, and tune kernels across GPUs and NPUs, supporting several kernel DSLs.
 - [Atrex Kernel Agent](https://github.com/alibaba/atrex-kernel-agent) (2026) — Uses a GPU knowledge base, profiling tools, and structured workflows for kernel implementation, diagnosis, and iterative optimization.
+- [AutoProfiler](https://github.com/Satissss/AutoProfiler) (2026) — Learns a deterministic profiling tree from optimization feedback, selecting hardware counters per kernel to inform one LLM kernel rewrite under a fixed measurement budget. [Paper](https://arxiv.org/abs/2610.36576)
 - [AWS Neuron Agentic Development](https://github.com/aws-neuron/neuron-agentic-development) — AWS's official NKI agent tools cover kernel authoring, compilation repair, profiling, performance analysis, and API migration.
 - [CUDA Agent](https://github.com/BytedTsinghua-SIA/CUDA-Agent) (2026) — Combines large-scale agentic RL, CUDA task data, expert skills, and verifiable execution environments to train high-performance kernel generation. [Paper](https://arxiv.org/abs/2602.24286)
 - [CUDA-L1](https://github.com/ornith-ai/CUDA-L1) (2025/2026) — Optimizes CUDA kernels with contrastive reinforcement learning and execution feedback, discussing performance rewards and reward hacking. [Paper](https://arxiv.org/abs/2507.14111)
@@ -364,6 +378,7 @@ Scan the code to join the AI4CHIP WeChat group and discuss research and engineer
 - [Kevin-32B](https://cognition.com/blog/kevin-32b) (2025) — Trains CUDA kernel generation and optimization through multi-turn reinforcement learning, enabling iterative code improvement with execution feedback. [Paper](https://arxiv.org/abs/2507.11948) [Model](https://huggingface.co/cognition-ai/Kevin-32B)
 - [MaxKernel](https://arxiv.org/abs/2609.04523) (2026) — Provides human-agent collaboration, autonomous optimization, and graph-search modes for TPU kernels, combining compilation, testing, and hardware profiling. [Code](https://github.com/AI-Hypercomputer/accelerator-agents)
 - [PyTorch KernelAgent / KernelFalcon](https://github.com/meta-pytorch/KernelAgent) (2025–2026) — Organizes kernel generation, numerical validation, hardware profiling, and bottleneck analysis into a multi-agent loop, with shared memory guiding optimization. [Technical Blog](https://pytorch.org/blog/kernelagent-hardware-guided-gpu-kernel-optimization-via-multi-agent-orchestration/)
+- [RNGD Multi-Agent Kernel Optimization](https://arxiv.org/abs/2610.38329) (2026) — Builds FuriosaAI RNGD knowledge from checked documentation, microbenchmarks, and compiler legality rules, searches three Gemma decode kernels with Design Trees, and accepts changes through repeated device comparisons. [Measurement tools and artifacts](https://github.com/bgchun-fs/multi-agent-kernel-gen-loop)
 
 ## Kernel Libraries and Compilers
 
@@ -385,12 +400,14 @@ AI EDA connects models to chip design and verification through tool use, design 
 - [ACE-RTL](https://github.com/NVlabs/ACE-RTL) (2026) — NVIDIA uses generation, reflection, and coordination roles to maintain iterative context, combining simulation feedback with RTL generation, verification, and repair. [Paper](https://arxiv.org/abs/2602.10218) [Nemotron RTL Case Study](https://developer.nvidia.com/blog/nvidia-nemotron-3-ultra-leads-open-models-on-accuracy-and-efficiency-in-agentic-rtl-coding/)
 - [AHRR](https://github.com/ZijD/AHRR) (2026) — Combines agent-driven HLS with refinement of the compiled RTL to compare how abstraction levels affect hardware design efficiency. [Paper](https://arxiv.org/abs/2609.21157)
 - [AMD Ross](https://github.com/Xilinx/ross-ai-assistant) (2026) — AMD's FPGA/SoC agent skills and examples connect to Vivado through MCP, covering RTL simulation, timing analysis, HLS optimization, and on-board debugging. [MCP and Tool Downloads](https://www.amd.com/en/support/downloads/ross-agentic-ai.html)
+- [LLM Agent-Based Design of RISC-V CPUs with FPGA-in-the-Loop Evaluation](https://arxiv.org/abs/2610.39570) (2026) — Uses Artix-7 on-board measurements to guide human-supervised RISC-V microarchitecture iteration and diagnose long-run performance regressions, with RTL snapshots and case-study records. [Artifacts](https://github.com/kadomoto-lab/llm-cpu-fpga-loop)
 - [Spec2RTL-Agent](https://arxiv.org/abs/2506.13905) (2025) — NVIDIA, Cadence, and Georgia Tech decompose complex specifications into implementation plans, use multiple agents to generate and repair synthesizable C++, and convert it to RTL through HLS.
 
 ## Verification, Debugging, and Design Data Queries
 
 - [Back-to-the-Future (BTTF)](https://arxiv.org/abs/2610.06790) (2026) — Stores simulation waveforms in SQLite so agents can query signals in natural language and correlate them with versioned RTL.
 - [ChipXplore](https://github.com/scale-lab/ChipXplore) (2025) — Organizes PDK libraries and physical design data into SQL and graph databases for natural-language queries and exploration.
+- [GI-RTL-Fuzz](https://arxiv.org/abs/2610.38489) (2026) — Guides LLM RTL generation with BNF grammar coverage and differentially tests Verilator, Icarus Verilog, and ModelSim to locate lint and simulation-output inconsistencies.
 - [RTLExplain](https://research.ibm.com/publications/rtlexplain-a-structured-approach-to-rtl-code-summarization-and-question-answering-for-medium-to-large-designs-using-llms--1) (2025) — IBM builds structured knowledge bases for medium-to-large RTL projects, using RAG for code summaries, documentation generation, and design Q&A.
 - [UCAgent](https://github.com/XS-MLVP/UCAgent) (2026) — Organizes RTL verification through staged checks and a Python verification toolchain, connecting Picker, Toffee, and language models. [Paper](https://arxiv.org/abs/2603.25768)
 
@@ -400,6 +417,7 @@ AI EDA connects models to chip design and verification through tool use, design 
 - [AnalogCoder](https://github.com/laiyao1/AnalogCoder) (2025) — Designs analog circuits through Python/PySpice code generation, simulation feedback, and a subcircuit library. [Data](https://github.com/laiyao1/AnalogCoder/blob/main/problem_set.tsv)
 - [AnalogCoder-Pro](https://github.com/laiyao1/AnalogCoderPro) (2026) — Combines circuit generation, waveform-image diagnosis, and parameter optimization to jointly explore analog topologies and device sizes. [Data](https://github.com/laiyao1/AnalogCoderPro/blob/master/problem_set.tsv)
 - [HeaRT](https://arxiv.org/abs/2511.19669) (2025) — Uses hierarchical circuit reasoning trees to organize subcircuit and feedback-loop identification, and to adapt designs when specifications change.
+- [OPERA](https://arxiv.org/abs/2610.39395) (2026) — Combines expert-provided gm/ID methods with gLayout generators for SKY130 opamp sizing, layout, DRC/LVS, and post-extraction PVT verification at designer-approved gates. [Benchmark netlists](https://github.com/AMPICLab/AMPICBench)
 - [RFChipAgent](https://arxiv.org/abs/2610.10858) (2026) — Connects retrieval, topology selection, schematic construction, and sizing under human supervision, using analog/RF simulation feedback to guide multiple agents.
 - [White-Box Reasoning](https://arxiv.org/abs/2508.13172) (2025) — Grounds LLM reasoning about analog design in device data from gm/Id lookup tables, demonstrated on a two-stage operational amplifier.
 
@@ -435,6 +453,7 @@ Tools for simulation and debug, synthesis and physical implementation, timing an
 
 ### EDA Vendors
 
+- [Altera QuartusIQ](https://www.altera.com/products/software-tools/quartusiq) (2026) — Connects project context, Quartus Skills, MCP, and an agent harness to Quartus Prime Pro for FPGA compilation, report analysis, timing debug, and design iteration. [Announcement](https://www.altera.com/newsroom/altera-launches-quartusIQ)
 - [Cadence AgentStack / JedAI](https://www.cadence.com/en_US/home/explore/agentic-ai.html) — Coordinates collaboration among domain agents; JedAI supplies the underlying data, models, and platform infrastructure.
 - [Cadence AuraStack AI Super Agent](https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/aurastack-ai-super-agent.html) — Extends agent workflows to PCB and advanced packaging design.
 - [Cadence Cerebrus](https://www.cadence.com/en_US/home/tools/digital-design-and-signoff/soc-implementation-and-floorplanning/cerebrus-intelligent-chip-explorer.html) — Uses machine learning to explore digital implementation parameters and flows to optimize chip PPA.
@@ -673,7 +692,7 @@ Tools for executing designs, generating feedback, and reproducing experiments, i
 - [GEM](https://github.com/NVlabs/GEM) (2025) — NVIDIA synthesizes RTL into AIGs and maps them to GPU Boolean computation structures to accelerate logic simulation.
 - [Icarus Verilog](https://github.com/steveicarus/iverilog) — An open-source Verilog compiler and simulator used as the execution backend for multiple RTL generation benchmarks.
 - [INSTA](https://github.com/NVlabs/INSTA) (2025) — NVIDIA's GPU statistical static timing analysis tool provides differentiable timing gradients for gate sizing and other physical design optimization. [Paper](https://research.nvidia.com/labs/electronic-design-automation/papers/yichen_INSTA_dac25.pdf)
-- [LibreLane](https://github.com/librelane/librelane) — An extensible Python RTL-to-GDS flow based on OpenLane 2 that preserves configuration and design state at each step.
+- [LibreLane](https://github.com/librelane/librelane) — An extensible Python RTL-to-GDS flow derived from OpenLane 2 that preserves per-step configuration and design state; 3.0.17 adds a manual installation guide and version manifest and backports a Magic fix. [3.0.17 release](https://github.com/librelane/librelane/releases/tag/3.0.17)
 - [OpenROAD / OpenROAD-flow-scripts](https://github.com/The-OpenROAD-Project/OpenROAD) — Open physical design tools and RTL-to-GDS flows that provide execution environments and PPA feedback for agents. [Flows and Examples](https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts)
 - [OpenSTA](https://github.com/parallaxsw/OpenSTA) — Reads gate-level netlists, Liberty libraries, SDC constraints, and parasitics to perform static timing analysis and produce timing reports.
 - [SymbiYosys](https://github.com/YosysHQ/sby) — Organizes bounded and unbounded property checking, coverage, and liveness verification for Yosys formal verification flows.
@@ -724,13 +743,18 @@ Covers circuit representation and performance prediction, RTL and logic optimiza
 - [C3PO](https://research.nvidia.com/labs/electronic-design-automation/publication/lu2026aspdac/) (2026) — NVIDIA jointly optimizes timing, routability, and wirelength with GPU-based differentiable optimization, adjusting objective weights during placement iterations. [Paper](https://hhsiao30.github.io/papers/yichen_apsdac26__Camera_Ready_eXpress.pdf)
 - [CROP](https://arxiv.org/abs/2507.02128) (2025) — Duke and Synopsys turn hierarchical RTL summaries into design vectors, retrieve parameter settings from similar circuits, and use RAG and LLMs to guide EDA flow tuning.
 - [DREAMPlace](https://github.com/limbo018/DREAMPlace) — Uses deep learning frameworks and GPUs to accelerate global and detailed placement, providing infrastructure for learning-based physical design.
+- [E-Layout](https://arxiv.org/abs/2610.26432) (2026) — Combines e-graph equality saturation, graph retrieval-augmented generation, and RL with design-level timing feedback to jointly select post-placement subcircuit logic and physical realizations.
+- [EGGPlacer](https://arxiv.org/abs/2610.33099) (2026) — Guides macro placement during reverse diffusion with analytical-placement and differentiable thermal feedback, accounting for standard-cell distribution, full-netlist wirelength, and temperature.
 - [LEGO-Size](https://research.nvidia.com/labs/electronic-design-automation/publication/lu2025ispd/) (2025) — NVIDIA pretrains a specialized Transformer on library-cell sequences with self-supervision, follows with supervised learning, and uses GPU-based differentiable timing analysis to optimize gate sizes. [Paper](https://research.nvidia.com/labs/electronic-design-automation/papers/yichen_LEGO_ispd25.pdf)
 - [OpenROAD AutoTuner](https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts/tree/master/tools/AutoTuner) — Tunes RTL-to-GDS flow parameters through distributed hyperparameter search and collects PPA metrics.
 
 ## Analog Circuit Design
 
 - [AnalogGenie](https://github.com/xz-group/AnalogGenie) (2025) — Represents circuits as device-pin sequences and trains an approximately 12M-parameter autoregressive Transformer from scratch to generate analog circuit topologies. [Paper](https://openreview.net/forum?id=jCPak79Kev) [Data](https://huggingface.co/datasets/JianGao666/AnalogGenie)
+- [AnalogScout](https://arxiv.org/abs/2610.37319) (2026) — Reuses verified designs, computes local sizes with gm/Id lookup tables, and combines global refinement with full-corner SPICE verification to optimize SKY130 OTAs under a fixed simulation budget.
+- [APPlace](https://github.com/bingyang1132/applace) (2026) — Jointly optimizes analog device locations and pin access points with differentiable objectives, followed by structure-preserving legalization; provides a Rust implementation and PDK-free abstract benchmarks. [Paper](https://arxiv.org/abs/2610.39515)
 - [AstRL](https://arxiv.org/abs/2602.12402) (2026) — Uses a graph neural network as a transistor-topology policy, combining expert behavior cloning, PPO, and simulation feedback to generate analog and mixed-signal circuits.
+- [LAMP](https://arxiv.org/abs/2610.39882) (2026) — Lets an LLM compose constraint, placement, legalization, and lightweight evaluation tools from multimodal checkpoints and revise hierarchy; evaluates post-layout performance on two SMIC 180 nm circuits.
 
 
 ---
@@ -754,11 +778,12 @@ Covers circuit representation and performance prediction, RTL and logic optimiza
 
 ## Latest
 
-- **2026-10-26** · [Cadence Maestro](https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2026/cadence-introduces-maestro-a-domain-specialized-ai-model.html) — 发布面向芯片与系统设计的领域模型组合，结合 EDA 工具反馈训练。
-- **2026-10-22** · [Back-to-the-Future (BTTF)](https://arxiv.org/abs/2610.06790) — 更新论文，用 SQLite 波形数据和自然语言查询辅助 RTL 调试。
-- **2026-10-07** · [RFChipAgent](https://arxiv.org/abs/2610.10858) — 发布模拟/RF 多 agent 设计流程，串联检索、拓扑选择与仿真优化。
-- **2026-10-04** · [VHDL-REPOBENCH](https://arxiv.org/abs/2610.05380) — 发布仓库级 VHDL 评测，关注跨文件依赖和层次设计理解。
-- **2026-10** · [Build-A-Chip-Bench](https://chipagents.ai/research/build-a-chip-bench) — 介绍从工作负载规格到 GDS 的长流程评测，结合功能验收与 PPA 评分。
+- **2026-10-30** · [RTL-Interact](https://arxiv.org/abs/2610.41225) — 以分阶段 SFT 与 PAPO 强化学习训练 RTL 生成、EDA 检查和反馈修复。
+- **2026-10-29** · [OPERA](https://arxiv.org/abs/2610.39395) — 将 gm/ID 推理与 gLayout 生成器连接到 SKY130 运放的版图提取和 PVT 验证。
+- **2026-10-29** · [RISC-V FPGA-in-the-Loop](https://arxiv.org/abs/2610.39570) — 在人工监督下用 FPGA 板上测量迭代 CPU，并定位长程运行中的性能退化。
+- **2026-10-29** · [Formulaic](https://arxiv.org/abs/2610.39380) — 让 agent 构造软硬件优化问题，由求解器、验证和测量检查；公布分项实验。
+- **2026-10-28** · [GI-RTL-Fuzz](https://arxiv.org/abs/2610.38489) — 以语法覆盖引导 RTL 生成，通过差分测试发现仿真器 lint 与执行结果不一致。
+- **2026-10-27** · [AutoProfiler](https://arxiv.org/abs/2610.36576) — 从优化反馈学习按 kernel 选择 profiling 信息，控制测量预算。
 
 ## 目录
 
@@ -842,11 +867,12 @@ Covers circuit representation and performance prediction, RTL and logic optimiza
 # Latest
 
 
-- **2026-10-26** · [Cadence Maestro](https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2026/cadence-introduces-maestro-a-domain-specialized-ai-model.html) — 发布面向芯片与系统设计的领域模型组合，结合 EDA 工具反馈训练。
-- **2026-10-22** · [Back-to-the-Future (BTTF)](https://arxiv.org/abs/2610.06790) — 更新论文，用 SQLite 波形数据和自然语言查询辅助 RTL 调试。
-- **2026-10-07** · [RFChipAgent](https://arxiv.org/abs/2610.10858) — 发布模拟/RF 多 agent 设计流程，串联检索、拓扑选择与仿真优化。
-- **2026-10-04** · [VHDL-REPOBENCH](https://arxiv.org/abs/2610.05380) — 发布仓库级 VHDL 评测，关注跨文件依赖和层次设计理解。
-- **2026-10** · [Build-A-Chip-Bench](https://chipagents.ai/research/build-a-chip-bench) — 介绍从工作负载规格到 GDS 的长流程评测，结合功能验收与 PPA 评分。
+- **2026-10-30** · [RTL-Interact](https://arxiv.org/abs/2610.41225) — 以分阶段 SFT 与 PAPO 强化学习训练 RTL 生成、EDA 检查和反馈修复。
+- **2026-10-29** · [OPERA](https://arxiv.org/abs/2610.39395) — 将 gm/ID 推理与 gLayout 生成器连接到 SKY130 运放的版图提取和 PVT 验证。
+- **2026-10-29** · [RISC-V FPGA-in-the-Loop](https://arxiv.org/abs/2610.39570) — 在人工监督下用 FPGA 板上测量迭代 CPU，并定位长程运行中的性能退化。
+- **2026-10-29** · [Formulaic](https://arxiv.org/abs/2610.39380) — 让 agent 构造软硬件优化问题，由求解器、验证和测量检查；公布分项实验。
+- **2026-10-28** · [GI-RTL-Fuzz](https://arxiv.org/abs/2610.38489) — 以语法覆盖引导 RTL 生成，通过差分测试发现仿真器 lint 与执行结果不一致。
+- **2026-10-27** · [AutoProfiler](https://arxiv.org/abs/2610.36576) — 从优化反馈学习按 kernel 选择 profiling 信息，控制测量预算。
 
 
 ---
@@ -897,6 +923,7 @@ Covers circuit representation and performance prediction, RTL and logic optimiza
 
 - [AMSbench](https://github.com/Why0912/AMSBench)（2025） — 覆盖模拟/混合信号原理图感知、分析和设计的多模态评测。 [数据](https://huggingface.co/datasets/wwhhyy/AMSBench)
 - [AnalogGym](https://github.com/CODA-Team/AnalogGym)（2024） — 提供多类模拟拓扑、规格和仿真测试，支持比较自动尺寸优化方法。
+- [AnalogPortBench](https://github.com/saeidrajabii/AnalogPortBench)（2026） — 评测从 0.18 μm 工艺到 SKY130 的模拟电路迁移，覆盖降压、拓扑调整与不可行规格识别，提供 ngspice 评分流程及多工艺角参考设计。 [论文](https://arxiv.org/abs/2610.33088)
 - [CircuitSense](https://github.com/xz-group/CircuitSense)（2026） — 评估从电路图感知到符号方程推导及设计推理，并提供合成生成流水线。 [数据](https://huggingface.co/datasets/armanakbari4/CircuitSense)
 - [Long-Horizon Analog Design Bench](https://arxiv.org/abs/2609.33356)（2026） — 以 SKY130/ngspice 下的长时设计任务评估模拟/混合信号 agent，验收范围是原理图级电气指标。
 - [NetlistBench](https://arxiv.org/abs/2608.12197)（2026） — 以确定性结构 oracle 检验 SPICE 网表识别、编辑、层次操作及等价判断。
@@ -951,11 +978,13 @@ Covers circuit representation and performance prediction, RTL and logic optimiza
 - [DeepRTL](https://github.com/PeterLau61/DeepRTL)（2025） — 基于 CodeT5+，按行、代码块和模块逐步进行指令微调，联合学习 Verilog 理解与生成。 [论文](https://arxiv.org/abs/2502.15832) [数据](https://huggingface.co/datasets/liuyi2000/deeprtl_finetuning_dataset)
 - [IBM EDA Assistants with RAFT](https://research.ibm.com/publications/improving-llm-powered-eda-assistants-with-raft)（2025） — 用合成 EDA 问答进行检索增强微调，并用真实问题引导训练数据生成，改善设计文档问答。
 - [LaMAGIC2](https://proceedings.mlr.press/v267/chang25b.html)（2025） — 以预训练 Flan-T5-base 为基础改造数值输入和电路表示，通过监督微调生成满足指标的电源转换器拓扑。 [代码](https://github.com/turtleben/LaMAGIC)
+- [MCTS-SFT / Plan-MCTS](https://arxiv.org/abs/2610.37706)（2026） — 用 testbench 反馈引导 DeepSeek-R1 搜索结构化硬件计划，再保留计划与 RTL 轨迹，对 Qwen2.5-Coder-7B-Instruct 做 LoRA SFT。
 - [ReasoningV](https://github.com/BUAA-CLab/ReasoningV)（2025） — 先用 LoRA 学习 Verilog 基础，再以通过仿真的代码及对应推理轨迹做全参数微调，并按题目难度选择推理方式。 [论文](https://arxiv.org/abs/2504.14560)
 - [RF-Agent (RFIC)](https://github.com/Nina-nina123/RF-Agent)（2026） — 从 RF 教材蒸馏问答与推理数据，对 Llama / Qwen 小型语言模型做 SFT，并比较不同 RAG 方法。 [论文](https://arxiv.org/abs/2607.18772)
 - [ScaleRTL](https://arxiv.org/abs/2506.05566)（2025） — NVIDIA 用 DeepSeek-R1 生成的长链推理数据微调 R1-Distill-Qwen-32B，并通过推理期反思与自纠错延长 RTL 推理。
 - [SiliconMind-V1](https://github.com/AS-SiliconMind/SiliconMind-V1)（2026） — 将多 agent 生成和自纠错轨迹蒸馏进 Qwen、OLMo 等模型，通过两轮 SFT 学习 RTL 生成与调试。 [论文](https://arxiv.org/abs/2603.08719)
 - [VeriThoughts](https://github.com/wilyub/VeriThoughts)（2025） — 利用 Verilog 形式等价反馈构建训练数据，并对 Qwen 系列进行推理 SFT。 [论文](https://arxiv.org/abs/2505.20302)
+- [VHDLBench](https://arxiv.org/abs/2610.28676)（2026） — 用开源 VHDL 与转换后的 Verilog 数据，对 DeepSeek-Coder 等五种 7B 模型做 QLoRA 微调，并分别评估语法/综合、功能仿真与 Zynq FPGA 原型。
 
 ## Representation Learning & Knowledge Distillation
 
@@ -970,6 +999,7 @@ Covers circuit representation and performance prediction, RTL and logic optimiza
 - [ChipSeek](https://github.com/rong-hash/chipseek)（2026） — 先做推理冷启动 SFT，再通过 CDPO 将仿真、综合与 PPA 反馈用于强化学习，兼顾功能正确性和设计质量。 [论文](https://aclanthology.org/2026.acl-long.1154/)
 - [CodeV-R1 / QiMeng-CodeV-R1](https://github.com/IPRC-DIP/CodeV-R1)（2025） — 通过自动 testbench 筛选训练数据，先蒸馏推理能力，再用自适应 DAPO 优化 Verilog 生成。 [论文](https://arxiv.org/abs/2505.24183) [数据](https://huggingface.co/datasets/zhuyaoyu/CodeV-R1-dataset)
 - [CovR](https://arxiv.org/abs/2609.19189)（2026） — 从覆盖率反馈生成推理与激励数据，先做 SFT，再用 GRPO 训练高覆盖率 testbench 生成模型。
+- [RTL-Interact](https://arxiv.org/abs/2610.41225)（2026） — 基于 Qwen3-8B/32B，以 CodeV-R1 数据和 DeepSeek-V3.2 工具交互轨迹分阶段 SFT，再用 PAPO 强化学习联合训练 RTL 生成、检查与修复。
 - [RTLSeek](https://arxiv.org/abs/2603.27630)（2026） — 在 SFT 后分阶段进行 GRPO 训练，用 EDA 反馈和 AST 多样性奖励兼顾功能正确与不同实现方式。
 - [VeriPrefer](https://github.com/CatIIIIIIII/VeriPrefer)（2025） — 把 testbench 执行结果转成代码偏好对，在 SFT 后用 DPO 提高 Verilog 生成的功能正确性。 [论文](https://arxiv.org/abs/2504.15804) [数据](https://huggingface.co/datasets/LLM-EDA/pyra_tb)
 - [VeriReason](https://github.com/NellyW8/VeriReason)（2025） — 先做推理数据 SFT，再用 testbench 与代码结构反馈进行 GRPO 训练，提升 RTL 生成和自检查能力。 [论文](https://arxiv.org/abs/2505.11849) [数据](https://huggingface.co/collections/AI4EDA-CASE/verireason)
@@ -983,11 +1013,13 @@ Covers circuit representation and performance prediction, RTL and logic optimiza
 
 - [Exploring the Agentic Frontier of Verilog Code Generation](https://arxiv.org/abs/2603.19347)（2026） — 在 CVDP 上受控比较提示结构、工具与 agent 封装，分析工具解读和崩溃等失败模式。
 - [Human-Centered Agentic AI Workflows for RTL Verification](https://resources.sw.siemens.com/en-GB/white-paper-human-centered-agentic-ai-workflows-for-rtl-verification/) — Siemens 对 RTL 验证中工程师、agent 与确定性工具分工的说明。
+- [Learn the Interface, Not the Implementation](https://arxiv.org/abs/2610.25881)（2026） — 在 SECDED ECC wrapper 任务中固定数据与形式等价 oracle，对比训练方式和输出表示，研究生成配置再调用确定性 RTL 生成器的价值。
 - [LLM for EDA in Front-End Design](https://arxiv.org/abs/2607.09616)（2026） — 讨论规格理解、HDL、testbench 和高层次综合中的 LLM 能力与限制。
 - [LLMs for EDA: A Survey](https://arxiv.org/abs/2501.09655)（2025） — 梳理 LLM 在 EDA 中的任务、模型适配和评测方法。
 - [Loop Engineering for Chip Design](https://agentrys.ai/case-studies/loop-engineering-for-chip-design)（2026） — Agentrys 的香山优化案例，介绍工作负载、微架构参数、正确性检查和物理设计反馈如何连接。
 - [Microsoft Discovery — Learning Chip Design](https://techcommunity.microsoft.com/blog/microsoft-discovery-blog/from-ad-astra-to-semper-disco-learning-chip-design-with-microsoft-discovery/4554904)（2026） — 介绍借助 Discovery 从规格、RTL 推进到 OpenROAD 物理布局，并尝试时序与功耗优化的实践。
 - [Report for NSF Workshop on AI for EDA](https://arxiv.org/abs/2601.14541)（2026） — 覆盖物理设计、综合、验证与 AI 工具箱，并讨论数据和计算基础设施。
+- [The Code Behind the Layout](https://arxiv.org/abs/2610.38426)（2026） — 在 SKY130/gLayout 中比较直接绘制、调用器件与修改生成器三种 agent 操作层次，研究跨参数族物理验证与编辑经验蒸馏。
 - [The Dawn of Agentic EDA](https://arxiv.org/abs/2512.23189)（2025–2026） — 从 RTL、验证到物理设计梳理 agent 工作流及跨阶段反馈。
 - [Thermonat 热建模实践](https://research.ibm.com/blog/from-atoms-to-chips-thermonat-models-heat-with-unprecedented-accuracy)（2026） — IBM 与 Ansys/Synopsys 在 DARPA 项目中结合原子级热学数据、降阶模型和 Fourier neural operator，连接晶体管热行为与芯片设计。
 
@@ -1000,9 +1032,11 @@ Covers circuit representation and performance prediction, RTL and logic optimiza
 ## Domain-specific Accelerators
 
 - [Etched](https://www.etched.com/) — 围绕大模型推理协同设计芯片、机架、互联和软件，介绍低电压推理与集群级内存方案。
+- [FIGFLEX](https://arxiv.org/abs/2610.30480)（2026） — 联合设计低比特混合精度量化与 FP-INT GEMM 数据通路，通过 radix-4 移位加法和按精度调整的部分积归约，把权重位宽降低转成计算吞吐收益。
 - [Gemmini](https://github.com/ucb-bar/gemmini)（2019/2021） — 可参数化脉动阵列加速器生成器，将 RTL、RISC-V 主机、内存系统及软件栈联合用于 DNN 全系统评估。 [论文](https://arxiv.org/abs/1911.09925)
 - [Jalapeño](https://openai.com/index/jalapeno-first-results/)（2026） — OpenAI 的芯片、内存、网络和推理软件协同设计案例，同时介绍 AI 在硬件设计与 kernel 优化中的使用。
 - [Taalas HC1](https://taalas.com/the-path-to-ubiquitous-ai/)（2026） — 将特定模型直接固化进硅芯片；HC1 技术演示运行 Llama 3.1 8B，官方介绍其架构和推理方式。
+- [TranSAGE](https://github.com/sjtu-zhao-lab/TranSAGE)（2026） — 联合搜索 Transformer 算子聚合、流水线与数据流，通过图划分和 MLIR lowering 自动生成空间加速器；公开实现名为 AccelGen。 [论文](https://arxiv.org/abs/2610.32279)
 
 ## CIM (Compute-in-Memory)
 
@@ -1022,6 +1056,9 @@ Covers circuit representation and performance prediction, RTL and logic optimiza
 - [AlphaEvolve](https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/)（2025–2026） — 结合 LLM、程序进化与自动验证优化算法，官方披露了 TPU 算术电路、训练 kernel 和数据中心调度案例。 [后续实践](https://deepmind.google/blog/alphaevolve-impact/)
 - [ArchGym](https://github.com/srivatsankrishnan/oss-arch-gym)（2023） — 统一搜索算法与架构模拟器接口，用于机器学习驱动的设计空间探索和实验数据收集。 [论文](https://arxiv.org/abs/2306.08888)
 - [CHIA](https://github.com/ucb-bar/chia)（2026） — 用工作流图和可扩展运行时组织 AI 驱动的硬件/软件协同设计实验，示例覆盖 RTL、gem5 对齐、微架构实现和关键路径优化。 [论文](https://arxiv.org/abs/2606.27350)
+- [Formulaic](https://arxiv.org/abs/2610.39380)（2026） — 由 agent 逐步构造软硬件协同优化问题，求解器搜索、验证器和测量检查结果；以独立的 GB10 实测、Ventus 仿真与证明复用实验研究各环节。
+- [IMPACT](https://arxiv.org/abs/2610.39040)（2026） — 以遗传搜索和约束感知修复探索非整除 tiling 的加速器映射，将不可行候选修复为可行映射，覆盖灵活架构与受限 CIM 架构。
+- [PaFeDSE](https://arxiv.org/abs/2610.34838)（2026） — 利用 Pareto 命中与未命中反馈引导乱序处理器微架构搜索，并过滤反复低优先级候选，减少仿真和候选处理开销。
 
 ## 架构与映射评估
 
@@ -1062,6 +1099,7 @@ Covers circuit representation and performance prediction, RTL and logic optimiza
 - [AccelOpt](https://github.com/zhang677/AccelOpt)（2025/2026） — 利用 slow–fast kernel 对积累优化记忆，在 AWS Trainium 上自主优化 kernel，并提供 NKIBench。 [论文](https://arxiv.org/abs/2511.15915)
 - [AKG kernel Agent](https://arxiv.org/abs/2512.23424)（2025） — 用多 agent 自动完成跨 GPU/NPU 的 kernel 生成、迁移和调优，支持多种 kernel DSL。
 - [Atrex Kernel Agent](https://github.com/alibaba/atrex-kernel-agent)（2026） — 围绕 GPU 知识库、profiling 工具与结构化工作流完成 kernel 实现、诊断及迭代优化。
+- [AutoProfiler](https://github.com/Satissss/AutoProfiler)（2026） — 由优化反馈学习确定性的 profiling 决策树，按 kernel 选择硬件计数器，在固定测量预算内为一次 LLM kernel 改写提供信息。 [论文](https://arxiv.org/abs/2610.36576)
 - [AWS Neuron Agentic Development](https://github.com/aws-neuron/neuron-agentic-development) — AWS 官方 NKI agent 工具，覆盖 kernel 编写、编译修复、profiling、性能分析及 API 迁移。
 - [CUDA Agent](https://github.com/BytedTsinghua-SIA/CUDA-Agent)（2026） — 把大规模 agentic RL、CUDA 任务数据、专家 skills 与可验证执行环境结合，训练高性能 kernel 生成能力。 [论文](https://arxiv.org/abs/2602.24286)
 - [CUDA-L1](https://github.com/ornith-ai/CUDA-L1)（2025/2026） — 以对比强化学习和执行反馈优化 CUDA kernel，讨论性能奖励设计及 reward hacking。 [论文](https://arxiv.org/abs/2507.14111)
@@ -1069,6 +1107,7 @@ Covers circuit representation and performance prediction, RTL and logic optimiza
 - [Kevin-32B](https://cognition.com/blog/kevin-32b)（2025） — 通过多轮强化学习训练 CUDA kernel 生成与优化模型，让模型利用执行反馈迭代代码。 [论文](https://arxiv.org/abs/2507.11948) [模型](https://huggingface.co/cognition-ai/Kevin-32B)
 - [MaxKernel](https://arxiv.org/abs/2609.04523)（2026） — 针对 TPU kernel 提供人机协作、自主优化和图搜索三种多 agent 模式，结合编译、测试和硬件 profiling。 [代码](https://github.com/AI-Hypercomputer/accelerator-agents)
 - [PyTorch KernelAgent / KernelFalcon](https://github.com/meta-pytorch/KernelAgent)（2025–2026） — 将 kernel 生成、数值验证、硬件 profiling 和瓶颈分析组织为多 agent 闭环，并用共享记忆指导优化。 [技术博客](https://pytorch.org/blog/kernelagent-hardware-guided-gpu-kernel-optimization-via-multi-agent-orchestration/)
+- [RNGD Multi-Agent Kernel Optimization](https://arxiv.org/abs/2610.38329)（2026） — 通过文档校验、微基准和编译器合法性规则积累 FuriosaAI RNGD 知识，以 Design Trees 搜索三个 Gemma 解码 kernel，并用重复实机对比验收改动。 [测量工具与实验材料](https://github.com/bgchun-fs/multi-agent-kernel-gen-loop)
 
 ## Kernel 与编译工具
 
@@ -1090,12 +1129,14 @@ AI EDA 将模型接入芯片设计与验证，组织工具调用、设计上下�
 - [ACE-RTL](https://github.com/NVlabs/ACE-RTL)（2026） — NVIDIA 以生成、反思和协调三个角色维护迭代上下文，结合仿真反馈生成、验证与修复 RTL。 [论文](https://arxiv.org/abs/2602.10218) [Nemotron RTL 实践](https://developer.nvidia.com/blog/nvidia-nemotron-3-ultra-leads-open-models-on-accuracy-and-efficiency-in-agentic-rtl-coding/)
 - [AHRR](https://github.com/ZijD/AHRR)（2026） — 组合 agent 驱动 HLS 与编译后的 RTL 细化，比较不同抽象层对硬件设计效率的影响。 [论文](https://arxiv.org/abs/2609.21157)
 - [AMD Ross](https://github.com/Xilinx/ross-ai-assistant)（2026） — AMD 的 FPGA/SoC agent skills 与示例，通过 MCP 连接 Vivado，覆盖 RTL 仿真、时序分析、HLS 优化和板上调试。 [MCP 与工具下载](https://www.amd.com/en/support/downloads/ross-agentic-ai.html)
+- [LLM Agent-Based Design of RISC-V CPUs with FPGA-in-the-Loop Evaluation](https://arxiv.org/abs/2610.39570)（2026） — 在人类监督下用 Artix-7 板上测量指导 RISC-V 微架构迭代，并以长程运行反馈定位性能退化；公开 RTL 快照与案例记录。 [实验材料](https://github.com/kadomoto-lab/llm-cpu-fpga-loop)
 - [Spec2RTL-Agent](https://arxiv.org/abs/2506.13905)（2025） — NVIDIA、Cadence 与 Georgia Tech 将复杂规格分解为实现计划，通过多 agent 生成和修正可综合 C++，再经 HLS 转换为 RTL。
 
 ## 验证、调试与设计数据查询
 
 - [Back-to-the-Future (BTTF)](https://arxiv.org/abs/2610.06790)（2026） — 把仿真波形存入 SQLite，让 agent 根据自然语言查询信号，并关联对应版本的 RTL。
 - [ChipXplore](https://github.com/scale-lab/ChipXplore)（2025） — 把 PDK 库与物理设计数据分别组织成 SQL 和图数据库，支持自然语言查询和探索。
+- [GI-RTL-Fuzz](https://arxiv.org/abs/2610.38489)（2026） — 以 BNF 语法覆盖引导 LLM 生成 RTL，对 Verilator、Icarus Verilog 和 ModelSim 做差分测试，定位 lint 与仿真输出不一致。
 - [RTLExplain](https://research.ibm.com/publications/rtlexplain-a-structured-approach-to-rtl-code-summarization-and-question-answering-for-medium-to-large-designs-using-llms--1)（2025） — IBM 为中大型 RTL 项目构建结构化知识库，结合 RAG 支持代码摘要、文档生成与设计问答。
 - [UCAgent](https://github.com/XS-MLVP/UCAgent)（2026） — 以分阶段检查和 Python 验证工具链组织 RTL 验证，连接 Picker、Toffee 与大模型。 [论文](https://arxiv.org/abs/2603.25768)
 
@@ -1105,6 +1146,7 @@ AI EDA 将模型接入芯片设计与验证，组织工具调用、设计上下�
 - [AnalogCoder](https://github.com/laiyao1/AnalogCoder)（2025） — 通过 Python/PySpice 代码生成、仿真反馈和子电路库完成模拟电路设计。 [数据](https://github.com/laiyao1/AnalogCoder/blob/main/problem_set.tsv)
 - [AnalogCoder-Pro](https://github.com/laiyao1/AnalogCoderPro)（2026） — 结合电路生成、波形图诊断与参数优化，联合探索模拟拓扑和器件尺寸。 [数据](https://github.com/laiyao1/AnalogCoderPro/blob/master/problem_set.tsv)
 - [HeaRT](https://arxiv.org/abs/2511.19669)（2025） — 以层次电路推理树组织子电路、反馈回路识别和规格变化下的设计调整。
+- [OPERA](https://arxiv.org/abs/2610.39395)（2026） — 将专家提供的 gm/ID 方法与 gLayout 生成器结合，在设计师审批节点下完成 SKY130 运放尺寸、版图、DRC/LVS 和提取后 PVT 验证。 [基准网表](https://github.com/AMPICLab/AMPICBench)
 - [RFChipAgent](https://arxiv.org/abs/2610.10858)（2026） — 在人类监督下串联检索、拓扑选择、原理图和尺寸优化，以模拟/RF 仿真反馈驱动多 agent 设计。
 - [White-Box Reasoning](https://arxiv.org/abs/2508.13172)（2025） — 用 gm/Id 查找表为 LLM 模拟设计推理提供器件数据依据，展示两级运放设计案例。
 
@@ -1140,6 +1182,7 @@ AI EDA 将模型接入芯片设计与验证，组织工具调用、设计上下�
 
 ### EDA 厂商
 
+- [Altera QuartusIQ](https://www.altera.com/products/software-tools/quartusiq)（2026） — 将项目上下文、Quartus Skills、MCP 与 agent harness 接入 Quartus Prime Pro，支持 FPGA 编译、报告分析、时序调试和设计迭代。 [发布公告](https://www.altera.com/newsroom/altera-launches-quartusIQ)
 - [Cadence AgentStack / JedAI](https://www.cadence.com/en_US/home/explore/agentic-ai.html) — 组织多个领域 agent 的协作；JedAI 提供相关数据、模型与平台基础。
 - [Cadence AuraStack AI Super Agent](https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/aurastack-ai-super-agent.html) — 将 agent 工作流扩展到 PCB 与先进封装设计。
 - [Cadence Cerebrus](https://www.cadence.com/en_US/home/tools/digital-design-and-signoff/soc-implementation-and-floorplanning/cerebrus-intelligent-chip-explorer.html) — 利用机器学习探索数字实现参数和流程，优化芯片 PPA。
@@ -1378,7 +1421,7 @@ Parasitic Extraction → Post-layout Simulation → Signoff
 - [GEM](https://github.com/NVlabs/GEM)（2025） — NVIDIA 将 RTL 综合为 AIG 并映射到 GPU 上的布尔计算结构，加速逻辑仿真。
 - [Icarus Verilog](https://github.com/steveicarus/iverilog) — 开源 Verilog 编译与仿真工具，是多项 RTL 生成基准的执行后端。
 - [INSTA](https://github.com/NVlabs/INSTA)（2025） — NVIDIA 的 GPU 统计静态时序分析工具，提供可微时序梯度，支持门尺寸调整等物理设计优化。 [论文](https://research.nvidia.com/labs/electronic-design-automation/papers/yichen_INSTA_dac25.pdf)
-- [LibreLane](https://github.com/librelane/librelane) — 基于 OpenLane 2 的可扩展 Python RTL-to-GDS 流程，保存各步骤配置和设计状态。
+- [LibreLane](https://github.com/librelane/librelane) — 基于 OpenLane 2 的可扩展 Python RTL-to-GDS 流程，保存各步骤配置和设计状态；3.0.17 补充手工安装指南与版本清单，并回移 Magic 修复。 [3.0.17 发布](https://github.com/librelane/librelane/releases/tag/3.0.17)
 - [OpenROAD / OpenROAD-flow-scripts](https://github.com/The-OpenROAD-Project/OpenROAD) — 开放物理设计工具及 RTL-to-GDS 流程，为 agent 运行与 PPA 反馈提供基础环境。 [流程与示例](https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts)
 - [OpenSTA](https://github.com/parallaxsw/OpenSTA) — 读取门级网表、Liberty、SDC 与寄生参数，执行静态时序分析并生成时序报告。
 - [SymbiYosys](https://github.com/YosysHQ/sby) — 为 Yosys 形式验证流程组织有界与无界性质检查、覆盖率和活性验证。
@@ -1429,10 +1472,15 @@ Parasitic Extraction → Post-layout Simulation → Signoff
 - [C3PO](https://research.nvidia.com/labs/electronic-design-automation/publication/lu2026aspdac/)（2026） — NVIDIA 以 GPU 可微优化联合处理时序、可布线性与线长，并在布局迭代中调整多目标权重。 [论文](https://hhsiao30.github.io/papers/yichen_apsdac26__Camera_Ready_eXpress.pdf)
 - [CROP](https://arxiv.org/abs/2507.02128)（2025） — Duke 与 Synopsys 将 RTL 分层摘要转成设计向量，检索相似电路的参数经验，再用 RAG 与 LLM 引导 EDA 流程调参。
 - [DREAMPlace](https://github.com/limbo018/DREAMPlace) — 借用深度学习计算框架和 GPU 加速全局及详细布局，为学习型物理设计提供基础。
+- [E-Layout](https://arxiv.org/abs/2610.26432)（2026） — 通过 e-graph 等价饱和、图检索增强生成与设计级时序反馈 RL，联合选择布局后子电路的逻辑变换和物理实现。
+- [EGGPlacer](https://arxiv.org/abs/2610.33099)（2026） — 在反向扩散中注入解析布局与可微热模型反馈，联合考虑标准单元分布、全网表线长和温度，引导宏单元布局。
 - [LEGO-Size](https://research.nvidia.com/labs/electronic-design-automation/publication/lu2025ispd/)（2025） — NVIDIA 对库单元序列进行专用 Transformer 自监督预训练和监督学习，再用 GPU 可微时序分析优化门尺寸。 [论文](https://research.nvidia.com/labs/electronic-design-automation/papers/yichen_LEGO_ispd25.pdf)
 - [OpenROAD AutoTuner](https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts/tree/master/tools/AutoTuner) — 通过分布式超参数搜索自动调节 RTL-to-GDS 流程参数，并收集 PPA 指标。
 
 ## Analog Circuit Design
 
 - [AnalogGenie](https://github.com/xz-group/AnalogGenie)（2025） — 把电路转换成器件引脚序列，从头训练约 12M 参数的自回归 Transformer，生成模拟电路拓扑。 [论文](https://openreview.net/forum?id=jCPak79Kev) [数据](https://huggingface.co/datasets/JianGao666/AnalogGenie)
+- [AnalogScout](https://arxiv.org/abs/2610.37319)（2026） — 复用已验证设计，以 gm/Id 查找表做局部尺寸计算，再结合全局搜索和全角 SPICE 验证，在固定仿真预算下优化 SKY130 OTA。
+- [APPlace](https://github.com/bingyang1132/applace)（2026） — 以可微目标联合优化模拟器件位置与端口接入点，再通过保持结构的合法化改善布线条件；提供 Rust 实现和无需 PDK 的抽象算例。 [论文](https://arxiv.org/abs/2610.39515)
 - [AstRL](https://arxiv.org/abs/2602.12402)（2026） — 以图神经网络作为晶体管拓扑策略，结合专家行为克隆、PPO 和仿真反馈生成模拟与混合信号电路。
+- [LAMP](https://arxiv.org/abs/2610.39882)（2026） — 让 LLM 根据多模态布局检查点组合约束、布局、合法化和轻量评估工具，并重组层次；在两个 SMIC 180 nm 电路上评估版图后性能。

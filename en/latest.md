@@ -1,5 +1,6 @@
-- **2026-10-26** · [Cadence Maestro](https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2026/cadence-introduces-maestro-a-domain-specialized-ai-model.html) — Introduces a family of domain models for chip and system design, trained with EDA tool feedback.
-- **2026-10-22** · [Back-to-the-Future (BTTF)](https://arxiv.org/abs/2610.06790) — Updates its paper on RTL debugging with SQLite waveform data and natural-language queries.
-- **2026-10-07** · [RFChipAgent](https://arxiv.org/abs/2610.10858) — Presents a multi-agent analog/RF design workflow connecting retrieval, topology selection and simulation-based optimization.
-- **2026-10-04** · [VHDL-REPOBENCH](https://arxiv.org/abs/2610.05380) — Introduces repository-level VHDL evaluation focused on cross-file dependencies and hierarchical design understanding.
-- **2026-10** · [Build-A-Chip-Bench](https://chipagents.ai/research/build-a-chip-bench) — Describes long-horizon evaluation from workload specifications to GDS, combining functional acceptance with PPA scoring.
+- **2026-10-30** · [RTL-Interact](https://arxiv.org/abs/2610.41225) — Trains RTL generation, EDA checking, and feedback-guided revision with staged SFT and PAPO reinforcement learning.
+- **2026-10-29** · [OPERA](https://arxiv.org/abs/2610.39395) — Connects gm/ID reasoning and gLayout generators to layout extraction and PVT verification for SKY130 opamps.
+- **2026-10-29** · [RISC-V FPGA-in-the-Loop](https://arxiv.org/abs/2610.39570) — Uses FPGA on-board measurements for human-supervised CPU iteration and diagnosis of long-run performance regressions.
+- **2026-10-29** · [Formulaic](https://arxiv.org/abs/2610.39380) — Uses agents to formulate hardware–software optimization problems checked by solvers, verification, and measurement, reporting separate component studies.
+- **2026-10-28** · [GI-RTL-Fuzz](https://arxiv.org/abs/2610.38489) — Guides RTL generation with grammar coverage and uses differential testing to find simulator lint and execution inconsistencies.
+- **2026-10-27** · [AutoProfiler](https://arxiv.org/abs/2610.36576) — Learns kernel-specific profiling information selection from optimization feedback under a measurement budget.

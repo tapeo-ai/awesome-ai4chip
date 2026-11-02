@@ -23,10 +23,15 @@ description: "电路表示与性能预测、RTL 与逻辑优化、物理设计�
 - [C3PO](https://research.nvidia.com/labs/electronic-design-automation/publication/lu2026aspdac/)（2026） — NVIDIA 以 GPU 可微优化联合处理时序、可布线性与线长，并在布局迭代中调整多目标权重。 [论文](https://hhsiao30.github.io/papers/yichen_apsdac26__Camera_Ready_eXpress.pdf)
 - [CROP](https://arxiv.org/abs/2507.02128)（2025） — Duke 与 Synopsys 将 RTL 分层摘要转成设计向量，检索相似电路的参数经验，再用 RAG 与 LLM 引导 EDA 流程调参。
 - [DREAMPlace](https://github.com/limbo018/DREAMPlace) — 借用深度学习计算框架和 GPU 加速全局及详细布局，为学习型物理设计提供基础。
+- [E-Layout](https://arxiv.org/abs/2610.26432)（2026） — 通过 e-graph 等价饱和、图检索增强生成与设计级时序反馈 RL，联合选择布局后子电路的逻辑变换和物理实现。
+- [EGGPlacer](https://arxiv.org/abs/2610.33099)（2026） — 在反向扩散中注入解析布局与可微热模型反馈，联合考虑标准单元分布、全网表线长和温度，引导宏单元布局。
 - [LEGO-Size](https://research.nvidia.com/labs/electronic-design-automation/publication/lu2025ispd/)（2025） — NVIDIA 对库单元序列进行专用 Transformer 自监督预训练和监督学习，再用 GPU 可微时序分析优化门尺寸。 [论文](https://research.nvidia.com/labs/electronic-design-automation/papers/yichen_LEGO_ispd25.pdf)
 - [OpenROAD AutoTuner](https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts/tree/master/tools/AutoTuner) — 通过分布式超参数搜索自动调节 RTL-to-GDS 流程参数，并收集 PPA 指标。
 
 ## Analog Circuit Design
 
 - [AnalogGenie](https://github.com/xz-group/AnalogGenie)（2025） — 把电路转换成器件引脚序列，从头训练约 12M 参数的自回归 Transformer，生成模拟电路拓扑。 [论文](https://openreview.net/forum?id=jCPak79Kev) [数据](https://huggingface.co/datasets/JianGao666/AnalogGenie)
+- [AnalogScout](https://arxiv.org/abs/2610.37319)（2026） — 复用已验证设计，以 gm/Id 查找表做局部尺寸计算，再结合全局搜索和全角 SPICE 验证，在固定仿真预算下优化 SKY130 OTA。
+- [APPlace](https://github.com/bingyang1132/applace)（2026） — 以可微目标联合优化模拟器件位置与端口接入点，再通过保持结构的合法化改善布线条件；提供 Rust 实现和无需 PDK 的抽象算例。 [论文](https://arxiv.org/abs/2610.39515)
 - [AstRL](https://arxiv.org/abs/2602.12402)（2026） — 以图神经网络作为晶体管拓扑策略，结合专家行为克隆、PPO 和仿真反馈生成模拟与混合信号电路。
+- [LAMP](https://arxiv.org/abs/2610.39882)（2026） — 让 LLM 根据多模态布局检查点组合约束、布局、合法化和轻量评估工具，并重组层次；在两个 SMIC 180 nm 电路上评估版图后性能。

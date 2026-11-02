@@ -5,12 +5,14 @@ AI EDA connects models to chip design and verification through tool use, design 
 - [ACE-RTL](https://github.com/NVlabs/ACE-RTL) (2026) — NVIDIA uses generation, reflection, and coordination roles to maintain iterative context, combining simulation feedback with RTL generation, verification, and repair. [Paper](https://arxiv.org/abs/2602.10218) [Nemotron RTL Case Study](https://developer.nvidia.com/blog/nvidia-nemotron-3-ultra-leads-open-models-on-accuracy-and-efficiency-in-agentic-rtl-coding/)
 - [AHRR](https://github.com/ZijD/AHRR) (2026) — Combines agent-driven HLS with refinement of the compiled RTL to compare how abstraction levels affect hardware design efficiency. [Paper](https://arxiv.org/abs/2609.21157)
 - [AMD Ross](https://github.com/Xilinx/ross-ai-assistant) (2026) — AMD's FPGA/SoC agent skills and examples connect to Vivado through MCP, covering RTL simulation, timing analysis, HLS optimization, and on-board debugging. [MCP and Tool Downloads](https://www.amd.com/en/support/downloads/ross-agentic-ai.html)
+- [LLM Agent-Based Design of RISC-V CPUs with FPGA-in-the-Loop Evaluation](https://arxiv.org/abs/2610.39570) (2026) — Uses Artix-7 on-board measurements to guide human-supervised RISC-V microarchitecture iteration and diagnose long-run performance regressions, with RTL snapshots and case-study records. [Artifacts](https://github.com/kadomoto-lab/llm-cpu-fpga-loop)
 - [Spec2RTL-Agent](https://arxiv.org/abs/2506.13905) (2025) — NVIDIA, Cadence, and Georgia Tech decompose complex specifications into implementation plans, use multiple agents to generate and repair synthesizable C++, and convert it to RTL through HLS.
 
 ## Verification, Debugging, and Design Data Queries
 
 - [Back-to-the-Future (BTTF)](https://arxiv.org/abs/2610.06790) (2026) — Stores simulation waveforms in SQLite so agents can query signals in natural language and correlate them with versioned RTL.
 - [ChipXplore](https://github.com/scale-lab/ChipXplore) (2025) — Organizes PDK libraries and physical design data into SQL and graph databases for natural-language queries and exploration.
+- [GI-RTL-Fuzz](https://arxiv.org/abs/2610.38489) (2026) — Guides LLM RTL generation with BNF grammar coverage and differentially tests Verilator, Icarus Verilog, and ModelSim to locate lint and simulation-output inconsistencies.
 - [RTLExplain](https://research.ibm.com/publications/rtlexplain-a-structured-approach-to-rtl-code-summarization-and-question-answering-for-medium-to-large-designs-using-llms--1) (2025) — IBM builds structured knowledge bases for medium-to-large RTL projects, using RAG for code summaries, documentation generation, and design Q&A.
 - [UCAgent](https://github.com/XS-MLVP/UCAgent) (2026) — Organizes RTL verification through staged checks and a Python verification toolchain, connecting Picker, Toffee, and language models. [Paper](https://arxiv.org/abs/2603.25768)
 
@@ -20,6 +22,7 @@ AI EDA connects models to chip design and verification through tool use, design 
 - [AnalogCoder](https://github.com/laiyao1/AnalogCoder) (2025) — Designs analog circuits through Python/PySpice code generation, simulation feedback, and a subcircuit library. [Data](https://github.com/laiyao1/AnalogCoder/blob/main/problem_set.tsv)
 - [AnalogCoder-Pro](https://github.com/laiyao1/AnalogCoderPro) (2026) — Combines circuit generation, waveform-image diagnosis, and parameter optimization to jointly explore analog topologies and device sizes. [Data](https://github.com/laiyao1/AnalogCoderPro/blob/master/problem_set.tsv)
 - [HeaRT](https://arxiv.org/abs/2511.19669) (2025) — Uses hierarchical circuit reasoning trees to organize subcircuit and feedback-loop identification, and to adapt designs when specifications change.
+- [OPERA](https://arxiv.org/abs/2610.39395) (2026) — Combines expert-provided gm/ID methods with gLayout generators for SKY130 opamp sizing, layout, DRC/LVS, and post-extraction PVT verification at designer-approved gates. [Benchmark netlists](https://github.com/AMPICLab/AMPICBench)
 - [RFChipAgent](https://arxiv.org/abs/2610.10858) (2026) — Connects retrieval, topology selection, schematic construction, and sizing under human supervision, using analog/RF simulation feedback to guide multiple agents.
 - [White-Box Reasoning](https://arxiv.org/abs/2508.13172) (2025) — Grounds LLM reasoning about analog design in device data from gm/Id lookup tables, demonstrated on a two-stage operational amplifier.
 

@@ -13,6 +13,7 @@ Tools for simulation and debug, synthesis and physical implementation, timing an
 
 ### EDA Vendors
 
+- [Altera QuartusIQ](https://www.altera.com/products/software-tools/quartusiq) (2026) — Connects project context, Quartus Skills, MCP, and an agent harness to Quartus Prime Pro for FPGA compilation, report analysis, timing debug, and design iteration. [Announcement](https://www.altera.com/newsroom/altera-launches-quartusIQ)
 - [Cadence AgentStack / JedAI](https://www.cadence.com/en_US/home/explore/agentic-ai.html) — Coordinates collaboration among domain agents; JedAI supplies the underlying data, models, and platform infrastructure.
 - [Cadence AuraStack AI Super Agent](https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/aurastack-ai-super-agent.html) — Extends agent workflows to PCB and advanced packaging design.
 - [Cadence Cerebrus](https://www.cadence.com/en_US/home/tools/digital-design-and-signoff/soc-implementation-and-floorplanning/cerebrus-intelligent-chip-explorer.html) — Uses machine learning to explore digital implementation parameters and flows to optimize chip PPA.

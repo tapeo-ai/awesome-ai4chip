@@ -13,6 +13,7 @@
 
 ### EDA 厂商
 
+- [Altera QuartusIQ](https://www.altera.com/products/software-tools/quartusiq)（2026） — 将项目上下文、Quartus Skills、MCP 与 agent harness 接入 Quartus Prime Pro，支持 FPGA 编译、报告分析、时序调试和设计迭代。 [发布公告](https://www.altera.com/newsroom/altera-launches-quartusIQ)
 - [Cadence AgentStack / JedAI](https://www.cadence.com/en_US/home/explore/agentic-ai.html) — 组织多个领域 agent 的协作；JedAI 提供相关数据、模型与平台基础。
 - [Cadence AuraStack AI Super Agent](https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/aurastack-ai-super-agent.html) — 将 agent 工作流扩展到 PCB 与先进封装设计。
 - [Cadence Cerebrus](https://www.cadence.com/en_US/home/tools/digital-design-and-signoff/soc-implementation-and-floorplanning/cerebrus-intelligent-chip-explorer.html) — 利用机器学习探索数字实现参数和流程，优化芯片 PPA。

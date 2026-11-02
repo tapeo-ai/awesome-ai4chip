@@ -41,6 +41,7 @@
 
 - [AMSbench](https://github.com/Why0912/AMSBench) (2025) — A multimodal benchmark for analog and mixed-signal schematic perception, analysis, and design. [Data](https://huggingface.co/datasets/wwhhyy/AMSBench)
 - [AnalogGym](https://github.com/CODA-Team/AnalogGym) (2024) — Provides multiple analog topologies, specifications, and simulation tests for comparing automated sizing methods.
+- [AnalogPortBench](https://github.com/saeidrajabii/AnalogPortBench) (2026) — Evaluates analog circuit porting from a 0.18 μm process to SKY130, including reduced supplies, topology changes, and infeasible specifications, with ngspice scoring and process-corner-checked references. [Paper](https://arxiv.org/abs/2610.33088)
 - [CircuitSense](https://github.com/xz-group/CircuitSense) (2026) — Evaluates circuit-image perception, symbolic equation derivation, and design reasoning, with a synthetic data generation pipeline. [Data](https://huggingface.co/datasets/armanakbari4/CircuitSense)
 - [Long-Horizon Analog Design Bench](https://arxiv.org/abs/2609.33356) (2026) — Evaluates analog and mixed-signal agents on long-running SKY130/ngspice design tasks, using schematic-level electrical specifications for acceptance.
 - [NetlistBench](https://arxiv.org/abs/2608.12197) (2026) — Uses deterministic structural oracles to assess SPICE netlist recognition, editing, hierarchy operations, and equivalence judgments.

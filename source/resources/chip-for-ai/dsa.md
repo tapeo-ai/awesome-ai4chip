@@ -6,9 +6,11 @@ description: "面向 AI 工作负载的专用加速器、模型专用芯片和�
 ## Domain-specific Accelerators
 
 - [Etched](https://www.etched.com/) — 围绕大模型推理协同设计芯片、机架、互联和软件，介绍低电压推理与集群级内存方案。
+- [FIGFLEX](https://arxiv.org/abs/2610.30480)（2026） — 联合设计低比特混合精度量化与 FP-INT GEMM 数据通路，通过 radix-4 移位加法和按精度调整的部分积归约，把权重位宽降低转成计算吞吐收益。
 - [Gemmini](https://github.com/ucb-bar/gemmini)（2019/2021） — 可参数化脉动阵列加速器生成器，将 RTL、RISC-V 主机、内存系统及软件栈联合用于 DNN 全系统评估。 [论文](https://arxiv.org/abs/1911.09925)
 - [Jalapeño](https://openai.com/index/jalapeno-first-results/)（2026） — OpenAI 的芯片、内存、网络和推理软件协同设计案例，同时介绍 AI 在硬件设计与 kernel 优化中的使用。
 - [Taalas HC1](https://taalas.com/the-path-to-ubiquitous-ai/)（2026） — 将特定模型直接固化进硅芯片；HC1 技术演示运行 Llama 3.1 8B，官方介绍其架构和推理方式。
+- [TranSAGE](https://github.com/sjtu-zhao-lab/TranSAGE)（2026） — 联合搜索 Transformer 算子聚合、流水线与数据流，通过图划分和 MLIR lowering 自动生成空间加速器；公开实现名为 AccelGen。 [论文](https://arxiv.org/abs/2610.32279)
 
 ## CIM (Compute-in-Memory)
 
