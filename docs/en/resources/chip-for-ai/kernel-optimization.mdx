@@ -22,5 +22,6 @@ description: "Kernel generation, optimization, evaluation, and compiler tools fo
 
 - [Arm KleidiAI](https://github.com/ARM-software/kleidiai) — An AI micro-kernel library for Arm CPUs, with architecture-optimized matrix operations and data-packing routines. [Main Repository](https://gitlab.arm.com/kleidi/kleidiai)
 - [DeepEP](https://github.com/deepseek-ai/DeepEP) — Provides high-throughput and low-latency communication paths for MoE expert parallelism, connecting model routing, GPU kernels, and network transport.
+- [oneDNN](https://github.com/uxlfoundation/oneDNN) — Provides optimized deep-learning primitives and hardware-specific kernels; AMD and Intel announced plans to integrate ZenDNN optimizations into oneDNN as a common PyTorch acceleration path for x86 CPUs. [Integration announcement](https://newsroom.amd.com/news/amd-intel-collaborate-simplify-ai-development-on-x86-cpus-pytorch/)
 - [TileLang](https://github.com/tile-ai/tilelang) — Expresses GPU, CPU, and accelerator kernels through tiles to simplify low-level optimization and implementation across hardware backends.
 - [Triton](https://github.com/triton-lang/triton) — A language and compiler for high-performance GPU kernels, used as a code-generation target by multiple kernel agents.
