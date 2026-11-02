@@ -17,5 +17,6 @@
 
 - [Arm KleidiAI](https://github.com/ARM-software/kleidiai) — 面向 Arm CPU 的 AI micro-kernel 库，提供按硬件架构优化的矩阵计算与数据打包例程。 [主仓库](https://gitlab.arm.com/kleidi/kleidiai)
 - [DeepEP](https://github.com/deepseek-ai/DeepEP) — 为 MoE expert parallelism 设计高吞吐与低延迟通信路径，连接模型路由、GPU kernel 和网络传输。
+- [oneDNN](https://github.com/uxlfoundation/oneDNN) — 提供深度学习算子与硬件专用 kernel；AMD 与 Intel 宣布计划将 ZenDNN 优化整合到 oneDNN，统一 PyTorch 在 x86 CPU 上的加速路径。 [整合公告](https://newsroom.amd.com/news/amd-intel-collaborate-simplify-ai-development-on-x86-cpus-pytorch/)
 - [TileLang](https://github.com/tile-ai/tilelang) — 以 tile 为核心表达 GPU、CPU 和加速器 kernel，简化底层优化与跨硬件后端实现。
 - [Triton](https://github.com/triton-lang/triton) — 用于编写高性能 GPU kernel 的语言和编译器，是多项 kernel agent 的代码生成目标。

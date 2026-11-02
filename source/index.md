@@ -23,9 +23,9 @@ updated: "2026-11-02"
 - **2026-10-30** · [RTL-Interact](https://arxiv.org/abs/2610.41225) — 以分阶段 SFT 与 PAPO 强化学习训练 RTL 生成、EDA 检查和反馈修复。
 - **2026-10-29** · [OPERA](https://arxiv.org/abs/2610.39395) — 将 gm/ID 推理与 gLayout 生成器连接到 SKY130 运放的版图提取和 PVT 验证。
 - **2026-10-29** · [RISC-V FPGA-in-the-Loop](https://arxiv.org/abs/2610.39570) — 在人工监督下用 FPGA 板上测量迭代 CPU，并定位长程运行中的性能退化。
-- **2026-10-29** · [Formulaic](https://arxiv.org/abs/2610.39380) — 让 agent 构造软硬件优化问题，由求解器、验证和测量检查；公布分项实验。
-- **2026-10-28** · [GI-RTL-Fuzz](https://arxiv.org/abs/2610.38489) — 以语法覆盖引导 RTL 生成，通过差分测试发现仿真器 lint 与执行结果不一致。
-- **2026-10-27** · [AutoProfiler](https://arxiv.org/abs/2610.36576) — 从优化反馈学习按 kernel 选择 profiling 信息，控制测量预算。
+- **2026-10-27** · [AMD–Meta AI Infrastructure](https://newsroom.amd.com/news/amd-meta-advance-strategic-partnership-power-metas-ai-infrastructure/) — 披露初始 Helios 系统已在 Meta 安装并测试，以及围绕实际工作负载的芯片与软件协同设计。
+- **2026-10-26** · [Cadence Maestro](https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2026/cadence-introduces-maestro-a-domain-specialized-ai-model.html) — 发布结合 EDA/SDA 反馈训练的领域模型、决策模型和 agent skills，第四季度向部分客户早期开放。
+- **2026-10-21 · 补录** · [Altera QuartusIQ](https://www.altera.com/newsroom/altera-launches-quartusIQ) — 宣布接入项目上下文、MCP、Quartus Skills 和 agent harness 的 FPGA 助手，公告安排于 10 月 28 日提供下载。
 
 ## 目录
 

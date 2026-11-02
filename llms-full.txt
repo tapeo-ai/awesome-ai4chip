@@ -52,9 +52,9 @@ We will continue building Awesome AI4Chip into **the most comprehensive source o
 - **2026-10-30** · [RTL-Interact](https://arxiv.org/abs/2610.41225) — Trains RTL generation, EDA checking, and feedback-guided revision with staged SFT and PAPO reinforcement learning.
 - **2026-10-29** · [OPERA](https://arxiv.org/abs/2610.39395) — Connects gm/ID reasoning and gLayout generators to layout extraction and PVT verification for SKY130 opamps.
 - **2026-10-29** · [RISC-V FPGA-in-the-Loop](https://arxiv.org/abs/2610.39570) — Uses FPGA on-board measurements for human-supervised CPU iteration and diagnosis of long-run performance regressions.
-- **2026-10-29** · [Formulaic](https://arxiv.org/abs/2610.39380) — Uses agents to formulate hardware–software optimization problems checked by solvers, verification, and measurement, reporting separate component studies.
-- **2026-10-28** · [GI-RTL-Fuzz](https://arxiv.org/abs/2610.38489) — Guides RTL generation with grammar coverage and uses differential testing to find simulator lint and execution inconsistencies.
-- **2026-10-27** · [AutoProfiler](https://arxiv.org/abs/2610.36576) — Learns kernel-specific profiling information selection from optimization feedback under a measurement budget.
+- **2026-10-27** · [AMD–Meta AI Infrastructure](https://newsroom.amd.com/news/amd-meta-advance-strategic-partnership-power-metas-ai-infrastructure/) — Reports initial Helios systems installed and under test at Meta, alongside workload-specific silicon and software co-design.
+- **2026-10-26** · [Cadence Maestro](https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2026/cadence-introduces-maestro-a-domain-specialized-ai-model.html) — Introduces domain-specialized models, decision models, and agent skills trained with EDA/SDA feedback, with select-customer early access in Q4.
+- **2026-10-21 · Backfill** · [Altera QuartusIQ](https://www.altera.com/newsroom/altera-launches-quartusIQ) — Announces a project-aware FPGA companion with MCP, reusable Quartus Skills, and an agent harness; product downloads were scheduled for October 28.
 
 ## Directory
 
@@ -141,9 +141,9 @@ Scan the code to join the AI4CHIP WeChat group and discuss research and engineer
 - **2026-10-30** · [RTL-Interact](https://arxiv.org/abs/2610.41225) — Trains RTL generation, EDA checking, and feedback-guided revision with staged SFT and PAPO reinforcement learning.
 - **2026-10-29** · [OPERA](https://arxiv.org/abs/2610.39395) — Connects gm/ID reasoning and gLayout generators to layout extraction and PVT verification for SKY130 opamps.
 - **2026-10-29** · [RISC-V FPGA-in-the-Loop](https://arxiv.org/abs/2610.39570) — Uses FPGA on-board measurements for human-supervised CPU iteration and diagnosis of long-run performance regressions.
-- **2026-10-29** · [Formulaic](https://arxiv.org/abs/2610.39380) — Uses agents to formulate hardware–software optimization problems checked by solvers, verification, and measurement, reporting separate component studies.
-- **2026-10-28** · [GI-RTL-Fuzz](https://arxiv.org/abs/2610.38489) — Guides RTL generation with grammar coverage and uses differential testing to find simulator lint and execution inconsistencies.
-- **2026-10-27** · [AutoProfiler](https://arxiv.org/abs/2610.36576) — Learns kernel-specific profiling information selection from optimization feedback under a measurement budget.
+- **2026-10-27** · [AMD–Meta AI Infrastructure](https://newsroom.amd.com/news/amd-meta-advance-strategic-partnership-power-metas-ai-infrastructure/) — Reports initial Helios systems installed and under test at Meta, alongside workload-specific silicon and software co-design.
+- **2026-10-26** · [Cadence Maestro](https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2026/cadence-introduces-maestro-a-domain-specialized-ai-model.html) — Introduces domain-specialized models, decision models, and agent skills trained with EDA/SDA feedback, with select-customer early access in Q4.
+- **2026-10-21 · Backfill** · [Altera QuartusIQ](https://www.altera.com/newsroom/altera-launches-quartusIQ) — Announces a project-aware FPGA companion with MCP, reusable Quartus Skills, and an agent harness; product downloads were scheduled for October 28.
 
 
 ---
@@ -282,6 +282,7 @@ Scan the code to join the AI4CHIP WeChat group and discuss research and engineer
 # Surveys & Articles
 
 
+- [AMD–Meta AI Infrastructure](https://newsroom.amd.com/news/amd-meta-advance-strategic-partnership-power-metas-ai-infrastructure/) (2026) — Reports initial Helios rackscale installation and testing at Meta, workload-specific Instinct co-design, and joint ROCm/PyTorch optimization, distinguishing deployed systems from future hardware plans.
 - [Exploring the Agentic Frontier of Verilog Code Generation](https://arxiv.org/abs/2603.19347) (2026) — Compares prompt structures, tools, and agent wrappers under controlled conditions on CVDP, analyzing failure modes such as tool-output interpretation and crashes.
 - [Human-Centered Agentic AI Workflows for RTL Verification](https://resources.sw.siemens.com/en-GB/white-paper-human-centered-agentic-ai-workflows-for-rtl-verification/) — Siemens explains the division of work among engineers, agents, and deterministic tools in RTL verification.
 - [Learn the Interface, Not the Implementation](https://arxiv.org/abs/2610.25881) (2026) — Holds data and the formal-equivalence oracle fixed on SECDED ECC wrappers to compare training regimes and output representations, studying configuration generation followed by a deterministic RTL generator.
@@ -384,6 +385,7 @@ Scan the code to join the AI4CHIP WeChat group and discuss research and engineer
 
 - [Arm KleidiAI](https://github.com/ARM-software/kleidiai) — An AI micro-kernel library for Arm CPUs, with architecture-optimized matrix operations and data-packing routines. [Main Repository](https://gitlab.arm.com/kleidi/kleidiai)
 - [DeepEP](https://github.com/deepseek-ai/DeepEP) — Provides high-throughput and low-latency communication paths for MoE expert parallelism, connecting model routing, GPU kernels, and network transport.
+- [oneDNN](https://github.com/uxlfoundation/oneDNN) — Provides optimized deep-learning primitives and hardware-specific kernels; AMD and Intel announced plans to integrate ZenDNN optimizations into oneDNN as a common PyTorch acceleration path for x86 CPUs. [Integration announcement](https://newsroom.amd.com/news/amd-intel-collaborate-simplify-ai-development-on-x86-cpus-pytorch/)
 - [TileLang](https://github.com/tile-ai/tilelang) — Expresses GPU, CPU, and accelerator kernels through tiles to simplify low-level optimization and implementation across hardware backends.
 - [Triton](https://github.com/triton-lang/triton) — A language and compiler for high-performance GPU kernels, used as a code-generation target by multiple kernel agents.
 
@@ -464,7 +466,7 @@ Tools for simulation and debug, synthesis and physical implementation, timing an
 - [GPT-Synopsys](https://news.synopsys.com/2026-09-30-OpenAI-and-Synopsys-Announce-GPT-Synopsys-Frontier-Intelligence-to-Revolutionize-Chip-Design) (2026) — OpenAI and Synopsys are developing specialized models for EDA tool use, with planned integration into customer harnesses, Synopsys.ai, and Autopilot.
 - [Siemens Aprisa AI](https://siemens.com/aprisa-ai) — Integrates PPA design-space exploration and natural-language assistance into RTL-to-GDS implementation, generating tool configurations and flow examples.
 - [Siemens Calibre Vision AI](https://blogs.sw.siemens.com/calibre/2025/06/25/calibre-vision-ai-a-new-era-of-fast-scalable-chip-level-drc-debug/) — Combines OASIS results with AI spatial-pattern clustering to organize large volumes of DRC violations into actionable debugging findings for teams.
-- [Siemens Fuse EDA AI](https://news.siemens.com/en-gb/siemens-fuse-eda-ai-agent/) — Connects design tools through multimodal EDA data, RAG, MCP, and Agent Skills, organizing hierarchical planning, dynamic tool discovery, and feedback loops. [Continuous Verification Architecture](https://blogs.sw.siemens.com/cicv/2026/07/29/self-verifying-eda-ai-agents/)
+- [Siemens Fuse EDA AI](https://news.siemens.com/en-gb/siemens-fuse-eda-ai-agent/) — Connects design tools through multimodal EDA data, RAG, MCP, and Agent Skills, organizing hierarchical planning, dynamic tool discovery, and feedback loops. [Continuous Verification Architecture](https://blogs.sw.siemens.com/cicv/2026/07/29/self-verifying-eda-ai-agents/) [Electrothermal workflow](https://press.siemens.com/global/en/pressrelease/siemens-and-nvidia-are-advancing-industrial-ai)
 - [Siemens Questa One](https://www.siemens.com/en-us/products/ic/questa-one/) — Combines AI-assisted verification with an Agentic Toolkit for verification planning, execution, debugging, and coverage analysis.
 - [Siemens Solido AI](https://eda.sw.siemens.com/en-US/ic/solido/solido-generative-agentic-ai/) — Applies generative and agentic AI to schematics, simulation, variation-aware verification, library characterization, and layout, with Fuse coordinating workflows across tools.
 - [Synopsys AgentEngineer / Autopilot](https://news.synopsys.com/2026-09-28-Synopsys-Powers-Autonomous-Engineering-with-a-Broad-Portfolio-of-Long-Horizon-Agents-and-Autopilot-Platform) — A portfolio of agents for long-running engineering tasks across design stages, planned for availability by the end of 2026. [AMD / Microsoft Case Studies](https://news.synopsys.com/2026-07-27-Synopsys-Advances-Agentic-AI-Chip-Design-with-AMD-and-Microsoft)
@@ -781,9 +783,9 @@ Covers circuit representation and performance prediction, RTL and logic optimiza
 - **2026-10-30** · [RTL-Interact](https://arxiv.org/abs/2610.41225) — 以分阶段 SFT 与 PAPO 强化学习训练 RTL 生成、EDA 检查和反馈修复。
 - **2026-10-29** · [OPERA](https://arxiv.org/abs/2610.39395) — 将 gm/ID 推理与 gLayout 生成器连接到 SKY130 运放的版图提取和 PVT 验证。
 - **2026-10-29** · [RISC-V FPGA-in-the-Loop](https://arxiv.org/abs/2610.39570) — 在人工监督下用 FPGA 板上测量迭代 CPU，并定位长程运行中的性能退化。
-- **2026-10-29** · [Formulaic](https://arxiv.org/abs/2610.39380) — 让 agent 构造软硬件优化问题，由求解器、验证和测量检查；公布分项实验。
-- **2026-10-28** · [GI-RTL-Fuzz](https://arxiv.org/abs/2610.38489) — 以语法覆盖引导 RTL 生成，通过差分测试发现仿真器 lint 与执行结果不一致。
-- **2026-10-27** · [AutoProfiler](https://arxiv.org/abs/2610.36576) — 从优化反馈学习按 kernel 选择 profiling 信息，控制测量预算。
+- **2026-10-27** · [AMD–Meta AI Infrastructure](https://newsroom.amd.com/news/amd-meta-advance-strategic-partnership-power-metas-ai-infrastructure/) — 披露初始 Helios 系统已在 Meta 安装并测试，以及围绕实际工作负载的芯片与软件协同设计。
+- **2026-10-26** · [Cadence Maestro](https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2026/cadence-introduces-maestro-a-domain-specialized-ai-model.html) — 发布结合 EDA/SDA 反馈训练的领域模型、决策模型和 agent skills，第四季度向部分客户早期开放。
+- **2026-10-21 · 补录** · [Altera QuartusIQ](https://www.altera.com/newsroom/altera-launches-quartusIQ) — 宣布接入项目上下文、MCP、Quartus Skills 和 agent harness 的 FPGA 助手，公告安排于 10 月 28 日提供下载。
 
 ## 目录
 
@@ -870,9 +872,9 @@ Covers circuit representation and performance prediction, RTL and logic optimiza
 - **2026-10-30** · [RTL-Interact](https://arxiv.org/abs/2610.41225) — 以分阶段 SFT 与 PAPO 强化学习训练 RTL 生成、EDA 检查和反馈修复。
 - **2026-10-29** · [OPERA](https://arxiv.org/abs/2610.39395) — 将 gm/ID 推理与 gLayout 生成器连接到 SKY130 运放的版图提取和 PVT 验证。
 - **2026-10-29** · [RISC-V FPGA-in-the-Loop](https://arxiv.org/abs/2610.39570) — 在人工监督下用 FPGA 板上测量迭代 CPU，并定位长程运行中的性能退化。
-- **2026-10-29** · [Formulaic](https://arxiv.org/abs/2610.39380) — 让 agent 构造软硬件优化问题，由求解器、验证和测量检查；公布分项实验。
-- **2026-10-28** · [GI-RTL-Fuzz](https://arxiv.org/abs/2610.38489) — 以语法覆盖引导 RTL 生成，通过差分测试发现仿真器 lint 与执行结果不一致。
-- **2026-10-27** · [AutoProfiler](https://arxiv.org/abs/2610.36576) — 从优化反馈学习按 kernel 选择 profiling 信息，控制测量预算。
+- **2026-10-27** · [AMD–Meta AI Infrastructure](https://newsroom.amd.com/news/amd-meta-advance-strategic-partnership-power-metas-ai-infrastructure/) — 披露初始 Helios 系统已在 Meta 安装并测试，以及围绕实际工作负载的芯片与软件协同设计。
+- **2026-10-26** · [Cadence Maestro](https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2026/cadence-introduces-maestro-a-domain-specialized-ai-model.html) — 发布结合 EDA/SDA 反馈训练的领域模型、决策模型和 agent skills，第四季度向部分客户早期开放。
+- **2026-10-21 · 补录** · [Altera QuartusIQ](https://www.altera.com/newsroom/altera-launches-quartusIQ) — 宣布接入项目上下文、MCP、Quartus Skills 和 agent harness 的 FPGA 助手，公告安排于 10 月 28 日提供下载。
 
 
 ---
@@ -1011,6 +1013,7 @@ Covers circuit representation and performance prediction, RTL and logic optimiza
 # Surveys & Articles
 
 
+- [AMD–Meta AI Infrastructure](https://newsroom.amd.com/news/amd-meta-advance-strategic-partnership-power-metas-ai-infrastructure/)（2026） — 披露 Meta 初始 Helios 机架系统的安装与测试、面向其工作负载的 Instinct 协同设计及 ROCm/PyTorch 优化，并区分现有部署与后续硬件计划。
 - [Exploring the Agentic Frontier of Verilog Code Generation](https://arxiv.org/abs/2603.19347)（2026） — 在 CVDP 上受控比较提示结构、工具与 agent 封装，分析工具解读和崩溃等失败模式。
 - [Human-Centered Agentic AI Workflows for RTL Verification](https://resources.sw.siemens.com/en-GB/white-paper-human-centered-agentic-ai-workflows-for-rtl-verification/) — Siemens 对 RTL 验证中工程师、agent 与确定性工具分工的说明。
 - [Learn the Interface, Not the Implementation](https://arxiv.org/abs/2610.25881)（2026） — 在 SECDED ECC wrapper 任务中固定数据与形式等价 oracle，对比训练方式和输出表示，研究生成配置再调用确定性 RTL 生成器的价值。
@@ -1113,6 +1116,7 @@ Covers circuit representation and performance prediction, RTL and logic optimiza
 
 - [Arm KleidiAI](https://github.com/ARM-software/kleidiai) — 面向 Arm CPU 的 AI micro-kernel 库，提供按硬件架构优化的矩阵计算与数据打包例程。 [主仓库](https://gitlab.arm.com/kleidi/kleidiai)
 - [DeepEP](https://github.com/deepseek-ai/DeepEP) — 为 MoE expert parallelism 设计高吞吐与低延迟通信路径，连接模型路由、GPU kernel 和网络传输。
+- [oneDNN](https://github.com/uxlfoundation/oneDNN) — 提供深度学习算子与硬件专用 kernel；AMD 与 Intel 宣布计划将 ZenDNN 优化整合到 oneDNN，统一 PyTorch 在 x86 CPU 上的加速路径。 [整合公告](https://newsroom.amd.com/news/amd-intel-collaborate-simplify-ai-development-on-x86-cpus-pytorch/)
 - [TileLang](https://github.com/tile-ai/tilelang) — 以 tile 为核心表达 GPU、CPU 和加速器 kernel，简化底层优化与跨硬件后端实现。
 - [Triton](https://github.com/triton-lang/triton) — 用于编写高性能 GPU kernel 的语言和编译器，是多项 kernel agent 的代码生成目标。
 
@@ -1193,7 +1197,7 @@ AI EDA 将模型接入芯片设计与验证，组织工具调用、设计上下�
 - [GPT-Synopsys](https://news.synopsys.com/2026-09-30-OpenAI-and-Synopsys-Announce-GPT-Synopsys-Frontier-Intelligence-to-Revolutionize-Chip-Design)（2026） — OpenAI 与 Synopsys 合作开发面向 EDA 工具使用的专用模型，计划连接客户 harness、Synopsys.ai 与 Autopilot。
 - [Siemens Aprisa AI](https://siemens.com/aprisa-ai) — 将 PPA 设计空间探索与自然语言辅助集成进 RTL-to-GDS 实现流程，生成工具配置和流程示例。
 - [Siemens Calibre Vision AI](https://blogs.sw.siemens.com/calibre/2025/06/25/calibre-vision-ai-a-new-era-of-fast-scalable-chip-level-drc-debug/) — 结合 OASIS 结果与 AI 空间模式聚类，将大规模 DRC 违规整理为可定位、可协作处理的调试线索。
-- [Siemens Fuse EDA AI](https://news.siemens.com/en-gb/siemens-fuse-eda-ai-agent/) — 以多模态 EDA 数据、RAG、MCP 和 Agent Skills 连接设计工具，组织分层规划、动态工具发现与反馈循环。 [持续验证架构](https://blogs.sw.siemens.com/cicv/2026/07/29/self-verifying-eda-ai-agents/)
+- [Siemens Fuse EDA AI](https://news.siemens.com/en-gb/siemens-fuse-eda-ai-agent/) — 以多模态 EDA 数据、RAG、MCP 和 Agent Skills 连接设计工具，组织分层规划、动态工具发现与反馈循环。 [持续验证架构](https://blogs.sw.siemens.com/cicv/2026/07/29/self-verifying-eda-ai-agents/) [电热分析工作流](https://press.siemens.com/global/en/pressrelease/siemens-and-nvidia-are-advancing-industrial-ai)
 - [Siemens Questa One](https://www.siemens.com/en-us/products/ic/questa-one/) — 将 AI 辅助验证与 Agentic Toolkit 结合，覆盖验证规划、执行、调试与覆盖率分析。
 - [Siemens Solido AI](https://eda.sw.siemens.com/en-US/ic/solido/solido-generative-agentic-ai/) — 将生成式与 agentic AI 用于原理图、仿真、工艺变异感知验证、库表征和版图，并通过 Fuse 组织多工具工作流。
 - [Synopsys AgentEngineer / Autopilot](https://news.synopsys.com/2026-09-28-Synopsys-Powers-Autonomous-Engineering-with-a-Broad-Portfolio-of-Long-Horizon-Agents-and-Autopilot-Platform) — 面向跨阶段长流程工程任务的 agent 产品组合，计划于 2026 年底提供。 [AMD / Microsoft 实践](https://news.synopsys.com/2026-07-27-Synopsys-Advances-Agentic-AI-Chip-Design-with-AMD-and-Microsoft)

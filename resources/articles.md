@@ -1,3 +1,4 @@
+- [AMD–Meta AI Infrastructure](https://newsroom.amd.com/news/amd-meta-advance-strategic-partnership-power-metas-ai-infrastructure/)（2026） — 披露 Meta 初始 Helios 机架系统的安装与测试、面向其工作负载的 Instinct 协同设计及 ROCm/PyTorch 优化，并区分现有部署与后续硬件计划。
 - [Exploring the Agentic Frontier of Verilog Code Generation](https://arxiv.org/abs/2603.19347)（2026） — 在 CVDP 上受控比较提示结构、工具与 agent 封装，分析工具解读和崩溃等失败模式。
 - [Human-Centered Agentic AI Workflows for RTL Verification](https://resources.sw.siemens.com/en-GB/white-paper-human-centered-agentic-ai-workflows-for-rtl-verification/) — Siemens 对 RTL 验证中工程师、agent 与确定性工具分工的说明。
 - [Learn the Interface, Not the Implementation](https://arxiv.org/abs/2610.25881)（2026） — 在 SECDED ECC wrapper 任务中固定数据与形式等价 oracle，对比训练方式和输出表示，研究生成配置再调用确定性 RTL 生成器的价值。

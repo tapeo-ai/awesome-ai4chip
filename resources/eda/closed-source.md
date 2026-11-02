@@ -24,7 +24,7 @@
 - [GPT-Synopsys](https://news.synopsys.com/2026-09-30-OpenAI-and-Synopsys-Announce-GPT-Synopsys-Frontier-Intelligence-to-Revolutionize-Chip-Design)（2026） — OpenAI 与 Synopsys 合作开发面向 EDA 工具使用的专用模型，计划连接客户 harness、Synopsys.ai 与 Autopilot。
 - [Siemens Aprisa AI](https://siemens.com/aprisa-ai) — 将 PPA 设计空间探索与自然语言辅助集成进 RTL-to-GDS 实现流程，生成工具配置和流程示例。
 - [Siemens Calibre Vision AI](https://blogs.sw.siemens.com/calibre/2025/06/25/calibre-vision-ai-a-new-era-of-fast-scalable-chip-level-drc-debug/) — 结合 OASIS 结果与 AI 空间模式聚类，将大规模 DRC 违规整理为可定位、可协作处理的调试线索。
-- [Siemens Fuse EDA AI](https://news.siemens.com/en-gb/siemens-fuse-eda-ai-agent/) — 以多模态 EDA 数据、RAG、MCP 和 Agent Skills 连接设计工具，组织分层规划、动态工具发现与反馈循环。 [持续验证架构](https://blogs.sw.siemens.com/cicv/2026/07/29/self-verifying-eda-ai-agents/)
+- [Siemens Fuse EDA AI](https://news.siemens.com/en-gb/siemens-fuse-eda-ai-agent/) — 以多模态 EDA 数据、RAG、MCP 和 Agent Skills 连接设计工具，组织分层规划、动态工具发现与反馈循环。 [持续验证架构](https://blogs.sw.siemens.com/cicv/2026/07/29/self-verifying-eda-ai-agents/) [电热分析工作流](https://press.siemens.com/global/en/pressrelease/siemens-and-nvidia-are-advancing-industrial-ai)
 - [Siemens Questa One](https://www.siemens.com/en-us/products/ic/questa-one/) — 将 AI 辅助验证与 Agentic Toolkit 结合，覆盖验证规划、执行、调试与覆盖率分析。
 - [Siemens Solido AI](https://eda.sw.siemens.com/en-US/ic/solido/solido-generative-agentic-ai/) — 将生成式与 agentic AI 用于原理图、仿真、工艺变异感知验证、库表征和版图，并通过 Fuse 组织多工具工作流。
 - [Synopsys AgentEngineer / Autopilot](https://news.synopsys.com/2026-09-28-Synopsys-Powers-Autonomous-Engineering-with-a-Broad-Portfolio-of-Long-Horizon-Agents-and-Autopilot-Platform) — 面向跨阶段长流程工程任务的 agent 产品组合，计划于 2026 年底提供。 [AMD / Microsoft 实践](https://news.synopsys.com/2026-07-27-Synopsys-Advances-Agentic-AI-Chip-Design-with-AMD-and-Microsoft)
