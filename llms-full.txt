@@ -432,6 +432,7 @@ AI EDA connects models to chip design and verification through tool use, design 
 - [JARVIS](https://arxiv.org/abs/2505.14978) (2025) — NVIDIA fine-tunes ChipNeMo on synthetic EDA scripts, then combines API-graph checks, rules, retrieval, and multi-agent repair to generate tool scripts.
 - [MCP4EDA](https://arxiv.org/abs/2507.19570) (2025) — Orchestrates open-source RTL-to-GDS tools through MCP and optimizes synthesis scripts using post-place-and-route PPA feedback.
 - [OpenROAD-MCP](https://github.com/The-OpenROAD-Project/OpenROAD-MCP) (2026) — Provides agents with persistent OpenROAD sessions, command execution, historical metrics, and access to ORFS report plots.
+- [PCBRouteAgent](https://chip-ai-agent.github.io/research/pcbrouteagent/) (2026) — A multimodal PCB routing agent combining global routing planning, native KiCad routing execution, and feedback-driven replanning, evaluated on PCBWorld-Bench. [Paper](https://arxiv.org/abs/2611.08175)
 - [TuRTLe](https://github.com/HPAI-BSC/TuRTLe) (2025) — Unifies multiple RTL benchmarks and EDA tools, covering syntax, functionality, equivalence, synthesis, PPA, and code-completion metrics. [Paper](https://arxiv.org/abs/2504.01986)
 
 
@@ -1163,6 +1164,7 @@ AI EDA 将模型接入芯片设计与验证，组织工具调用、设计上下�
 - [JARVIS](https://arxiv.org/abs/2505.14978)（2025） — NVIDIA 在合成 EDA 脚本上微调 ChipNeMo，再结合 API 图检查、规则、检索和多 agent 修复生成工具脚本。
 - [MCP4EDA](https://arxiv.org/abs/2507.19570)（2025） — 通过 MCP 编排开源 RTL-to-GDS 工具，并用布局布线后的 PPA 反馈优化综合脚本。
 - [OpenROAD-MCP](https://github.com/The-OpenROAD-Project/OpenROAD-MCP)（2026） — 为 agent 提供持久 OpenROAD 会话、命令执行、历史指标和 ORFS 报告图访问。
+- [PCBRouteAgent](https://chip-ai-agent.github.io/research/pcbrouteagent/)（2026） — 面向 PCB 布线的多模态 agent，将全局布线规划、KiCad 原生布线执行与反馈驱动重规划结合，并在 PCBWorld-Bench 上评估。 [论文](https://arxiv.org/abs/2611.08175)
 - [TuRTLe](https://github.com/HPAI-BSC/TuRTLe)（2025） — 统一多套 RTL 基准和 EDA 工具，覆盖语法、功能、等价、综合、PPA 与代码补全指标。 [论文](https://arxiv.org/abs/2504.01986)
 
 
