@@ -32,6 +32,7 @@
 
 <!-- latest:start -->
 
+- **2026-11-05** · [PCBRouteAgent](https://arxiv.org/abs/2611.08175) — 发布面向 PCB 布线的多模态 agent，结合全局规划、KiCad 原生执行与反馈驱动重规划。 [项目页](https://chip-ai-agent.github.io/research/pcbrouteagent/)
 - **2026-10-30** · [RTL-Interact](https://arxiv.org/abs/2610.41225) — 以分阶段 SFT 与 PAPO 强化学习训练 RTL 生成、EDA 检查和反馈修复。
 - **2026-10-29** · [OPERA](https://arxiv.org/abs/2610.39395) — 将 gm/ID 推理与 gLayout 生成器连接到 SKY130 运放的版图提取和 PVT 验证。
 - **2026-10-29** · [RISC-V FPGA-in-the-Loop](https://arxiv.org/abs/2610.39570) — 在人工监督下用 FPGA 板上测量迭代 CPU，并定位长程运行中的性能退化。
