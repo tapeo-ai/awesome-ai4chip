@@ -5,6 +5,8 @@ description: "Specialized accelerators, model-specific chips, and compute-in-mem
 
 ## Domain-specific Accelerators
 
+- [Atik](https://github.com/AhmedZeer/atik) (2026) — An open-source Rocket Chip RoCC accelerator that executes matrix multiplication and streaming online-softmax attention on one shared fixed-point MAC mesh, passes its FireSim cycle-level tests, and separately reports Sky130 layout area. [Paper](https://arxiv.org/abs/2611.09522)
+- [Cross-Domain Matrix Engine](https://arxiv.org/abs/2611.03503) (2026) — Reconfigures a systolic array into a tensor-style reduction per operation so one engine can serve small signal-processing matrices and large DNN matrix multiplications; the structure is checked on a Zynq-7020 FPGA and in ASAP 7 nm synthesis.
 - [Etched](https://www.etched.com/) — Co-designs chips, racks, interconnects, and software for large-model inference, with material on low-voltage inference and cluster-level memory.
 - [FIGFLEX](https://arxiv.org/abs/2610.30480) (2026) — Co-designs low-bit mixed-precision quantization and an FP-INT GEMM datapath using radix-4 shift-add and precision-flexible partial-product reduction to turn lower weight precision into computation throughput.
 - [Gemmini](https://github.com/ucb-bar/gemmini) (2019/2021) — A parameterized systolic-array accelerator generator that combines RTL, a RISC-V host, memory systems, and software for full-system DNN evaluation. [Paper](https://arxiv.org/abs/1911.09925)
@@ -15,6 +17,9 @@ description: "Specialized accelerators, model-specific chips, and compute-in-mem
 ## CIM (Compute-in-Memory)
 
 - [AccelForge / HWComponents](https://github.com/Accelergy-Project/accelforge) — Carry forward CiMLoop architecture and component models to evaluate mappings, area, energy, and latency for accelerators including compute-in-memory; the original CiMLoop repository is no longer maintained. [Component Models](https://github.com/Accelergy-Project/hwcomponents) [Original CiMLoop Repository](https://github.com/mit-emze/cimloop) [CiMLoop Paper](https://arxiv.org/abs/2405.07259)
+- [CAMP](https://arxiv.org/abs/2611.07707) (2026) — Builds a conflict matrix from architecture, network, and inference context to map LLM weights onto 3D compute-in-memory arrays, then prunes the search with profiling feedback.
 - [CrossSim](https://github.com/sandialabs/cross-sim) — Evaluates how analog crossbar nonidealities, including device errors, drift, noise, and ADC effects, affect algorithm accuracy, with hardware-aware training support.
 - [DNN+NeuroSim](https://github.com/neurosim/NeuroSim) — Combines device, circuit, and DNN models to assess the accuracy, performance, energy, and area of compute-in-memory accelerators.
 - [IBM AIHWKit / AIHWKit-Lightning](https://github.com/IBM/aihwkit) — Models analog compute-in-memory noise and nonidealities in PyTorch, supporting hardware-aware training. [AIHWKit-Lightning](https://github.com/IBM/aihwkit-lightning)
+- [Isobar](https://arxiv.org/abs/2611.08399) (2026) — Simulates analog compute-in-memory decomposition, heterogeneous execution, and interconnect topology, checks cost estimates against silicon measurements and cycle-accurate simulation, and searches weight mappings that affect communication and end-to-end latency.
+- [Retraining-Free Analog CIM](https://arxiv.org/abs/2611.08693) (2026) — Uses input centering and array-oriented Hadamard rotations as shared calibration so pretrained models can recover inference accuracy on PCM and ReRAM compute-in-memory arrays without retraining weights.

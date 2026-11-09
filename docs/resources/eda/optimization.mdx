@@ -7,6 +7,7 @@ description: "电路表示与性能预测、RTL 与逻辑优化、物理设计�
 
 ## Circuit Representation & Performance Prediction
 
+- [Clock-Mesh GNN Surrogate](https://arxiv.org/abs/2611.01473)（2026） — 用图网络代理 SPICE，预测时钟网格在片上变异下的延迟、slew、skew 和功耗，并据此搜索缓冲方案。
 - [DeepGate4](https://github.com/zyzheng17/DeepGate4-ICLR-25)（2025） — 结合 GNN 编码器和稀疏图 Transformer，以门级和图级多任务监督学习大规模 AIG 的功能与结构表示。 [论文](https://arxiv.org/abs/2502.01681)
 - [Multimodal Thermal Solver for 3DICs](https://doi.org/10.1109/MLCAD65511.2025.11189201)（2025） — UMD 与 Synopsys 结合分块热响应学习、多模态映射和线性叠加，预测不同芯片尺寸与功率分布下的热场。 [技术演讲](https://www.ieee-edps.com/archives/2025/c/0400chang.pdf)
 - [Pieceformer](https://arxiv.org/abs/2506.15907)（2025） — Georgia Tech 与 Cadence 结合消息传递、分区图 Transformer 和对比自监督学习，衡量网表相似性并复用设计划分经验。
@@ -27,6 +28,7 @@ description: "电路表示与性能预测、RTL 与逻辑优化、物理设计�
 - [EGGPlacer](https://arxiv.org/abs/2610.33099)（2026） — 在反向扩散中注入解析布局与可微热模型反馈，联合考虑标准单元分布、全网表线长和温度，引导宏单元布局。
 - [LEGO-Size](https://research.nvidia.com/labs/electronic-design-automation/publication/lu2025ispd/)（2025） — NVIDIA 对库单元序列进行专用 Transformer 自监督预训练和监督学习，再用 GPU 可微时序分析优化门尺寸。 [论文](https://research.nvidia.com/labs/electronic-design-automation/papers/yichen_LEGO_ispd25.pdf)
 - [OpenROAD AutoTuner](https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts/tree/master/tools/AutoTuner) — 通过分布式超参数搜索自动调节 RTL-to-GDS 流程参数，并收集 PPA 指标。
+- [qLevelPlace](https://arxiv.org/abs/2611.04019)（2026） — 将 RSFQ 电路的逻辑门与 splitter 分阶段布局，用时序感知的二次代价惩罚长互连；在基准电路上相对 qPlace 平均达到 2.65 倍时钟频率，并减少 51% 面积。
 
 ## Analog Circuit Design
 
@@ -35,3 +37,4 @@ description: "电路表示与性能预测、RTL 与逻辑优化、物理设计�
 - [APPlace](https://github.com/bingyang1132/applace)（2026） — 以可微目标联合优化模拟器件位置与端口接入点，再通过保持结构的合法化改善布线条件；提供 Rust 实现和无需 PDK 的抽象算例。 [论文](https://arxiv.org/abs/2610.39515)
 - [AstRL](https://arxiv.org/abs/2602.12402)（2026） — 以图神经网络作为晶体管拓扑策略，结合专家行为克隆、PPO 和仿真反馈生成模拟与混合信号电路。
 - [LAMP](https://arxiv.org/abs/2610.39882)（2026） — 让 LLM 根据多模态布局检查点组合约束、布局、合法化和轻量评估工具，并重组层次；在两个 SMIC 180 nm 电路上评估版图后性能。
+- [Route-Aware EM Surrogate](https://arxiv.org/abs/2611.00409)（2026） — 为同一工艺节点的走线训练可跨匹配网络复用的电磁导纳代理，在商用 65 nm CMOS 上对 LC 匹配网络做版图后无源微调，并以全版图电磁仿真验收。

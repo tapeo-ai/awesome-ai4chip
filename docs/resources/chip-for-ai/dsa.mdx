@@ -5,6 +5,8 @@ description: "面向 AI 工作负载的专用加速器、模型专用芯片和�
 
 ## Domain-specific Accelerators
 
+- [Atik](https://github.com/AhmedZeer/atik)（2026） — 开源 Rocket Chip RoCC 加速器，用共享定点 MAC mesh 执行矩阵乘和流式在线 softmax 注意力，在 FireSim 周期仿真中通过其基准测试，并单独报告 Sky130 版图面积。 [论文](https://arxiv.org/abs/2611.09522)
+- [Cross-Domain Matrix Engine](https://arxiv.org/abs/2611.03503)（2026） — 让脉动阵列按操作重构为张量式归约，兼顾小规模信号处理矩阵和大规模 DNN 矩阵乘；结构在 Zynq-7020 FPGA 与 ASAP 7 nm 综合中验证。
 - [Etched](https://www.etched.com/) — 围绕大模型推理协同设计芯片、机架、互联和软件，介绍低电压推理与集群级内存方案。
 - [FIGFLEX](https://arxiv.org/abs/2610.30480)（2026） — 联合设计低比特混合精度量化与 FP-INT GEMM 数据通路，通过 radix-4 移位加法和按精度调整的部分积归约，把权重位宽降低转成计算吞吐收益。
 - [Gemmini](https://github.com/ucb-bar/gemmini)（2019/2021） — 可参数化脉动阵列加速器生成器，将 RTL、RISC-V 主机、内存系统及软件栈联合用于 DNN 全系统评估。 [论文](https://arxiv.org/abs/1911.09925)
@@ -15,6 +17,9 @@ description: "面向 AI 工作负载的专用加速器、模型专用芯片和�
 ## CIM (Compute-in-Memory)
 
 - [AccelForge / HWComponents](https://github.com/Accelergy-Project/accelforge) — 承接 CiMLoop 的架构与组件模型，联合评估存算一体等加速器的映射、面积、能耗和时延；CiMLoop 原仓库已停止维护。 [组件模型](https://github.com/Accelergy-Project/hwcomponents) [CiMLoop 原仓库](https://github.com/mit-emze/cimloop) [CiMLoop 论文](https://arxiv.org/abs/2405.07259)
+- [CAMP](https://arxiv.org/abs/2611.07707)（2026） — 按架构、网络和推理上下文建立冲突矩阵，为 3D 存算阵列安排 LLM 权重映射，并用 profiling 反馈收窄搜索。
 - [CrossSim](https://github.com/sandialabs/cross-sim) — 评估模拟交叉阵列的器件误差、漂移、噪声和 ADC 等非理想性对算法精度的影响，支持硬件感知训练。
 - [DNN+NeuroSim](https://github.com/neurosim/NeuroSim) — 将器件、电路与 DNN 计算结合建模，用于存算一体加速器的精度、性能、能耗和面积评估。
 - [IBM AIHWKit / AIHWKit-Lightning](https://github.com/IBM/aihwkit) — 在 PyTorch 中建模模拟存算一体硬件的噪声和非理想性，支持硬件感知训练。 [AIHWKit-Lightning](https://github.com/IBM/aihwkit-lightning)
+- [Isobar](https://arxiv.org/abs/2611.08399)（2026） — 仿真模拟存算的分解、异构执行和互连拓扑，用硅测量与周期级仿真校验代价，再搜索影响通信和端到端延迟的权重映射。
+- [Retraining-Free Analog CIM](https://arxiv.org/abs/2611.08693)（2026） — 用输入中心化与面向阵列的 Hadamard 旋转做共享校准，使预训练模型在 PCM 和 ReRAM 存算阵列上无需重训练权重即可恢复推理精度。
