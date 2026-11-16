@@ -17,10 +17,12 @@ AI EDA 将模型接入芯片设计与验证，组织工具调用、设计上下�
 
 ## 验证、调试与设计数据查询
 
+- [Agentic UVM Testbench Synthesis](https://arxiv.org/abs/2611.16202)（2026） — 从编码接口、协议与覆盖意图的 Verification Manifest 生成 UVM testbench，以分类编译诊断和覆盖缺口双闭环修复，作者在 AMBA 桥接等案例中保留人工纠正。
 - [Back-to-the-Future (BTTF)](https://arxiv.org/abs/2610.06790)（2026） — 把仿真波形存入 SQLite，让 agent 根据自然语言查询信号，并关联对应版本的 RTL。
 - [ChipXplore](https://github.com/scale-lab/ChipXplore)（2025） — 把 PDK 库与物理设计数据分别组织成 SQL 和图数据库，支持自然语言查询和探索。
 - [GI-RTL-Fuzz](https://arxiv.org/abs/2610.38489)（2026） — 以 BNF 语法覆盖引导 LLM 生成 RTL，对 Verilator、Icarus Verilog 和 ModelSim 做差分测试，定位 lint 与仿真输出不一致。
 - [RTLExplain](https://research.ibm.com/publications/rtlexplain-a-structured-approach-to-rtl-code-summarization-and-question-answering-for-medium-to-large-designs-using-llms--1)（2025） — IBM 为中大型 RTL 项目构建结构化知识库，结合 RAG 支持代码摘要、文档生成与设计问答。
+- [RTLREX](https://arxiv.org/abs/2611.10798)（2026-11-07，补录） — 从门级网表或真值表恢复高层 RTL，以工具辅助结构分析和语法代价改写压缩表示，并用独立等价检查验证全部输入行为。
 - [UCAgent](https://github.com/XS-MLVP/UCAgent)（2026） — 以分阶段检查和 Python 验证工具链组织 RTL 验证，连接 Picker、Toffee 与大模型。 [论文](https://arxiv.org/abs/2603.25768)
 
 ## 模拟与射频设计
@@ -28,6 +30,7 @@ AI EDA 将模型接入芯片设计与验证，组织工具调用、设计上下�
 - [AnalogAgent](https://arxiv.org/abs/2603.23910)（2026） — 用代码生成、设计优化、知识整理三个角色及自演化记忆复用模拟设计反馈。
 - [AnalogCoder](https://github.com/laiyao1/AnalogCoder)（2025） — 通过 Python/PySpice 代码生成、仿真反馈和子电路库完成模拟电路设计。 [数据](https://github.com/laiyao1/AnalogCoder/blob/main/problem_set.tsv)
 - [AnalogCoder-Pro](https://github.com/laiyao1/AnalogCoderPro)（2026） — 结合电路生成、波形图诊断与参数优化，联合探索模拟拓扑和器件尺寸。 [数据](https://github.com/laiyao1/AnalogCoderPro/blob/master/problem_set.tsv)
+- [CASCoDe](https://arxiv.org/abs/2611.11710)（2026） — 将模拟尺寸、布局、局部修整与布线组织为分层动作和反馈树搜索，用 DRC/LVS 与寄生后仿真共同驱动 SKY130 放大器的电路与版图协同设计。
 - [HeaRT](https://arxiv.org/abs/2511.19669)（2025） — 以层次电路推理树组织子电路、反馈回路识别和规格变化下的设计调整。
 - [OPERA](https://arxiv.org/abs/2610.39395)（2026） — 将专家提供的 gm/ID 方法与 gLayout 生成器结合，在设计师审批节点下完成 SKY130 运放尺寸、版图、DRC/LVS 和提取后 PVT 验证。 [基准网表](https://github.com/AMPICLab/AMPICBench)
 - [Power Electronics Schematic Synthesis](https://arxiv.org/abs/2610.38201)（2026） — 将自然语言规格转成经过分销商数据、器件降额和 ngspice 瞬态校核的 KiCad 原理图，覆盖 Buck、Boost、反激、DAB 和半桥 LLC。
@@ -42,6 +45,7 @@ AI EDA 将模型接入芯片设计与验证，组织工具调用、设计上下�
 - [HORIZON](https://arxiv.org/abs/2606.28279)（2026） — 用 Markdown 描述设计任务、评估方法和验收条件，组织 agent 在 Git 仓库中迭代开发。
 - [JARVIS](https://arxiv.org/abs/2505.14978)（2025） — NVIDIA 在合成 EDA 脚本上微调 ChipNeMo，再结合 API 图检查、规则、检索和多 agent 修复生成工具脚本。
 - [MCP4EDA](https://arxiv.org/abs/2507.19570)（2025） — 通过 MCP 编排开源 RTL-to-GDS 工具，并用布局布线后的 PPA 反馈优化综合脚本。
+- [OpenLayout](https://github.com/fenggev56/OpenLayout)（2026） — 用分阶段执行、诊断与优化 agent 编排物理设计；公开实现提供 OpenROAD/Nangate45 流程、可复用 skills 和按时序、DRC 及预算反馈迭代的宏布局任务。 [论文](https://arxiv.org/abs/2611.18517)
 - [OpenROAD-MCP](https://github.com/The-OpenROAD-Project/OpenROAD-MCP)（2026） — 为 agent 提供持久 OpenROAD 会话、命令执行、历史指标和 ORFS 报告图访问。
 - [PCBRouteAgent](https://chip-ai-agent.github.io/research/pcbrouteagent/)（2026） — 面向 PCB 布线的多模态 agent，将全局布线规划、KiCad 原生布线执行与反馈驱动重规划结合，并在 PCBWorld-Bench 上评估。 [论文](https://arxiv.org/abs/2611.08175)
 - [TuRTLe](https://github.com/HPAI-BSC/TuRTLe)（2025） — 统一多套 RTL 基准和 EDA 工具，覆盖语法、功能、等价、综合、PPA 与代码补全指标。 [论文](https://arxiv.org/abs/2504.01986)
