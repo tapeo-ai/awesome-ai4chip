@@ -7,6 +7,7 @@ Covers circuit representation and performance prediction, RTL and logic optimiza
 
 ## Circuit Representation & Performance Prediction
 
+- [Clock-Mesh GNN Surrogate](https://arxiv.org/abs/2611.01473) (2026) — Uses a graph network as a SPICE surrogate to predict clock-mesh delay, slew, skew, and power under on-chip variation, then searches buffering candidates.
 - [DeepGate4](https://github.com/zyzheng17/DeepGate4-ICLR-25) (2025) — Combines a GNN encoder with a sparse graph Transformer, using gate-level and graph-level multitask supervision to learn functional and structural representations of large AIGs. [Paper](https://arxiv.org/abs/2502.01681)
 - [Multimodal Thermal Solver for 3DICs](https://doi.org/10.1109/MLCAD65511.2025.11189201) (2025) — UMD and Synopsys combine block-level thermal response learning, multimodal mapping, and linear superposition to predict thermal fields across chip sizes and power distributions. [Technical Talk](https://www.ieee-edps.com/archives/2025/c/0400chang.pdf)
 - [Pieceformer](https://arxiv.org/abs/2506.15907) (2025) — Georgia Tech and Cadence combine message passing, partitioned graph Transformers, and contrastive self-supervision to measure netlist similarity and reuse partitioning experience.
@@ -15,6 +16,7 @@ Covers circuit representation and performance prediction, RTL and logic optimiza
 ## RTL & Logic Optimization
 
 - [ASPEN](https://research.nvidia.com/labs/electronic-design-automation/publication/deng2025aspen/) (2025) — Cornell, NVIDIA, and UMD use LLMs to propose and select e-graph rewrite rules, then use PPA feedback to search for functionally equivalent RTL datapaths. [Paper](https://www.csl.cornell.edu/~zhiruz/pdfs/aspen-mlcad2025.pdf)
+- [PRISM](https://arxiv.org/abs/2611.11051) (2026-11-08; backfill) — Learns a pairwise-ranking reward model from synthesis results, allocates Design Compiler calls using uncertainty and candidate diversity, and filters LLM rewrites through compilation and simulation while maintaining a PPA Pareto archive.
 - [SynAct](https://arxiv.org/abs/2608.12751) (2026) — Reads live synthesis reports and tool knowledge to select commands in a feedback loop and optimize timing and PPA.
 
 ## Physical Design Optimization
@@ -22,11 +24,15 @@ Covers circuit representation and performance prediction, RTL and logic optimiza
 - [AlphaChip / Circuit Training](https://github.com/google-research/circuit_training) — Uses distributed deep reinforcement learning for chip macro placement, with an open training framework and checkpoints.
 - [C3PO](https://research.nvidia.com/labs/electronic-design-automation/publication/lu2026aspdac/) (2026) — NVIDIA jointly optimizes timing, routability, and wirelength with GPU-based differentiable optimization, adjusting objective weights during placement iterations. [Paper](https://hhsiao30.github.io/papers/yichen_apsdac26__Camera_Ready_eXpress.pdf)
 - [CROP](https://arxiv.org/abs/2507.02128) (2025) — Duke and Synopsys turn hierarchical RTL summaries into design vectors, retrieve parameter settings from similar circuits, and use RAG and LLMs to guide EDA flow tuning.
+- [CU-3D](https://arxiv.org/abs/2611.11475) (2026) — Builds a commercial-EDA RTL-to-GDS flow for face-to-face hybrid-bonded 3D ICs using an ASAP7 model, jointly allocating data, clock and power bond sites across partitioning, placement, CTS and routing.
 - [DREAMPlace](https://github.com/limbo018/DREAMPlace) — Uses deep learning frameworks and GPUs to accelerate global and detailed placement, providing infrastructure for learning-based physical design.
 - [E-Layout](https://arxiv.org/abs/2610.26432) (2026) — Combines e-graph equality saturation, graph retrieval-augmented generation, and RL with design-level timing feedback to jointly select post-placement subcircuit logic and physical realizations.
 - [EGGPlacer](https://arxiv.org/abs/2610.33099) (2026) — Guides macro placement during reverse diffusion with analytical-placement and differentiable thermal feedback, accounting for standard-cell distribution, full-netlist wirelength, and temperature.
+- [Flow-Matching Global Routing](https://arxiv.org/abs/2611.02304) (2026-11-02; backfill) — Predicts global routing cost maps with flow matching and guides constrained A* to connect multi-pin nets, studying wirelength, vias, congestion constraints and generalization across problem sizes.
 - [LEGO-Size](https://research.nvidia.com/labs/electronic-design-automation/publication/lu2025ispd/) (2025) — NVIDIA pretrains a specialized Transformer on library-cell sequences with self-supervision, follows with supervised learning, and uses GPU-based differentiable timing analysis to optimize gate sizes. [Paper](https://research.nvidia.com/labs/electronic-design-automation/papers/yichen_LEGO_ispd25.pdf)
 - [OpenROAD AutoTuner](https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts/tree/master/tools/AutoTuner) — Tunes RTL-to-GDS flow parameters through distributed hyperparameter search and collects PPA metrics.
+- [qLevelPlace](https://arxiv.org/abs/2611.04019) (2026) — Places RSFQ logic gates and splitters in separate stages and penalizes long interconnects with a timing-aware quadratic cost; on benchmark circuits it reports 2.65× clock frequency and 51% less area than qPlace on average.
+- [TAPCO-G](https://arxiv.org/abs/2611.13931) (2026) — Uses an outer agent to tune or rewrite timing-repair policies, with an inner STA-anchored graph model and staged power estimates screening candidates before physical-design trials optimize post-placement power and timing.
 
 ## Analog Circuit Design
 
@@ -35,3 +41,4 @@ Covers circuit representation and performance prediction, RTL and logic optimiza
 - [APPlace](https://github.com/bingyang1132/applace) (2026) — Jointly optimizes analog device locations and pin access points with differentiable objectives, followed by structure-preserving legalization; provides a Rust implementation and PDK-free abstract benchmarks. [Paper](https://arxiv.org/abs/2610.39515)
 - [AstRL](https://arxiv.org/abs/2602.12402) (2026) — Uses a graph neural network as a transistor-topology policy, combining expert behavior cloning, PPO, and simulation feedback to generate analog and mixed-signal circuits.
 - [LAMP](https://arxiv.org/abs/2610.39882) (2026) — Lets an LLM compose constraint, placement, legalization, and lightweight evaluation tools from multimodal checkpoints and revise hierarchy; evaluates post-layout performance on two SMIC 180 nm circuits.
+- [Route-Aware EM Surrogate](https://arxiv.org/abs/2611.00409) (2026) — Trains a route-admittance surrogate that transfers across matching networks in the same node, then retunes passives after layout for LC matching networks in a commercial 65 nm CMOS process and checks them with full-layout EM simulation.

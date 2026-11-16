@@ -14,12 +14,13 @@ We will continue building Awesome AI4Chip into **the most comprehensive source o
 
 ## Latest
 
-- **2026-10-30** · [RTL-Interact](https://arxiv.org/abs/2610.41225) — Trains RTL generation, EDA checking, and feedback-guided revision with staged SFT and PAPO reinforcement learning.
-- **2026-10-29** · [OPERA](https://arxiv.org/abs/2610.39395) — Connects gm/ID reasoning and gLayout generators to layout extraction and PVT verification for SKY130 opamps.
-- **2026-10-29** · [RISC-V FPGA-in-the-Loop](https://arxiv.org/abs/2610.39570) — Uses FPGA on-board measurements for human-supervised CPU iteration and diagnosis of long-run performance regressions.
-- **2026-10-27** · [AMD–Meta AI Infrastructure](https://newsroom.amd.com/news/amd-meta-advance-strategic-partnership-power-metas-ai-infrastructure/) — Reports initial Helios systems installed and under test at Meta, alongside workload-specific silicon and software co-design.
-- **2026-10-26** · [Cadence Maestro](https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2026/cadence-introduces-maestro-a-domain-specialized-ai-model.html) — Introduces domain-specialized models, decision models, and agent skills trained with EDA/SDA feedback, with select-customer early access in Q4.
-- **2026-10-21 · Backfill** · [Altera QuartusIQ](https://www.altera.com/newsroom/altera-launches-quartusIQ) — Announces a project-aware FPGA companion with MCP, reusable Quartus Skills, and an agent harness; product downloads were scheduled for October 28.
+- **2026-11-14** · [OpenLayout](https://github.com/fenggev56/OpenLayout) — Orchestrates physical design with worker, debugger and optimizer agents; the public implementation includes an OpenROAD/Nangate45 flow, skills and macro-placement tasks.
+- **2026-11-12** · [AnalogLayoutWorld](https://arxiv.org/abs/2611.16991) — Separately checks DRC/LVS, parasitic extraction, post-layout performance and quality on fixed-netlist analog-layout tasks; code release is pending.
+- **2026-11-10** · [Siemens HyperLynx Agentic Toolkit](https://news.siemens.com/en-us/siemens-hyperlynx-agentic-toolkit/) — Orchestrates SerDes, DDR, signal- and power-integrity analysis through natural language, with Q4 early access for selected customers.
+- **2026-11-10** · [TI CCStudio Agentic AI](https://www.ti.com.cn/en-us/about-ti/newsroom/news-releases/2026/2026-11-10-ti-redefines-embedded-development-with-agentic-ai-in-its-ccstudio-ecosystem-empowering-engineers-to-accelerate-innovation) — Uses MCP device context to connect code generation, builds, flashing and on-device debugging; tools are available as a free download.
+- **2026-11-10** · [TLX (Triton Low-Level Extensions)](https://engineering.fb.com/2026/11/10/open-source/tlx-a-hardware-native-gpu-compiler-for-production-ml/) — Meta describes production GPU orchestration for recommendation and LLM workloads, with co-design across models, runtimes and kernels.
+- **2026-11-10** · [SLIC](https://arxiv.org/abs/2611.13452) — Trains Qwen3.5-4B for iterative analog sizing with validity-gated simulation rewards and multi-turn GRPO.
+- **2026-11-09** · [Cadence OrCAD Xplore](https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2026/cadence-orcad-xplore-design-platform-unifies-design-component.html) — Connects manufacturer models, reference designs and supply-chain information inside schematic design, with natural-language assistance for component selection and replacement.
 
 ## Directory
 

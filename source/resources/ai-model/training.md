@@ -11,6 +11,7 @@ description: "按继续预训练、监督微调与推理蒸馏、表示学习、
 
 - [AnalogSeeker](https://arxiv.org/abs/2508.10409)（2025） — 从模拟电路教材构建问答与推理数据，通过带 KL 正则的 SFT 训练 Qwen2.5-32B 的电路知识与推理能力。 [模型](https://huggingface.co/analogllm/analog_model)
 - [AST-guided SVRF Code Synthesis](https://arxiv.org/abs/2507.00352)（2025） — Siemens EDA 对 T5 系列模型进行 AST 引导微调，并结合 RAG 从自然语言生成 SVRF 物理验证规则。
+- [CAPER](https://arxiv.org/abs/2611.00187)（2026） — 在 LoRA 旁增加读取各级电路属性的分支，对开源 LLM 做参数高效微调，用来标记模拟电路在 PVT 下不满足规格或存在潜伏失效的情况。
 - [DeepRTL](https://github.com/PeterLau61/DeepRTL)（2025） — 基于 CodeT5+，按行、代码块和模块逐步进行指令微调，联合学习 Verilog 理解与生成。 [论文](https://arxiv.org/abs/2502.15832) [数据](https://huggingface.co/datasets/liuyi2000/deeprtl_finetuning_dataset)
 - [IBM EDA Assistants with RAFT](https://research.ibm.com/publications/improving-llm-powered-eda-assistants-with-raft)（2025） — 用合成 EDA 问答进行检索增强微调，并用真实问题引导训练数据生成，改善设计文档问答。
 - [LaMAGIC2](https://proceedings.mlr.press/v267/chang25b.html)（2025） — 以预训练 Flan-T5-base 为基础改造数值输入和电路表示，通过监督微调生成满足指标的电源转换器拓扑。 [代码](https://github.com/turtleben/LaMAGIC)
@@ -30,6 +31,7 @@ description: "按继续预训练、监督微调与推理蒸馏、表示学习、
 ## Preference Optimization & RL
 
 - [Alpha-RTL / TTT-RTL](https://arxiv.org/abs/2606.05253)（2026） — 针对每个 RTL 设计在测试时更新模型参数，结合树搜索与语法、仿真、PPA 奖励优化实现。
+- [AutoC2V](https://arxiv.org/abs/2611.10824)（2026-11-08，补录） — 用真实综合的 C++/RTL/QoR 配对数据对 Qwen3-Coder-30B-A3B-Instruct 做 SFT 与 GRPO，以功能仿真门控和 QoR 预测奖励学习延迟或资源导向的 Verilog 生成。
 - [BUFFALO](https://research.nvidia.com/labs/electronic-design-automation/publication/lu2025buffalo/)（2025） — NVIDIA 与 Georgia Tech 微调预训练 T5-Large，联合生成缓冲树结构与位置，再通过网级和全芯片级 GRPO 优化 PPA。 [论文](https://gtcad.gatech.edu/www/papers/Hsiao-ICCAD25.pdf)
 - [ChipMATE](https://github.com/zhongkaiyu/ChipMATE)（2026） — 分别训练 Verilog 与 Python 参考模型 agent，再用交叉验证驱动的 X-GRPO 学习多轮协作生成 RTL。 [论文](https://arxiv.org/abs/2605.12857)
 - [ChipSeek](https://github.com/rong-hash/chipseek)（2026） — 先做推理冷启动 SFT，再通过 CDPO 将仿真、综合与 PPA 反馈用于强化学习，兼顾功能正确性和设计质量。 [论文](https://aclanthology.org/2026.acl-long.1154/)
@@ -37,6 +39,8 @@ description: "按继续预训练、监督微调与推理蒸馏、表示学习、
 - [CovR](https://arxiv.org/abs/2609.19189)（2026） — 从覆盖率反馈生成推理与激励数据，先做 SFT，再用 GRPO 训练高覆盖率 testbench 生成模型。
 - [RTL-Interact](https://arxiv.org/abs/2610.41225)（2026） — 基于 Qwen3-8B/32B，以 CodeV-R1 数据和 DeepSeek-V3.2 工具交互轨迹分阶段 SFT，再用 PAPO 强化学习联合训练 RTL 生成、检查与修复。
 - [RTLSeek](https://arxiv.org/abs/2603.27630)（2026） — 在 SFT 后分阶段进行 GRPO 训练，用 EDA 反馈和 AST 多样性奖励兼顾功能正确与不同实现方式。
+- [SAFTAC](https://arxiv.org/abs/2611.08543)（2026） — 用 10 类模拟电路的规格、测试平台和参考网表构建 8626 个仿真任务，对 Qwen3-8B 等模型做分阶段 SFT，再用仿真反馈做强化微调，以生成和修正模拟电路。
+- [SLIC](https://arxiv.org/abs/2611.13452)（2026） — 以 Qwen3.5-4B 为主模型，用电路 XML、相对尺寸动作和仿真奖励进行 SFT 与多轮 GRPO，结合有效性门控和奖励引导的 rollout 延续学习模拟电路尺寸优化。
 - [VeriPrefer](https://github.com/CatIIIIIIII/VeriPrefer)（2025） — 把 testbench 执行结果转成代码偏好对，在 SFT 后用 DPO 提高 Verilog 生成的功能正确性。 [论文](https://arxiv.org/abs/2504.15804) [数据](https://huggingface.co/datasets/LLM-EDA/pyra_tb)
 - [VeriReason](https://github.com/NellyW8/VeriReason)（2025） — 先做推理数据 SFT，再用 testbench 与代码结构反馈进行 GRPO 训练，提升 RTL 生成和自检查能力。 [论文](https://arxiv.org/abs/2505.11849) [数据](https://huggingface.co/collections/AI4EDA-CASE/verireason)
 - [VeriRL](https://github.com/ZJU-OmniAI/VeriRL)（2025） — 交替进行 SFT 与 Reinforce++，用 testbench 监督训练奖励模型，并通过轨迹重评分和样本平衡改进 RTL 生成。 [论文](https://arxiv.org/abs/2508.18462) [数据](https://huggingface.co/datasets/tttboy/Veribench-53K)

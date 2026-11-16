@@ -46,7 +46,9 @@ description: "RTL、验证、PPA、物理设计、长流程和模拟电路评测
 
 - [AMSbench](https://github.com/Why0912/AMSBench)（2025） — 覆盖模拟/混合信号原理图感知、分析和设计的多模态评测。 [数据](https://huggingface.co/datasets/wwhhyy/AMSBench)
 - [AnalogGym](https://github.com/CODA-Team/AnalogGym)（2024） — 提供多类模拟拓扑、规格和仿真测试，支持比较自动尺寸优化方法。
+- [AnalogLayoutWorld](https://arxiv.org/abs/2611.16991)（2026） — 以 40 个固定晶体管网表任务评测模拟版图 agent，将 DRC/LVS、寄生提取、版图后仿真和版图质量分开验收；代码待开放。
 - [AnalogPortBench](https://github.com/saeidrajabii/AnalogPortBench)（2026） — 评测从 0.18 μm 工艺到 SKY130 的模拟电路迁移，覆盖降压、拓扑调整与不可行规格识别，提供 ngspice 评分流程及多工艺角参考设计。 [论文](https://arxiv.org/abs/2610.33088)
 - [CircuitSense](https://github.com/xz-group/CircuitSense)（2026） — 评估从电路图感知到符号方程推导及设计推理，并提供合成生成流水线。 [数据](https://huggingface.co/datasets/armanakbari4/CircuitSense)
+- [ICLayout-Bench](https://github.com/lizhangmai/ICLayout-Bench)（2026-11-08，补录） — 公开集含 4 个开放 PDK 的 92 项模拟版图任务及 21 项核心评测，通过冻结 GDS、独立 DRC/LVS/PEX 与版图后仿真评估提交。 [论文](https://arxiv.org/abs/2611.12982) [数据](https://huggingface.co/datasets/lizhangmai/ICLayout-Bench)
 - [Long-Horizon Analog Design Bench](https://arxiv.org/abs/2609.33356)（2026） — 以 SKY130/ngspice 下的长时设计任务评估模拟/混合信号 agent，验收范围是原理图级电气指标。
 - [NetlistBench](https://arxiv.org/abs/2608.12197)（2026） — 以确定性结构 oracle 检验 SPICE 网表识别、编辑、层次操作及等价判断。

@@ -2,6 +2,7 @@
 
 ## Circuit Representation & Performance Prediction
 
+- [Clock-Mesh GNN Surrogate](https://arxiv.org/abs/2611.01473)（2026） — 用图网络代理 SPICE，预测时钟网格在片上变异下的延迟、slew、skew 和功耗，并据此搜索缓冲方案。
 - [DeepGate4](https://github.com/zyzheng17/DeepGate4-ICLR-25)（2025） — 结合 GNN 编码器和稀疏图 Transformer，以门级和图级多任务监督学习大规模 AIG 的功能与结构表示。 [论文](https://arxiv.org/abs/2502.01681)
 - [Multimodal Thermal Solver for 3DICs](https://doi.org/10.1109/MLCAD65511.2025.11189201)（2025） — UMD 与 Synopsys 结合分块热响应学习、多模态映射和线性叠加，预测不同芯片尺寸与功率分布下的热场。 [技术演讲](https://www.ieee-edps.com/archives/2025/c/0400chang.pdf)
 - [Pieceformer](https://arxiv.org/abs/2506.15907)（2025） — Georgia Tech 与 Cadence 结合消息传递、分区图 Transformer 和对比自监督学习，衡量网表相似性并复用设计划分经验。
@@ -10,6 +11,7 @@
 ## RTL & Logic Optimization
 
 - [ASPEN](https://research.nvidia.com/labs/electronic-design-automation/publication/deng2025aspen/)（2025） — Cornell、NVIDIA 与 UMD 让 LLM 提议和选择 e-graph 重写规则，再用 PPA 反馈搜索功能等价的 RTL 数据通路。 [论文](https://www.csl.cornell.edu/~zhiruz/pdfs/aspen-mlcad2025.pdf)
+- [PRISM](https://arxiv.org/abs/2611.11051)（2026-11-08，补录） — 用综合结果训练成对排序奖励模型，结合不确定性与候选多样性分配 Design Compiler 调用预算，以编译和仿真筛选 LLM 改写并维护 PPA Pareto 档案。
 - [SynAct](https://arxiv.org/abs/2608.12751)（2026） — 读取实时综合报告和工具知识，闭环选择命令并优化时序及 PPA。
 
 ## Physical Design Optimization
@@ -17,11 +19,15 @@
 - [AlphaChip / Circuit Training](https://github.com/google-research/circuit_training) — 用分布式深度强化学习进行芯片宏单元布局，公开训练框架与 checkpoint。
 - [C3PO](https://research.nvidia.com/labs/electronic-design-automation/publication/lu2026aspdac/)（2026） — NVIDIA 以 GPU 可微优化联合处理时序、可布线性与线长，并在布局迭代中调整多目标权重。 [论文](https://hhsiao30.github.io/papers/yichen_apsdac26__Camera_Ready_eXpress.pdf)
 - [CROP](https://arxiv.org/abs/2507.02128)（2025） — Duke 与 Synopsys 将 RTL 分层摘要转成设计向量，检索相似电路的参数经验，再用 RAG 与 LLM 引导 EDA 流程调参。
+- [CU-3D](https://arxiv.org/abs/2611.11475)（2026） — 基于商业 EDA 与 ASAP7 模型构建面对面混合键合 3D IC 的 RTL-to-GDS 流程，联合分配数据、时钟与电源键合点并协调分区、布局、CTS 和布线。
 - [DREAMPlace](https://github.com/limbo018/DREAMPlace) — 借用深度学习计算框架和 GPU 加速全局及详细布局，为学习型物理设计提供基础。
 - [E-Layout](https://arxiv.org/abs/2610.26432)（2026） — 通过 e-graph 等价饱和、图检索增强生成与设计级时序反馈 RL，联合选择布局后子电路的逻辑变换和物理实现。
 - [EGGPlacer](https://arxiv.org/abs/2610.33099)（2026） — 在反向扩散中注入解析布局与可微热模型反馈，联合考虑标准单元分布、全网表线长和温度，引导宏单元布局。
+- [Flow-Matching Global Routing](https://arxiv.org/abs/2611.02304)（2026-11-02，补录） — 用 flow matching 预测全局布线代价图，再以受约束 A* 连接多端网络，研究线长、过孔与拥塞约束下的搜索和跨规模泛化。
 - [LEGO-Size](https://research.nvidia.com/labs/electronic-design-automation/publication/lu2025ispd/)（2025） — NVIDIA 对库单元序列进行专用 Transformer 自监督预训练和监督学习，再用 GPU 可微时序分析优化门尺寸。 [论文](https://research.nvidia.com/labs/electronic-design-automation/papers/yichen_LEGO_ispd25.pdf)
 - [OpenROAD AutoTuner](https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts/tree/master/tools/AutoTuner) — 通过分布式超参数搜索自动调节 RTL-to-GDS 流程参数，并收集 PPA 指标。
+- [qLevelPlace](https://arxiv.org/abs/2611.04019)（2026） — 将 RSFQ 电路的逻辑门与 splitter 分阶段布局，用时序感知的二次代价惩罚长互连；在基准电路上相对 qPlace 平均达到 2.65 倍时钟频率，并减少 51% 面积。
+- [TAPCO-G](https://arxiv.org/abs/2611.13931)（2026） — 由外层 agent 调整或改写时序修复策略，内层以 STA 锚定图模型和分级功耗估计筛选候选，再用实际物理实现反馈优化布局后功耗与时序。
 
 ## Analog Circuit Design
 
@@ -30,3 +36,4 @@
 - [APPlace](https://github.com/bingyang1132/applace)（2026） — 以可微目标联合优化模拟器件位置与端口接入点，再通过保持结构的合法化改善布线条件；提供 Rust 实现和无需 PDK 的抽象算例。 [论文](https://arxiv.org/abs/2610.39515)
 - [AstRL](https://arxiv.org/abs/2602.12402)（2026） — 以图神经网络作为晶体管拓扑策略，结合专家行为克隆、PPO 和仿真反馈生成模拟与混合信号电路。
 - [LAMP](https://arxiv.org/abs/2610.39882)（2026） — 让 LLM 根据多模态布局检查点组合约束、布局、合法化和轻量评估工具，并重组层次；在两个 SMIC 180 nm 电路上评估版图后性能。
+- [Route-Aware EM Surrogate](https://arxiv.org/abs/2611.00409)（2026） — 为同一工艺节点的走线训练可跨匹配网络复用的电磁导纳代理，在商用 65 nm CMOS 上对 LC 匹配网络做版图后无源微调，并以全版图电磁仿真验收。

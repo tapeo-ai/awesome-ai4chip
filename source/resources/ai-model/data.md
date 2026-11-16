@@ -13,6 +13,7 @@ description: "RTL 语料、网表与原理图数据，以及设计数据接口�
 
 ## 网表、原理图与物理设计数据
 
+- [CADET / RouteDemos](https://github.com/LGAI-Research/CADET)（2026） — 构造 PCB 布线实例及可在引擎中重放的示范，提供生成器、独立重放校验、行为克隆与 PPO 训练和真实板评测脚本。 [论文](https://arxiv.org/abs/2611.16913)
 - [CircuitNet (1.0–3.0)](https://circuitnet.github.io/)（2022–2026） — 提供面向拥塞、DRC、IR drop、时序及 RTL-to-layout 学习的多模态设计数据。 [代码](https://github.com/circuitnet/CircuitNet) [数据](https://circuitnet.github.io/intro/download.html)
 - [Masala-CHAI](https://github.com/jitendra-bhandari/Masala-CHAI)（2024–2026） — 通过多模态模型、元件检测和验证，把模拟电路原理图转换为 SPICE 网表与数据。
 - [Netlistify](https://github.com/NYCU-AI-EDA/Netlistify)（2025） — NYCU 与 NVIDIA 联合识别器件、方向和连线，将原理图转换成 SPICE 网表，并提供合成图像数据与预训练模型。 [论文](https://research.nvidia.com/labs/electronic-design-automation/papers/netlistify_mlcad25.pdf)

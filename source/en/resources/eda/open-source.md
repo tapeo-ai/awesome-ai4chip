@@ -16,8 +16,8 @@ Tools for executing designs, generating feedback, and reproducing experiments, i
 - [OpenROAD / OpenROAD-flow-scripts](https://github.com/The-OpenROAD-Project/OpenROAD) — Open physical design tools and RTL-to-GDS flows that provide execution environments and PPA feedback for agents. [Flows and Examples](https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts)
 - [OpenSTA](https://github.com/parallaxsw/OpenSTA) — Reads gate-level netlists, Liberty libraries, SDC constraints, and parasitics to perform static timing analysis and produce timing reports.
 - [SymbiYosys](https://github.com/YosysHQ/sby) — Organizes bounded and unbounded property checking, coverage, and liveness verification for Yosys formal verification flows.
-- [Verilator](https://www.veripool.org/verilator/) — Compiles Verilog/SystemVerilog into C++/SystemC simulation models, providing lint, simulation, and coverage feedback.
-- [Yosys](https://github.com/YosysHQ/yosys) — An open RTL synthesis framework for synthesizability checks, netlist generation, and synthesis feedback for agents.
+- [Verilator](https://www.veripool.org/verilator/) — Compiles Verilog/SystemVerilog into C++/SystemC simulation models, providing lint, simulation, and coverage feedback. Release 5.054 separates branch coverage from line coverage and extends covergroup and constrained-random support. [5.054 changes](https://www.veripool.org/guide/latest/changes.html)
+- [Yosys](https://github.com/YosysHQ/yosys) — An open RTL synthesis framework for synthesizability checks, netlist generation, and synthesis feedback for agents; 0.71 adds reproducible design reordering and synthesis improvements, with string-storage changes requiring plugin adaptation. [0.71 release notes](https://github.com/YosysHQ/yosys/releases/tag/v0.71)
 
 ## Analog Simulation and Layout
 

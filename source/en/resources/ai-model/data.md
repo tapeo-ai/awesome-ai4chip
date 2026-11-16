@@ -13,6 +13,7 @@ description: "RTL corpora, netlist and schematic data, and design data interface
 
 ## Netlist, Schematic, and Physical Design Data
 
+- [CADET / RouteDemos](https://github.com/LGAI-Research/CADET) (2026) — Constructs PCB routing instances with engine-executable demonstrations, providing generators, fresh-engine replay checks, behavior-cloning and PPO training, and real-board evaluation scripts. [Paper](https://arxiv.org/abs/2611.16913)
 - [CircuitNet (1.0–3.0)](https://circuitnet.github.io/) (2022–2026) — Provides multimodal design data for congestion, DRC, IR drop, timing, and RTL-to-layout learning. [Code](https://github.com/circuitnet/CircuitNet) [Data](https://circuitnet.github.io/intro/download.html)
 - [Masala-CHAI](https://github.com/jitendra-bhandari/Masala-CHAI) (2024–2026) — Converts analog schematics into SPICE netlists and datasets using multimodal models, component detection, and verification.
 - [Netlistify](https://github.com/NYCU-AI-EDA/Netlistify) (2025) — NYCU and NVIDIA jointly identify devices, orientations, and connections to convert schematics into SPICE netlists, with synthetic images and pretrained models. [Paper](https://research.nvidia.com/labs/electronic-design-automation/papers/netlistify_mlcad25.pdf)
