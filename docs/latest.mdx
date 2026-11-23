@@ -3,10 +3,11 @@ title: "Latest"
 description: "近期 AI for Chip 工作与项目更新，按原始来源的发布日期或修订日期整理，日期以北京时间计。"
 ---
 
-- **2026-11-14** · [OpenLayout](https://github.com/fenggev56/OpenLayout) — 用执行、诊断与优化 agent 编排物理设计，公开实现提供 OpenROAD/Nangate45 流程、skills 与宏布局任务。
-- **2026-11-12** · [AnalogLayoutWorld](https://arxiv.org/abs/2611.16991) — 以固定网表任务分别检查模拟版图的 DRC/LVS、寄生提取、版图后性能与质量；代码待开放。
-- **2026-11-10** · [Siemens HyperLynx Agentic Toolkit](https://news.siemens.com/en-us/siemens-hyperlynx-agentic-toolkit/) — 用自然语言编排 SerDes、DDR、信号与电源完整性分析，第四季度向选定客户提供早期访问。
-- **2026-11-10** · [TI CCStudio Agentic AI](https://www.ti.com.cn/en-us/about-ti/newsroom/news-releases/2026/2026-11-10-ti-redefines-embedded-development-with-agentic-ai-in-its-ccstudio-ecosystem-empowering-engineers-to-accelerate-innovation) — 以 MCP 接入器件知识，将代码生成、编译、烧录和实机调试串入嵌入式开发，工具已可免费下载。
-- **2026-11-10** · [TLX (Triton Low-Level Extensions)](https://engineering.fb.com/2026/11/10/open-source/tlx-a-hardware-native-gpu-compiler-for-production-ml/) — Meta 分享 GPU 执行编排在推荐与 LLM 工作负载中的生产使用，以及模型、运行时和 kernel 协同优化实践。
-- **2026-11-10** · [SLIC](https://arxiv.org/abs/2611.13452) — 用有效性门控的仿真奖励和多轮 GRPO 训练 Qwen3.5-4B，使其迭代调整模拟电路尺寸。
-- **2026-11-09** · [Cadence OrCAD Xplore](https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2026/cadence-orcad-xplore-design-platform-unifies-design-component.html) — 在原理图设计中连接厂商器件模型、参考设计与供应链信息，以自然语言辅助选型和替换。
+- **2026-11-20** · [MiracleGro / BLOOM](https://arxiv.org/abs/2611.26517) — 以 RTL profiling、综合面积和时序反馈迭代 BOOM 微架构，用 FireSim 跑完整 SPEC CPU2017，并结合综合频率估计性能。
+- **2026-11-20** · [IHP Open PDK 0.4.0](https://github.com/IHP-GmbH/IHP-Open-PDK/releases/tag/v.0.4.0) — 更新 SG13G2 与 SG13CMOS5L 的器件、guard-ring、寄生角和验证支持，修正失配与全局变化模型。
+- **2026-11-19** · [Meta-RTL](https://arxiv.org/abs/2611.25891) — 在固定模型、EDA 流程和预算下演化 RTL 优化 harness，用综合、等价检查和未见设计检验策略迁移。
+- **2026-11-19** · [DVBench](https://github.com/JiaruQian/DVBench) — 以 95 项任务分阶段评测 UVM 验证；公开任务和容器工具，运行仍需 VCS/URG/UVM 及自行接入的仿真评分服务。
+- **2026-11-19** · [CRAFT](https://arxiv.org/abs/2611.25908) — 用器件查找表、工作点与小信号求解支撑模拟尺寸推理，并以独立 HSPICE 仿真验收商业 28 nm 电路。
+- **2026-11-18** · [OpenAI Chip Design Results](https://openai.com/index/advancing-chip-design-with-our-models/) — 报告与 Synopsys、AMD 的 RTL 优化实践，部分改动已纳入送厂设计；同时区分硅后验证与 RISC-V 仿真结果。
+- **2026-11-14（补录）** · [Execution-Grounded EDA Scripting](https://arxiv.org/abs/2611.19056v2) — 长鑫存储报告 MCP 连接 API 检索与沙箱执行的脚本生产实践，覆盖 PyAether、SKILL 和 Tcl；评测检查脚本效果。
+- **2026-11-09（补录）** · [Anthropic–Diode Electronics Prototypes](https://www.anthropic.com/research/claude-electronics-design) — Fable 5.2 协调 PCB、外壳与固件，Diode 工程师组装测试三款原型；电气、热及认证验证仍待完成。

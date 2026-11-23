@@ -16,6 +16,7 @@ description: "电路表示与性能预测、RTL 与逻辑优化、物理设计�
 ## RTL & Logic Optimization
 
 - [ASPEN](https://research.nvidia.com/labs/electronic-design-automation/publication/deng2025aspen/)（2025） — Cornell、NVIDIA 与 UMD 让 LLM 提议和选择 e-graph 重写规则，再用 PPA 反馈搜索功能等价的 RTL 数据通路。 [论文](https://www.csl.cornell.edu/~zhiruz/pdfs/aspen-mlcad2025.pdf)
+- [DiffScope](https://arxiv.org/abs/2611.27035)（2026） — 将候选的在线面积轨迹与基准 RTL 的完整综合轨迹配对，以校准下界提前停止无竞争力的综合运行，减少 agent RTL 搜索的评估开销而无需训练预测器。
 - [PRISM](https://arxiv.org/abs/2611.11051)（2026-11-08，补录） — 用综合结果训练成对排序奖励模型，结合不确定性与候选多样性分配 Design Compiler 调用预算，以编译和仿真筛选 LLM 改写并维护 PPA Pareto 档案。
 - [SynAct](https://arxiv.org/abs/2608.12751)（2026） — 读取实时综合报告和工具知识，闭环选择命令并优化时序及 PPA。
 
@@ -40,5 +41,7 @@ description: "电路表示与性能预测、RTL 与逻辑优化、物理设计�
 - [AnalogScout](https://arxiv.org/abs/2610.37319)（2026） — 复用已验证设计，以 gm/Id 查找表做局部尺寸计算，再结合全局搜索和全角 SPICE 验证，在固定仿真预算下优化 SKY130 OTA。
 - [APPlace](https://github.com/bingyang1132/applace)（2026） — 以可微目标联合优化模拟器件位置与端口接入点，再通过保持结构的合法化改善布线条件；提供 Rust 实现和无需 PDK 的抽象算例。 [论文](https://arxiv.org/abs/2610.39515)
 - [AstRL](https://arxiv.org/abs/2602.12402)（2026） — 以图神经网络作为晶体管拓扑策略，结合专家行为克隆、PPO 和仿真反馈生成模拟与混合信号电路。
+- [CleanRoute](https://arxiv.org/abs/2611.20047v2)（2026-11-15，补录） — 通过分层 DRC 规则执行、按电流镜关系构建供电树和器件金属边缘对齐的布线网格，兼顾商业 40 nm OTA 的规则合规、LVS 与版图后性能。
 - [LAMP](https://arxiv.org/abs/2610.39882)（2026） — 让 LLM 根据多模态布局检查点组合约束、布局、合法化和轻量评估工具，并重组层次；在两个 SMIC 180 nm 电路上评估版图后性能。
+- [PVTSizing 2.0](https://arxiv.org/abs/2611.22328)（2026） — 以损失引导的更新和 critic 引导的局部细化优化跨 PVT 尺寸；独立数值优化器可由 agent 调用，并可选用 LLM 提供参数关系指导搜索。
 - [Route-Aware EM Surrogate](https://arxiv.org/abs/2611.00409)（2026） — 为同一工艺节点的走线训练可跨匹配网络复用的电磁导纳代理，在商用 65 nm CMOS 上对 LC 匹配网络做版图后无源微调，并以全版图电磁仿真验收。
