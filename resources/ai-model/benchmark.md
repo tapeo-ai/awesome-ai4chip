@@ -11,10 +11,12 @@
 
 - [AssertionBench](https://github.com/achieve-lab/assertion_data_for_LLM)（2025） — 基于 OpenCores 设计与经过形式核验的参考断言，评估 LLM 从 RTL 生成断言。 [论文](https://arxiv.org/abs/2406.18627)
 - [AssertLLM2](https://github.com/hkust-zhiyao/AssertLLM2)（2026） — 围绕规格、完整 RTL 和突变 bug 评估 SVA 的预防错误与发现错误能力。 重跑需要 JasperGold。 [论文](https://arxiv.org/abs/2605.27472)
+- [DVBench](https://github.com/JiaruQian/DVBench)（2026） — 用 95 项任务评测完整 UVM 验证流程，分别检查中间材料、编译、覆盖率与缺陷检出；公开任务及容器工具，运行需 VCS/URG/UVM 和自行接入的仿真评分服务。 [论文](https://arxiv.org/abs/2611.25066)
 - [FIXME](https://github.com/ChatDesignVerification/FIXME)（2025） — 覆盖规格理解、参考模型、testbench、SVA 生成与 RTL 修复，含文本和多模态规格。 当前流程含 VCS、VC Static 依赖。 [论文](https://arxiv.org/abs/2507.04276)
 - [FVEval](https://github.com/NVlabs/FVEval)（2024） — 通过 NL2SVA 与 Design2SVA 任务，评估从指令和 RTL 生成断言的形式验证能力。 完整评测需要 Cadence Jasper。 [论文](https://arxiv.org/abs/2410.23299)
 - [HierSVA](https://arxiv.org/abs/2606.13706)（2026） — 为层次 RTL 构建参考 SVA，分别评估可证明性、空泛性、规格一致性、突变检测与覆盖率。 重跑需要 VC Formal。 [代码](https://github.com/HierSVAAnon/HierSVACodeAndArtifacts) [数据](https://huggingface.co/datasets/AnonymousHierSVA/HierSVA)
 - [ICCAD 2026 — Regression Failure Bucketing](https://www.iccad-contest.org/2026/Problems.html)（2026） — Synopsys 提供的验证回归失败归类任务，附题目说明、测试材料与阶段评测结果。
+- [RTLReviewBench](https://github.com/yasirmahmud/RTLReviewBench)（2026-11-15，补录） — 用 114 对经仿真确认的正确与错误 Verilog 模块评测无执行代码审查，分别统计漏报与误拒，并公开模型响应、困难划分和评测代码。 [论文](https://arxiv.org/abs/2611.21678)
 
 ## PPA 优化与 HLS
 

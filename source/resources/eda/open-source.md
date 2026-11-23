@@ -33,6 +33,6 @@ description: "数字设计、模拟仿真、物理实现工具和开放 PDK。"
 ## 集成环境与 PDK
 
 - [GF180MCU](https://github.com/google/gf180mcu-pdk)（2022） — GlobalFoundries 180nm MCU 工艺的开放 PDK，可用于模拟和数字设计工具链。 此 Google 原始仓库已归档。
-- [IHP Open PDK / SG13G2](https://github.com/IHP-GmbH/IHP-Open-PDK) — 面向模拟、混合信号和 RF 的 130nm BiCMOS 开放 PDK。
+- [IHP Open PDK / SG13G2 / SG13CMOS5L](https://github.com/IHP-GmbH/IHP-Open-PDK) — 面向模拟、混合信号和 RF 的 130 nm 开放工艺环境；0.4.0 扩展器件与 guard-ring 生成器、寄生角及 RF MOS LVS，并修正 HBT 失配和电阻全局变化模型。 [0.4.0 发布](https://github.com/IHP-GmbH/IHP-Open-PDK/releases/tag/v.0.4.0)
 - [IIC-OSIC-TOOLS](https://github.com/iic-jku/IIC-OSIC-TOOLS) — 将模拟与数字开源 EDA 工具及多个开放 PDK 集成到 Docker 环境。
 - [SKY130](https://github.com/google/skywater-pdk) — SkyWater 130nm 开放工艺设计套件，为模拟/数字设计实验提供器件模型和工艺数据。

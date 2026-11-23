@@ -13,6 +13,7 @@
 
 ## CIM (Compute-in-Memory)
 
+- [3D-NAND-CIM](https://arxiv.org/abs/2611.27479) (2026) — Hybrid-bonds 14 nm logic to 3D NAND and combines current-controlled-oscillator ADCs with charge retention for analog matrix-vector multiplication; measurements cover multiple tiers, while CNN validation executes remaining operators in software.
 - [AccelForge / HWComponents](https://github.com/Accelergy-Project/accelforge) — Carry forward CiMLoop architecture and component models to evaluate mappings, area, energy, and latency for accelerators including compute-in-memory; the original CiMLoop repository is no longer maintained. [Component Models](https://github.com/Accelergy-Project/hwcomponents) [Original CiMLoop Repository](https://github.com/mit-emze/cimloop) [CiMLoop Paper](https://arxiv.org/abs/2405.07259)
 - [CAMP](https://arxiv.org/abs/2611.07707) (2026) — Builds a conflict matrix from architecture, network, and inference context to map LLM weights onto 3D compute-in-memory arrays, then prunes the search with profiling feedback.
 - [CrossSim](https://github.com/sandialabs/cross-sim) — Evaluates how analog crossbar nonidealities, including device errors, drift, noise, and ADC effects, affect algorithm accuracy, with hardware-aware training support.

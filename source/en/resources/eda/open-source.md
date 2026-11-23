@@ -33,6 +33,6 @@ Tools for executing designs, generating feedback, and reproducing experiments, i
 ## Integrated Environments and PDKs
 
 - [GF180MCU](https://github.com/google/gf180mcu-pdk) (2022) — An open PDK for GlobalFoundries' 180nm MCU process, supporting analog and digital toolchains. This original Google repository is archived.
-- [IHP Open PDK / SG13G2](https://github.com/IHP-GmbH/IHP-Open-PDK) — An open 130nm BiCMOS PDK for analog, mixed-signal, and RF design.
+- [IHP Open PDK / SG13G2 / SG13CMOS5L](https://github.com/IHP-GmbH/IHP-Open-PDK) — Open 130 nm process environments for analog, mixed-signal, and RF design; 0.4.0 expands devices, guard-ring generators, parasitic corners, and RF MOS LVS, and corrects HBT mismatch and resistor global-variation models. [0.4.0 release](https://github.com/IHP-GmbH/IHP-Open-PDK/releases/tag/v.0.4.0)
 - [IIC-OSIC-TOOLS](https://github.com/iic-jku/IIC-OSIC-TOOLS) — Packages open-source analog and digital EDA tools and multiple open PDKs in a Docker environment.
 - [SKY130](https://github.com/google/skywater-pdk) — An open SkyWater 130nm process design kit with device models and technology data for analog and digital experiments.

@@ -11,10 +11,12 @@
 
 - [AssertionBench](https://github.com/achieve-lab/assertion_data_for_LLM) (2025) — Evaluates LLM-generated RTL assertions using OpenCores designs and formally checked reference assertions. [Paper](https://arxiv.org/abs/2406.18627)
 - [AssertLLM2](https://github.com/hkust-zhiyao/AssertLLM2) (2026) — Evaluates how SVA prevents and detects bugs using specifications, complete RTL, and injected mutations. Reproduction requires JasperGold. [Paper](https://arxiv.org/abs/2605.27472)
+- [DVBench](https://github.com/JiaruQian/DVBench) (2026) — Evaluates complete UVM workflows on 95 tasks, checking intermediate artifacts, compilation, coverage, and bug detection; published tasks and container tools require VCS/URG/UVM and a separately connected simulation/scoring service. [Paper](https://arxiv.org/abs/2611.25066)
 - [FIXME](https://github.com/ChatDesignVerification/FIXME) (2025) — Covers specification understanding, reference models, testbenches, SVA generation, and RTL repair with textual and multimodal specifications. The current flow depends on VCS and VC Static. [Paper](https://arxiv.org/abs/2507.04276)
 - [FVEval](https://github.com/NVlabs/FVEval) (2024) — Evaluates formal verification capabilities through NL2SVA and Design2SVA assertion-generation tasks. Full evaluation requires Cadence Jasper. [Paper](https://arxiv.org/abs/2410.23299)
 - [HierSVA](https://arxiv.org/abs/2606.13706) (2026) — Builds reference SVA for hierarchical RTL and separately evaluates provability, vacuity, specification alignment, mutation detection, and coverage. Reproduction requires VC Formal. [Code](https://github.com/HierSVAAnon/HierSVACodeAndArtifacts) [Data](https://huggingface.co/datasets/AnonymousHierSVA/HierSVA)
 - [ICCAD 2026 — Regression Failure Bucketing](https://www.iccad-contest.org/2026/Problems.html) (2026) — Synopsys' verification regression failure-bucketing task, with problem descriptions, test materials, and interim evaluation results.
+- [RTLReviewBench](https://github.com/yasirmahmud/RTLReviewBench) (2026-11-15, backfill) — Tests execution-free RTL review on 114 simulation-validated pairs of correct and buggy Verilog modules, separating missed bugs from false rejections and releasing responses, a harder split, and evaluation code. [Paper](https://arxiv.org/abs/2611.21678)
 
 ## PPA Optimization and HLS
 

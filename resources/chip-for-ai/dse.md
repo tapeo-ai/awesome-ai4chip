@@ -2,14 +2,18 @@
 
 - [AlphaEvolve](https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/)（2025–2026） — 结合 LLM、程序进化与自动验证优化算法，官方披露了 TPU 算术电路、训练 kernel 和数据中心调度案例。 [后续实践](https://deepmind.google/blog/alphaevolve-impact/)
 - [ArchGym](https://github.com/srivatsankrishnan/oss-arch-gym)（2023） — 统一搜索算法与架构模拟器接口，用于机器学习驱动的设计空间探索和实验数据收集。 [论文](https://arxiv.org/abs/2306.08888)
+- [BOOMerang](https://arxiv.org/abs/2611.25438)（2026） — 用双向 agent 循环把 BOOM RTL 对齐到 gem5 性能模型，再将模拟器中的微架构特性转回 RTL，连接高层探索与周期级实现验证。
 - [CHIA](https://github.com/ucb-bar/chia)（2026） — 用工作流图和可扩展运行时组织 AI 驱动的硬件/软件协同设计实验，示例覆盖 RTL、gem5 对齐、微架构实现和关键路径优化。 [论文](https://arxiv.org/abs/2606.27350)
+- [CriticNPU](https://github.com/bruno686/CriticNPU)（2026） — 用在线校准的 Roofline critic 在仿真前筛选 NPU 配置、在仿真后解释 prefill/decode 瓶颈，再指导 LLM 架构规划；公开 NeuSim、搜索实现与实验工具。 [论文](https://arxiv.org/abs/2611.24733)
 - [Formulaic](https://arxiv.org/abs/2610.39380)（2026） — 由 agent 逐步构造软硬件协同优化问题，求解器搜索、验证器和测量检查结果；以独立的 GB10 实测、Ventus 仿真与证明复用实验研究各环节。
 - [IMPACT](https://arxiv.org/abs/2610.39040)（2026） — 以遗传搜索和约束感知修复探索非整除 tiling 的加速器映射，将不可行候选修复为可行映射，覆盖灵活架构与受限 CIM 架构。
+- [MiracleGro / BLOOM](https://arxiv.org/abs/2611.26517)（2026） — 将 BOOM 微架构修改、周期级 RTL profiling、综合面积与关键路径反馈纳入 agent 循环；最终用 FireSim 验证完整 SPEC CPU2017，并结合 Sky130 综合频率估计执行时间收益。
 - [PaFeDSE](https://arxiv.org/abs/2610.34838)（2026） — 利用 Pareto 命中与未命中反馈引导乱序处理器微架构搜索，并过滤反复低优先级候选，减少仿真和候选处理开销。
 
 ## 架构与映射评估
 
 - [Accel-Sim](https://accel-sim.github.io/) — 对 GPU 等可编程加速器进行轨迹驱动仿真与实机校验，配合功耗模型研究新架构及 AI workload。
+- [FoldSim](https://arxiv.org/abs/2611.26472)（2026） — 将层次 RTL 实例折叠到共享 FPGA 逻辑，保留独立状态并以静态调度和外部 HBM 扩展容量，在单张 Alveo V80 上进行大规模周期精确仿真。
 - [GenZ](https://github.com/abhibambhaniya/GenZ-LLM-Analyzer)（2024） — 分析不同 LLM 推理场景下的算力、存储和通信需求，探索模型特征与平台设计参数的关系。 [论文](https://arxiv.org/abs/2406.01698)
 - [LLMCompass](https://github.com/PrincetonUniversity/LLMCompass)（2024） — 用模型执行、硬件映射与面积成本模型评估 LLM 推理平台，支持芯片参数及系统配置探索。 [论文](https://arxiv.org/abs/2312.03134)
 - [MAESTRO](https://github.com/maestro-project/maestro) — 以数据流与 tiling 描述分析 DNN 加速器的数据复用、性能和硬件成本。

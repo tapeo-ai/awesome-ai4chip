@@ -12,9 +12,11 @@ description: "面向 GPU、CPU 和加速器的 kernel 生成、优化、评测�
 - [AutoProfiler](https://github.com/Satissss/AutoProfiler)（2026） — 由优化反馈学习确定性的 profiling 决策树，按 kernel 选择硬件计数器，在固定测量预算内为一次 LLM kernel 改写提供信息。 [论文](https://arxiv.org/abs/2610.36576)
 - [AWS Neuron Agentic Development](https://github.com/aws-neuron/neuron-agentic-development) — AWS 官方 NKI agent 工具，覆盖 kernel 编写、编译修复、profiling、性能分析及 API 迁移。
 - [BitDecoding-FP4](https://github.com/OpenBitSys/BitDecoding-FP4)（2026） — 用双残差 query 量化、概率缩放和异常值感知的 key 量化实现原生 FP4 KV 解码；在 NVIDIA B300 上，Qwen3-4B 与 Qwen3-30B-A3B 的峰值服务吞吐达到 BF16 KV 的 2.4–3.0 倍，NVFP4 精度与 BF16 KV 相差不超过 0.5 个点。 [论文](https://arxiv.org/abs/2611.09825)
+- [CompoundingKernel](https://arxiv.org/abs/2611.19230)（2026-11-14，补录） — Amazon 用模型外的正确 kernel 与谱系档案指导并行搜索，由独立执行检查验收，并研究测量吞吐和重启恢复对 B200 kernel 搜索扩展性的影响。 [项目](https://huggingface.co/spaces/QianQu/CompoundingKernel-Explorer)
 - [CUDA Agent](https://github.com/BytedTsinghua-SIA/CUDA-Agent)（2026） — 把大规模 agentic RL、CUDA 任务数据、专家 skills 与可验证执行环境结合，训练高性能 kernel 生成能力。 [论文](https://arxiv.org/abs/2602.24286)
 - [CUDA-L1](https://github.com/ornith-ai/CUDA-L1)（2025/2026） — 以对比强化学习和执行反馈优化 CUDA kernel，讨论性能奖励设计及 reward hacking。 [论文](https://arxiv.org/abs/2507.14111)
 - [ForgeKernel](https://github.com/OpenBMB/ForgeKernel)（2026） — 从参考 kernel 的实测硬件行为提取可复用机制，并把通过正确性与性能测试的实现晋升为下一轮参考；在 Hopper 与 Blackwell 的 27 个算子、29 组输入上，25 组不低于专家参考，几何平均增益 10%。 [论文](https://arxiv.org/abs/2611.04998)
+- [KernelAudit](https://arxiv.org/abs/2611.15506)（2026-11-11，补录） — 按任务契约分别审计语义正确性、实现完整性和计时完整性，用压力测试、执行轨迹与计时检查定位 kernel 验证器的误接受和误拒绝。
 - [KernelBench](https://github.com/ScalingIntelligence/KernelBench)（2025） — 以 PyTorch 任务评估模型能否生成正确且更快的 GPU kernel，并提供运行与测量工具。
 - [KernelMosaic](https://arxiv.org/abs/2611.14604)（2026） — 以文本、参考实现和数学描述构建多样 CUDA 任务，生成经执行验证的解答与 agent 轨迹，并用其微调 Qwen3.5-9B 的 kernel 编写和工具反馈修正能力。
 - [Kevin-32B](https://cognition.com/blog/kevin-32b)（2025） — 通过多轮强化学习训练 CUDA kernel 生成与优化模型，让模型利用执行反馈迭代代码。 [论文](https://arxiv.org/abs/2507.11948) [模型](https://huggingface.co/cognition-ai/Kevin-32B)

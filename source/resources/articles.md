@@ -4,6 +4,7 @@ description: "AI for Chip 综述、工程实践与技术文章。"
 ---
 
 - [AMD–Meta AI Infrastructure](https://newsroom.amd.com/news/amd-meta-advance-strategic-partnership-power-metas-ai-infrastructure/)（2026） — 披露 Meta 初始 Helios 机架系统的安装与测试、面向其工作负载的 Instinct 协同设计及 ROCm/PyTorch 优化，并区分现有部署与后续硬件计划。
+- [Anthropic–Diode Electronics Prototypes](https://www.anthropic.com/research/claude-electronics-design)（2026-11-09，补录） — Fable 5.2 联合处理原理图、PCB、外壳、固件和制造检查，由 Diode 工程师组装测试三款可工作的原型；案例尚未经过电气、热及认证验证。
 - [Exploring the Agentic Frontier of Verilog Code Generation](https://arxiv.org/abs/2603.19347)（2026） — 在 CVDP 上受控比较提示结构、工具与 agent 封装，分析工具解读和崩溃等失败模式。
 - [GPU Kernel Library Issues](https://arxiv.org/abs/2611.09280)（2026） — 手工分析 FlashInfer、FlashAttention、Triton、CUTLASS、DeepGEMM、xFormers 和 bitsandbytes 的 300 个高质量 issue，归纳编译构建、运行环境和 kernel 特化约束上的失效模式。
 - [Human-Centered Agentic AI Workflows for RTL Verification](https://resources.sw.siemens.com/en-GB/white-paper-human-centered-agentic-ai-workflows-for-rtl-verification/) — Siemens 对 RTL 验证中工程师、agent 与确定性工具分工的说明。
@@ -12,6 +13,7 @@ description: "AI for Chip 综述、工程实践与技术文章。"
 - [LLMs for EDA: A Survey](https://arxiv.org/abs/2501.09655)（2025） — 梳理 LLM 在 EDA 中的任务、模型适配和评测方法。
 - [Loop Engineering for Chip Design](https://agentrys.ai/case-studies/loop-engineering-for-chip-design)（2026） — Agentrys 的香山优化案例，介绍工作负载、微架构参数、正确性检查和物理设计反馈如何连接。
 - [Microsoft Discovery — Learning Chip Design](https://techcommunity.microsoft.com/blog/microsoft-discovery-blog/from-ad-astra-to-semper-disco-learning-chip-design-with-microsoft-discovery/4554904)（2026） — 介绍借助 Discovery 从规格、RTL 推进到 OpenROAD 物理布局，并尝试时序与功耗优化的实践。
+- [OpenAI Chip Design Results](https://openai.com/index/advancing-chip-design-with-our-models/)（2026） — 报告模型改写 RTL、Synopsys 验证及 AMD 将部分改动纳入送厂设计的实践，并区分 Jalapeño 硅后验证与受功能和面积约束的 RISC-V 仿真评测。
 - [Report for NSF Workshop on AI for EDA](https://arxiv.org/abs/2601.14541)（2026） — 覆盖物理设计、综合、验证与 AI 工具箱，并讨论数据和计算基础设施。
 - [The Code Behind the Layout](https://arxiv.org/abs/2610.38426)（2026） — 在 SKY130/gLayout 中比较直接绘制、调用器件与修改生成器三种 agent 操作层次，研究跨参数族物理验证与编辑经验蒸馏。
 - [The Dawn of Agentic EDA](https://arxiv.org/abs/2512.23189)（2025–2026） — 从 RTL、验证到物理设计梳理 agent 工作流及跨阶段反馈。

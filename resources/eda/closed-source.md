@@ -2,6 +2,7 @@
 
 ## Core EDA
 
+- [AMD Vivado](https://www.amd.com/en/products/software/adaptive-socs-and-fpgas/vivado/vivado-whats-new/vivado-2026-2.html)（2026-11-11，补录） — FPGA 综合、实现与调试工具；2026.2 扩展并行 checkpoint 保存与加载、统一 NoC 视图、跨 SLR 寄存器优化及 XSIM 的 UVVM 支持。 [2026.2 发布说明](https://docs.amd.com/r/en-US/ug973-vivado-release-notes-install-license)
 - [Cadence Genus / Innovus+ / Tempus](https://www.cadence.com/en_US/home/tools/digital-design-and-signoff/synthesis/genus-synthesis-solution.html) — Genus 用于 RTL 综合，Innovus+ 连接综合、布局、时钟树与布线，Tempus 提供静态时序分析与签核。 [Innovus+](https://www.cadence.com/en_US/home/tools/digital-design-and-signoff/soc-implementation-and-floorplanning/innovus-plus-synthesis-implementation-system.html) [Tempus](https://www.cadence.com/en_US/home/tools/digital-design-and-signoff/silicon-signoff/tempus-timing-signoff-solution.html)
 - [Cadence Virtuoso Studio / Spectre](https://www.cadence.com/en_US/home/tools/custom-ic-analog-rf-design/virtuoso-studio.html) — Virtuoso 支持定制与模拟 IC 的原理图、版图及设计分析，Spectre 提供晶体管级 SPICE、模拟和 RF 仿真。 [Spectre X](https://www.cadence.com/en_US/home/tools/custom-ic-analog-rf-design/circuit-simulation/spectre-x-simulator.html)
 - [Cadence Xcelium](https://www.cadence.com/en_US/home/tools/system-design-and-verification/simulation-and-testbench-verification/xcelium-simulator.html) — 面向 IP 与 SoC 的逻辑仿真器，支持 SystemVerilog、VHDL、SystemC、UVM，以及混合信号、低功耗和 X 传播验证。

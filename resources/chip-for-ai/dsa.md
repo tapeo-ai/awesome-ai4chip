@@ -13,6 +13,7 @@
 
 ## CIM (Compute-in-Memory)
 
+- [3D-NAND-CIM](https://arxiv.org/abs/2611.27479)（2026） — 将 14 nm 逻辑芯片与 3D NAND 晶圆混合键合，以电流控制振荡器 ADC 和电荷保持实现模拟矩阵向量乘；芯片测量覆盖多存储层，CNN 验证将其余算子放在软件执行。
 - [AccelForge / HWComponents](https://github.com/Accelergy-Project/accelforge) — 承接 CiMLoop 的架构与组件模型，联合评估存算一体等加速器的映射、面积、能耗和时延；CiMLoop 原仓库已停止维护。 [组件模型](https://github.com/Accelergy-Project/hwcomponents) [CiMLoop 原仓库](https://github.com/mit-emze/cimloop) [CiMLoop 论文](https://arxiv.org/abs/2405.07259)
 - [CAMP](https://arxiv.org/abs/2611.07707)（2026） — 按架构、网络和推理上下文建立冲突矩阵，为 3D 存算阵列安排 LLM 权重映射，并用 profiling 反馈收窄搜索。
 - [CrossSim](https://github.com/sandialabs/cross-sim) — 评估模拟交叉阵列的器件误差、漂移、噪声和 ADC 等非理想性对算法精度的影响，支持硬件感知训练。
